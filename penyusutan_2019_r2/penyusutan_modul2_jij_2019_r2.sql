@@ -4175,9 +4175,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e39 CASCADE;
+DROP view if exists view_penyusutan_jij_2019_r2_e42 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e39 as
+create view view_penyusutan_jij_2019_r2_e42 as
 
 select register,
 nama_skpd,
@@ -4196,7 +4196,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e38.kode_barang,
+view_penyusutan_jij_2019_r2_e41.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4289,7 +4289,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e38
+view_penyusutan_jij_2019_r2_e41
  Window
 urutan as (partition by register order by rank)
 
@@ -4300,9 +4300,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e40 CASCADE;
+DROP view if exists view_penyusutan_jij_2019_r2_e43 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e40 as
+create view view_penyusutan_jij_2019_r2_e43 as
 
 select register,
 nama_skpd,
@@ -4321,7 +4321,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e39.kode_barang,
+view_penyusutan_jij_2019_r2_e42.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4347,20 +4347,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e39, penambahan_umur
+view_penyusutan_jij_2019_r2_e42, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e39.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e39.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2019_r2_e42.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2019_r2_e42.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e41 CASCADE;
+DROP view if exists view_penyusutan_jij_2019_r2_e44 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e41 as
+create view view_penyusutan_jij_2019_r2_e44 as
 
 select register,
 nama_skpd,
@@ -4474,7 +4474,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e40
+view_penyusutan_jij_2019_r2_e43
  Window
 urutan as (partition by register order by rank)
 

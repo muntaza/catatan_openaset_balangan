@@ -1,6 +1,6 @@
-DROP view if exists view_penyusutan_gb_2018_r2_a3 CASCADE;
+DROP view if exists view_penyusutan_jij_2019_r2_a3 CASCADE;
 
-create view view_penyusutan_gb_2018_r2_a3 as
+create view view_penyusutan_jij_2019_r2_a3 as
 
 select register,
 nama_skpd,
@@ -40,10 +40,10 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2018_r2_e29
+view_penyusutan_jij_2019_r2_e35
 
 
 order by register, rank;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_gb_2018_r2_a3 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2018_r2_a3 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_jij_2019_r2_a3 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2019_r2_a3 FROM lap_kabupaten;

@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS view_penyusutan_jij_2018_r2_a1 CASCADE;
+DROP VIEW IF EXISTS view_penyusutan_jij_2019_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_jij_2018_r2_a1 AS
+CREATE VIEW view_penyusutan_jij_2019_r2_a1 AS
 
 
 SELECT * FROM
@@ -56,7 +56,7 @@ WHERE
 1 = 1  AND
 harga_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan = jalan_irigasi_jaringan.id AND
 harga_jalan_irigasi_jaringan.id_asal_usul = asal_usul.id AND
-harga_jalan_irigasi_jaringan.tahun <= 2018 AND
+harga_jalan_irigasi_jaringan.tahun <= 2019 AND
 
 jalan_irigasi_jaringan.id_kode_barang = kode_barang.id AND
 jalan_irigasi_jaringan.id_mutasi_berkurang = mutasi_berkurang.id AND
@@ -109,5 +109,5 @@ jalan_irigasi_jaringan.keterangan) AS QUERY_JALAN_IRIGASI_JARINGAN
 
 ;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2018_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2018_r2_a1 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_jij_2019_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2019_r2_a1 FROM lap_kabupaten;

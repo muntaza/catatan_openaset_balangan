@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS view_penyusutan_pm_2018_r2_a1 CASCADE;
+DROP VIEW IF EXISTS view_penyusutan_pm_2019_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_pm_2018_r2_a1 AS
+CREATE VIEW view_penyusutan_pm_2019_r2_a1 AS
 
 
 
@@ -57,7 +57,7 @@ WHERE
 1 = 1  AND
 harga_peralatan_mesin.id_peralatan_mesin = peralatan_mesin.id AND
 harga_peralatan_mesin.id_asal_usul = asal_usul.id AND
-harga_peralatan_mesin.tahun <= 2018 AND
+harga_peralatan_mesin.tahun <= 2019 AND
 
 peralatan_mesin.id_kode_barang = kode_barang.id AND
 peralatan_mesin.id_mutasi_berkurang = mutasi_berkurang.id AND
@@ -111,5 +111,5 @@ peralatan_mesin.keterangan) AS QUERY_PERALATAN_MESIN
 ;
 
 
-GRANT ALL PRIVILEGES ON view_penyusutan_pm_2018_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2018_r2_a1 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_pm_2019_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2019_r2_a1 FROM lap_kabupaten;

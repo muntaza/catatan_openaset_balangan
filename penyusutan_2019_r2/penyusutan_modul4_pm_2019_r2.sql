@@ -1,6 +1,6 @@
-DROP view if exists view_penyusutan_jij_2018_r2_a4 CASCADE;
+DROP view if exists view_penyusutan_pm_2019_r2_a4 CASCADE;
 
-create view view_penyusutan_jij_2018_r2_a4 as
+create view view_penyusutan_pm_2019_r2_a4 as
 
 select register,
 nama_skpd,
@@ -25,7 +25,7 @@ sum(harga) - sum(penyusutan) as nilai_buku
 
 
  from
-view_penyusutan_jij_2018_r2_a3
+view_penyusutan_pm_2019_r2_a3
 
 GROUP BY
 register,
@@ -46,5 +46,5 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2018_r2_a4 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2018_r2_a4 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_pm_2019_r2_a4 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2019_r2_a4 FROM lap_kabupaten;

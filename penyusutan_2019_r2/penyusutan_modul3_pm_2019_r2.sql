@@ -40,7 +40,7 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e5
+view_penyusutan_pm_2019_r2_e29
 
 
 order by register, rank;

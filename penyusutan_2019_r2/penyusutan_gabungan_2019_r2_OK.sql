@@ -7407,6 +7407,942 @@ order by register, rank;
 
 
 
+DROP view if exists view_penyusutan_jij_2019_r2_e42 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e42 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e41.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+
+
+CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+          THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+     WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+          THEN round(100,2)
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as persen_awal,
+
+
+
+
+CASE WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 75
+     THEN 100
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 50
+         THEN 75
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 25
+         THEN 50
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 0
+         THEN 25
+ELSE
+         0
+END as persentasi,
+
+masa_manfaat,
+penambahan_umur,
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+ from
+view_penyusutan_jij_2019_r2_e41
+ Window
+urutan as (partition by register order by rank)
+
+
+order by register, rank;
+
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e43 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e43 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e42.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+CASE WHEN rank > 1
+          THEN penambahan_umur.umur
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as penambahan_umur,
+
+
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e42, penambahan_umur
+
+where
+view_penyusutan_jij_2019_r2_e42.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2019_r2_e42.persentasi = penambahan_umur.persen
+
+order by register, rank;
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e44 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e44 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+penambahan_umur,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+END as umur_awal,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur < masa_manfaat
+          THEN lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun)
+
+     WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          AND masa_manfaat - (tahun_akhir - tahun) > 0
+          THEN masa_manfaat - (tahun_akhir - tahun)
+
+     WHEN rank = 1 AND masa_manfaat - (tahun_akhir - tahun) > 0
+	  THEN masa_manfaat - (tahun_akhir - tahun)
+ELSE
+    0
+END as sisa_umur,
+
+
+
+COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga as nilai_buku_awal,
+
+
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0)
+ELSE
+     COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga
+END as penyusutan,
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) -
+     (round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0))
+ELSE
+     (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) - (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga)
+END as nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e43
+ Window
+urutan as (partition by register order by rank)
+
+order by register, rank;
+
+
+
+-- kunci angka baris ke 15
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e45 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e45 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e44.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+
+
+CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+          THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+     WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+          THEN round(100,2)
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as persen_awal,
+
+
+
+
+CASE WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 75
+     THEN 100
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 50
+         THEN 75
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 25
+         THEN 50
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 0
+         THEN 25
+ELSE
+         0
+END as persentasi,
+
+masa_manfaat,
+penambahan_umur,
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+ from
+view_penyusutan_jij_2019_r2_e44
+ Window
+urutan as (partition by register order by rank)
+
+
+order by register, rank;
+
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e46 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e46 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e45.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+CASE WHEN rank > 1
+          THEN penambahan_umur.umur
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as penambahan_umur,
+
+
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e45, penambahan_umur
+
+where
+view_penyusutan_jij_2019_r2_e45.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2019_r2_e45.persentasi = penambahan_umur.persen
+
+order by register, rank;
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e47 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e47 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+penambahan_umur,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+END as umur_awal,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur < masa_manfaat
+          THEN lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun)
+
+     WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          AND masa_manfaat - (tahun_akhir - tahun) > 0
+          THEN masa_manfaat - (tahun_akhir - tahun)
+
+     WHEN rank = 1 AND masa_manfaat - (tahun_akhir - tahun) > 0
+	  THEN masa_manfaat - (tahun_akhir - tahun)
+ELSE
+    0
+END as sisa_umur,
+
+
+
+COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga as nilai_buku_awal,
+
+
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0)
+ELSE
+     COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga
+END as penyusutan,
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) -
+     (round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0))
+ELSE
+     (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) - (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga)
+END as nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e46
+ Window
+urutan as (partition by register order by rank)
+
+order by register, rank;
+
+
+
+-- kunci angka baris ke 16
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e48 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e48 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e47.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+
+
+CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+          THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+     WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+          THEN round(100,2)
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as persen_awal,
+
+
+
+
+CASE WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 75
+     THEN 100
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 50
+         THEN 75
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 25
+         THEN 50
+
+
+     WHEN
+
+  CASE WHEN rank > 1 AND lag(nilai_perolehan) over urutan > 0
+	    THEN round (100 * (harga / lag(nilai_perolehan) over urutan),2)
+      WHEN rank > 1 AND lag(nilai_perolehan) over urutan <= 0
+	    THEN round(100,2)
+      WHEN rank = 1
+	    THEN 0
+  ELSE
+      0
+  END
+
+     > 0
+         THEN 25
+ELSE
+         0
+END as persentasi,
+
+masa_manfaat,
+penambahan_umur,
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+ from
+view_penyusutan_jij_2019_r2_e47
+ Window
+urutan as (partition by register order by rank)
+
+
+order by register, rank;
+
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e49 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e49 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+view_penyusutan_jij_2019_r2_e48.kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+CASE WHEN rank > 1
+          THEN penambahan_umur.umur
+     WHEN rank = 1
+	  THEN 0
+ELSE
+     0
+END as penambahan_umur,
+
+
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e48, penambahan_umur
+
+where
+view_penyusutan_jij_2019_r2_e48.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2019_r2_e48.persentasi = penambahan_umur.persen
+
+order by register, rank;
+
+
+
+
+DROP view if exists view_penyusutan_jij_2019_r2_e50 CASCADE;
+
+create view view_penyusutan_jij_2019_r2_e50 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+tahun,
+kode_barang,
+kode_umur,
+rank,
+tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+penambahan_umur,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+END as umur_awal,
+
+CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur < masa_manfaat
+          THEN lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun)
+
+     WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur - (tahun_akhir - tahun) > 0
+          AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          AND masa_manfaat - (tahun_akhir - tahun) > 0
+          THEN masa_manfaat - (tahun_akhir - tahun)
+
+     WHEN rank = 1 AND masa_manfaat - (tahun_akhir - tahun) > 0
+	  THEN masa_manfaat - (tahun_akhir - tahun)
+ELSE
+    0
+END as sisa_umur,
+
+
+
+COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga as nilai_buku_awal,
+
+
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0)
+ELSE
+     COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga
+END as penyusutan,
+
+CASE WHEN (tahun_akhir - tahun) <
+
+     CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END
+
+
+     THEN (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) -
+     (round((tahun_akhir - tahun) * (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) /
+
+     (CASE WHEN rank > 1 AND lag(sisa_umur,1,0) over urutan + penambahan_umur >= masa_manfaat
+          THEN masa_manfaat
+     WHEN rank = 1
+	  THEN masa_manfaat
+     ELSE
+     lag(sisa_umur,1,0) over urutan + penambahan_umur
+     END),
+
+     0))
+ELSE
+     (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga) - (COALESCE(lag(nilai_buku_akhir) over urutan, 0) + harga)
+END as nilai_buku_akhir
+
+
+ from
+view_penyusutan_jij_2019_r2_e49
+ Window
+urutan as (partition by register order by rank)
+
+order by register, rank;
+
+
+
+-- kunci angka baris ke 17
+
+
+
+
 DROP view if exists view_penyusutan_pm_2019_r2_e2 CASCADE;
 
 create view view_penyusutan_pm_2019_r2_e2 as select

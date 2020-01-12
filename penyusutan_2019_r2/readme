@@ -1,0 +1,14 @@
+Ini folder untuk penyusutan LK-2018
+
+penyusutan_gabungan_2018_OK adalah file hasil perubahan
+dari tahun sbb:
+
+pada file OLD_copy, lakukan perubahan sbb:
+
+    2018 -> 2019
+    2017 -> 2018
+    2016 -> 2017
+    2015 -> 2016
+
+setelah script OLD_copy dirubah, baru eksekusi script tsb,
+baru tambahkan tahun 2018 untuk JIJ

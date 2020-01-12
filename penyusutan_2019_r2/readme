@@ -14,4 +14,17 @@ setelah script OLD_copy dirubah, baru eksekusi script tsb,
 baru tambahkan tahun 2019 untuk JIJ
 - 3 view untuk 1 tahun
 
+saat penambahan, posisi 2018 -> 2019, maka:
+    rubah _e41 -> _e44
+    rubah _e40 -> _e43
+    rubah _e39 -> _e42
+    rubah _e38 -> _e41
+
+- 3 view untuk tahun 2020
+
+saat penambahan, posisi 2019 -> 2020, maka:
+    rubah _e44 -> _e47
+    rubah _e43 -> _e46
+    rubah _e42 -> _e45
+    rubah _e41 -> _e44
 

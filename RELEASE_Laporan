@@ -8,8 +8,10 @@ RELEASE rel-7-14:
     - test remote folder php5_projects -OK-
     - rename folder penyusutan_2017_presentasi_dengan_nilai_buku -> penyusutan_2017_nb
     - tambah folder penyusutan_2019 -OK-
-    - script laporan_penyusutan_2019 untuk merubah seluruh script 2018 -> 2019
+    - script laporan_penyusutan_2019 untuk merubah seluruh script 2018 -> 2019 -OK-
     - test local folder php5_projects -OK-
+    - buat view:
+	psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2019_r2_OK.sql
     - cvs tag rel-7-14
 
 

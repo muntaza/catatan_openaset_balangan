@@ -1,10 +1,15 @@
 RELEASE rel-7-14:
 
-    - perbaikan file modul3 ->
+    - perbaikan file modul3 -> OK
 	jij dari _e50
 	pm dari _e29
 	gb dari _e29
-    - tambah folder penyusutan_2019
+    - test local folder php5_projects -OK-
+    - test remote folder php5_projects -OK-
+    - rename folder penyusutan_2017_presentasi_dengan_nilai_buku -> penyusutan_2017_nb
+    - tambah folder penyusutan_2019 -OK-
+    - script laporan_penyusutan_2019 untuk merubah seluruh script 2018 -> 2019
+    - test local folder php5_projects -OK-
     - cvs tag rel-7-14
 
 

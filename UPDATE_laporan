@@ -1,0 +1,8 @@
+UPDATE rel-7-14:
+
+    - stop apache2 -OK-
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2019_r2_OK.sql -OK-
+    - restart apache2 -OK-
+    - sh chmod_plus -OK-
+    - cvs up pada php5_projects -OK-
+    - sh chmod_min -OK-

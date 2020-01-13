@@ -1,0 +1,10 @@
+Ambil dari Buku Persediaan Sub SKPD
+jangan lupa sortir dengan Provinsi
+Delete hasil penjumlahan
+Harga harus = 0
+asal usul = distribusi dinas (Masuk)
+jenis keluar = distribusi (Keluar), sub unit = Gudang Farmasi
+
+masuk dari saldo awal ke gudang farmasi 2 Januari 2019
+masuk ke sub unit 3 Januari 2019
+keluar dari gudang farmasi 3 Januari 2019

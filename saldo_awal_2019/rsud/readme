@@ -1,3 +1,0 @@
-Insert saldo awal RSUD:
-
-psql -h localhost -U persediaan_2019 persediaan_2019 < obat_bmhp_rsud_insert.sql

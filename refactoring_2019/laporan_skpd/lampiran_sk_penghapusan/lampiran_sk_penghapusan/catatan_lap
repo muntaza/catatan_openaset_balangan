@@ -1,0 +1,34 @@
+copy baris di bawah ini pada laporan:
+
+
+id_sk_penghapusan,
+nomor_sk_penghapusan,
+tanggal_sk_penghapusan,
+tahun_penghapusan,
+
+keterangan
+
+
+FROM
+view_sk_penghapusan_tanah_kabupaten
+
+WHERE 1 = 1
+AND id_mutasi_berkurang = 4
+
+
+
+
+--------
+hidden 4 kolom
+
+id_sk_penghapusan,
+nomor_sk_penghapusan,
+tanggal_sk_penghapusan,
+tahun_penghapusan,
+
+group by
+tahun_penghapusan
+
+id_sk_penghapusan
+    nomor_sk_penghapusan
+    tanggal_sk_penghapusan

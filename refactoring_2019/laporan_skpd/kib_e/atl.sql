@@ -1,7 +1,4 @@
-DROP VIEW IF EXISTS view_atl_kabupaten;
-
-
-CREATE VIEW view_atl_kabupaten AS
+CREATE OR REPLACE VIEW view_atl_kabupaten AS
 
 SELECT
 atl.id_sub_skpd,

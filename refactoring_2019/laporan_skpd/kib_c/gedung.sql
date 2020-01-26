@@ -1,8 +1,4 @@
-DROP VIEW IF EXISTS view_gedung_bangunan_kabupaten;
-
-
-
-CREATE VIEW view_gedung_bangunan_kabupaten AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_kabupaten AS
 
 SELECT
 gedung_bangunan.id_sub_skpd,

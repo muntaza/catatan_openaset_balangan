@@ -1,8 +1,4 @@
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_kabupaten;
-
-
-
-CREATE VIEW view_jalan_irigasi_jaringan_kabupaten AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_kabupaten AS
 
 SELECT
 jalan_irigasi_jaringan.id_sub_skpd,

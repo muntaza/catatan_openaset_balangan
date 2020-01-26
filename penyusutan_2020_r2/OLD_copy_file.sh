@@ -20,4 +20,4 @@ cat penyusutan_modul4_jij_2019_r2.sql | sed -e s/2020/2021/g  | sed -e s/2019/20
 cat penyusutan_modul4_pm_2019_r2.sql | sed -e s/2020/2021/g  | sed -e s/2019/2020/g  | sed -e s/2018/2019/g  > penyusutan_modul4_pm_2020_r2.sql
 cat gabung_penyusutan_2019.sh | sed -e s/2019/2020/g > gabung_penyusutan_2020.sh
 cat laporan_penyusutan_2019.sh | sed -e s/2020/2021/g  | sed -e s/2019/2020/g  | sed -e s/2018/2019/g \
-       | sed -e /2017/2018/g	> laporan_penyusutan_2020.sh
+       | sed -e s/2017/2018/g	> laporan_penyusutan_2020.sh

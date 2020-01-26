@@ -43,7 +43,7 @@ atl.ukuran_hewan_tumbuhan,
 
 atl.tahun,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_atl.harga_bertambah) - SUM(harga_atl.harga_berkurang) harga,
 atl.keterangan
 

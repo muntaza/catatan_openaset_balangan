@@ -38,14 +38,14 @@ hak_tanah.hak_tanah,
 tanah.tanggal_sertifikat,
 tanah.nomor_sertifikat,
 tanah.penggunaan,
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_tanah.harga_bertambah) - SUM(harga_tanah.harga_berkurang) harga,
 tanah.keterangan
 
 
 FROM
 tanah as tanah, harga_tanah as harga_tanah, kode_barang,
-mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang, 
+mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 hak_tanah, sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
 
 
@@ -66,7 +66,7 @@ tanah.id_sub_skpd = sub_skpd.id AND
 sub_skpd.id_skpd = skpd.id AND
 skpd.id_lokasi_bidang = lokasi_bidang.id AND
 lokasi_bidang.id_kabupaten = kabupaten.id AND
-kabupaten.id_provinsi = provinsi.id 
+kabupaten.id_provinsi = provinsi.id
 
 
 

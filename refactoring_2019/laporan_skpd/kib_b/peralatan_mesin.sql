@@ -43,7 +43,7 @@ peralatan_mesin.nomor_mesin,
 peralatan_mesin.nomor_polisi,
 peralatan_mesin.nomor_bpkb,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_peralatan_mesin.harga_bertambah) - SUM(harga_peralatan_mesin.harga_berkurang) harga,
 peralatan_mesin.keterangan
 

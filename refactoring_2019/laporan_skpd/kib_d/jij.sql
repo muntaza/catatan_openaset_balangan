@@ -48,7 +48,7 @@ view_tanah_tanpa_harga_kabupaten.status_tanah,
 
 view_tanah_tanpa_harga_kabupaten.id_tanah as nomor_kode_tanah,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_jalan_irigasi_jaringan.harga_bertambah) - SUM(harga_jalan_irigasi_jaringan.harga_berkurang) harga,
 
 jalan_irigasi_jaringan.keterangan as ket

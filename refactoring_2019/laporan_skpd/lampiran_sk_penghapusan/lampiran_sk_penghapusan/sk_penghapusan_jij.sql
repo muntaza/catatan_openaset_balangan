@@ -54,7 +54,7 @@ SUM(harga_jalan_irigasi_jaringan.harga_bertambah) - SUM(harga_jalan_irigasi_jari
 penghapusan_jalan_irigasi_jaringan.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
-tahun_berkurang_jalan_irigasi_jaringan.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_jij.tahun_berkurang as tahun_penghapusan,
 
 jalan_irigasi_jaringan.keterangan as ket
 
@@ -63,12 +63,12 @@ FROM
 jalan_irigasi_jaringan as jalan_irigasi_jaringan, harga_jalan_irigasi_jaringan as harga_jalan_irigasi_jaringan, kode_barang,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi, view_tanah_tanpa_harga_kabupaten,
-tahun_berkurang_jalan_irigasi_jaringan, penghapusan_jalan_irigasi_jaringan, sk_penghapusan
+tahun_berkurang_jij, penghapusan_jalan_irigasi_jaringan, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
-jalan_irigasi_jaringan.id = tahun_berkurang_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan AND
+jalan_irigasi_jaringan.id = tahun_berkurang_jij.id_jalan_irigasi_jaringan AND
 jalan_irigasi_jaringan.id = penghapusan_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan AND
 penghapusan_jalan_irigasi_jaringan.id_sk_penghapusan = sk_penghapusan.id AND
 

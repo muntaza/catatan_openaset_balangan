@@ -41,9 +41,22 @@ RELEASE rel-8-1:
 	gedung -OK-
 	jij -OK-
 	atl -OK-
+    - cek local -OK-
 
+    - md5 local -OK-
+    - cvs tag rel-8-1
+
+RELEASE rel-8-2:
+
+    - KIB 108:
+	Perbaiki UML dan ER
+	    Tanah
+	    PM
+	    Gedung Bangunan
+	    JIJ
+	    ATL
     - penyusutan 2020
     - penyusutan 2021
 
+    - cvs tag rel-8-2
 
-    - cvs tag rel-8-1

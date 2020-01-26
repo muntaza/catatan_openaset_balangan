@@ -1,0 +1,357 @@
+DROP VIEW IF EXISTS view_mutasi_barang_l2_kabupaten;
+
+
+
+
+CREATE VIEW view_mutasi_barang_l2_kabupaten AS
+
+SELECT
+tanah.id register,
+
+tanah.id_sub_skpd,
+sub_skpd.nama_sub_skpd,
+
+sub_skpd.id_skpd,
+skpd.nama_skpd,
+
+skpd.id_lokasi_bidang,
+lokasi_bidang.nama_lokasi_bidang,
+
+lokasi_bidang.id_kabupaten,
+kabupaten.nama_kabupaten,
+
+kabupaten.id_provinsi,
+provinsi.nama_provinsi,
+
+tanah.id_golongan_barang,
+golongan_barang.golongan_barang,
+LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang.kode_barang, 14) kode_barang,
+
+tanah.nama_barang,
+
+kontrak_tanah.tanggal_kontrak,
+kontrak_tanah.nomor_kontrak,
+
+kontrak_tanah.tanggal_sp2d,
+kontrak_tanah.nomor_sp2d,
+
+harga_tanah.tahun,
+harga_tanah.tahun_mutasi,
+asal_usul.asal_usul,
+
+harga_tanah.harga_bertambah,
+harga_tanah.harga_berkurang,
+harga_tanah.catatan as keterangan
+
+
+FROM
+tanah as tanah, harga_tanah as harga_tanah,
+asal_usul, golongan_barang, kontrak_tanah,
+kode_barang,
+sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
+
+
+WHERE
+1 = 1  AND
+harga_tanah.id_tanah = tanah.id AND
+harga_tanah.id_asal_usul = asal_usul.id AND
+
+tanah.id_golongan_barang = golongan_barang.id AND
+tanah.id_kode_barang = kode_barang.id AND
+
+harga_tanah.id_kontrak = kontrak_tanah.id AND
+
+tanah.id_sub_skpd = sub_skpd.id AND
+sub_skpd.id_skpd = skpd.id AND
+skpd.id_lokasi_bidang = lokasi_bidang.id AND
+lokasi_bidang.id_kabupaten = kabupaten.id AND
+kabupaten.id_provinsi = provinsi.id
+
+
+UNION ALL
+
+
+SELECT
+peralatan_mesin.id register,
+
+peralatan_mesin.id_sub_skpd,
+sub_skpd.nama_sub_skpd,
+
+sub_skpd.id_skpd,
+skpd.nama_skpd,
+
+skpd.id_lokasi_bidang,
+lokasi_bidang.nama_lokasi_bidang,
+
+lokasi_bidang.id_kabupaten,
+kabupaten.nama_kabupaten,
+
+kabupaten.id_provinsi,
+provinsi.nama_provinsi,
+
+peralatan_mesin.id_golongan_barang,
+golongan_barang.golongan_barang,
+LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang.kode_barang, 14) kode_barang,
+
+peralatan_mesin.nama_barang,
+
+kontrak_peralatan_mesin.tanggal_kontrak,
+kontrak_peralatan_mesin.nomor_kontrak,
+
+kontrak_peralatan_mesin.tanggal_sp2d,
+kontrak_peralatan_mesin.nomor_sp2d,
+
+harga_peralatan_mesin.tahun,
+harga_peralatan_mesin.tahun_mutasi,
+asal_usul.asal_usul,
+
+harga_peralatan_mesin.harga_bertambah,
+harga_peralatan_mesin.harga_berkurang,
+harga_peralatan_mesin.catatan as keterangan
+
+
+FROM
+peralatan_mesin as peralatan_mesin, harga_peralatan_mesin as harga_peralatan_mesin,
+asal_usul, golongan_barang, kontrak_peralatan_mesin,
+kode_barang,
+sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
+
+
+WHERE
+1 = 1  AND
+harga_peralatan_mesin.id_peralatan_mesin = peralatan_mesin.id AND
+harga_peralatan_mesin.id_asal_usul = asal_usul.id AND
+
+peralatan_mesin.id_golongan_barang = golongan_barang.id AND
+peralatan_mesin.id_kode_barang = kode_barang.id AND
+
+harga_peralatan_mesin.id_kontrak_peralatan_mesin = kontrak_peralatan_mesin.id AND
+
+peralatan_mesin.id_sub_skpd = sub_skpd.id AND
+sub_skpd.id_skpd = skpd.id AND
+skpd.id_lokasi_bidang = lokasi_bidang.id AND
+lokasi_bidang.id_kabupaten = kabupaten.id AND
+kabupaten.id_provinsi = provinsi.id
+
+
+
+
+UNION ALL
+
+
+SELECT
+gedung_bangunan.id register,
+
+gedung_bangunan.id_sub_skpd,
+sub_skpd.nama_sub_skpd,
+
+sub_skpd.id_skpd,
+skpd.nama_skpd,
+
+skpd.id_lokasi_bidang,
+lokasi_bidang.nama_lokasi_bidang,
+
+lokasi_bidang.id_kabupaten,
+kabupaten.nama_kabupaten,
+
+kabupaten.id_provinsi,
+provinsi.nama_provinsi,
+
+gedung_bangunan.id_golongan_barang,
+golongan_barang.golongan_barang,
+LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang.kode_barang, 14) kode_barang,
+
+gedung_bangunan.nama_barang,
+
+kontrak_gedung_bangunan.tanggal_kontrak,
+kontrak_gedung_bangunan.nomor_kontrak,
+
+kontrak_gedung_bangunan.tanggal_sp2d,
+kontrak_gedung_bangunan.nomor_sp2d,
+
+harga_gedung_bangunan.tahun,
+harga_gedung_bangunan.tahun_mutasi,
+asal_usul.asal_usul,
+
+harga_gedung_bangunan.harga_bertambah,
+harga_gedung_bangunan.harga_berkurang,
+harga_gedung_bangunan.catatan as keterangan
+
+
+FROM
+gedung_bangunan as gedung_bangunan, harga_gedung_bangunan as harga_gedung_bangunan,
+asal_usul, golongan_barang, kontrak_gedung_bangunan,
+kode_barang,
+sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
+
+
+WHERE
+1 = 1  AND
+harga_gedung_bangunan.id_gedung_bangunan = gedung_bangunan.id AND
+harga_gedung_bangunan.id_asal_usul = asal_usul.id AND
+
+gedung_bangunan.id_golongan_barang = golongan_barang.id AND
+gedung_bangunan.id_kode_barang = kode_barang.id AND
+
+harga_gedung_bangunan.id_kontrak_gedung_bangunan = kontrak_gedung_bangunan.id AND
+
+gedung_bangunan.id_sub_skpd = sub_skpd.id AND
+sub_skpd.id_skpd = skpd.id AND
+skpd.id_lokasi_bidang = lokasi_bidang.id AND
+lokasi_bidang.id_kabupaten = kabupaten.id AND
+kabupaten.id_provinsi = provinsi.id
+
+
+
+
+UNION ALL
+
+
+SELECT
+jalan_irigasi_jaringan.id register,
+
+jalan_irigasi_jaringan.id_sub_skpd,
+sub_skpd.nama_sub_skpd,
+
+sub_skpd.id_skpd,
+skpd.nama_skpd,
+
+skpd.id_lokasi_bidang,
+lokasi_bidang.nama_lokasi_bidang,
+
+lokasi_bidang.id_kabupaten,
+kabupaten.nama_kabupaten,
+
+kabupaten.id_provinsi,
+provinsi.nama_provinsi,
+
+jalan_irigasi_jaringan.id_golongan_barang,
+golongan_barang.golongan_barang,
+LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang.kode_barang, 14) kode_barang,
+
+jalan_irigasi_jaringan.nama_barang,
+
+kontrak_jalan_irigasi_jaringan.tanggal_kontrak,
+kontrak_jalan_irigasi_jaringan.nomor_kontrak,
+
+kontrak_jalan_irigasi_jaringan.tanggal_sp2d,
+kontrak_jalan_irigasi_jaringan.nomor_sp2d,
+
+harga_jalan_irigasi_jaringan.tahun,
+harga_jalan_irigasi_jaringan.tahun_mutasi,
+asal_usul.asal_usul,
+
+harga_jalan_irigasi_jaringan.harga_bertambah,
+harga_jalan_irigasi_jaringan.harga_berkurang,
+harga_jalan_irigasi_jaringan.catatan as keterangan
+
+
+FROM
+jalan_irigasi_jaringan as jalan_irigasi_jaringan, harga_jalan_irigasi_jaringan as harga_jalan_irigasi_jaringan,
+asal_usul, golongan_barang, kontrak_jalan_irigasi_jaringan,
+kode_barang,
+sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
+
+
+WHERE
+1 = 1  AND
+harga_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan = jalan_irigasi_jaringan.id AND
+harga_jalan_irigasi_jaringan.id_asal_usul = asal_usul.id AND
+
+jalan_irigasi_jaringan.id_golongan_barang = golongan_barang.id AND
+jalan_irigasi_jaringan.id_kode_barang = kode_barang.id AND
+
+harga_jalan_irigasi_jaringan.id_kontrak_jalan_irigasi_jaringan = kontrak_jalan_irigasi_jaringan.id AND
+
+jalan_irigasi_jaringan.id_sub_skpd = sub_skpd.id AND
+sub_skpd.id_skpd = skpd.id AND
+skpd.id_lokasi_bidang = lokasi_bidang.id AND
+lokasi_bidang.id_kabupaten = kabupaten.id AND
+kabupaten.id_provinsi = provinsi.id
+
+
+
+
+UNION ALL
+
+
+SELECT
+atl.id register,
+
+atl.id_sub_skpd,
+sub_skpd.nama_sub_skpd,
+
+sub_skpd.id_skpd,
+skpd.nama_skpd,
+
+skpd.id_lokasi_bidang,
+lokasi_bidang.nama_lokasi_bidang,
+
+lokasi_bidang.id_kabupaten,
+kabupaten.nama_kabupaten,
+
+kabupaten.id_provinsi,
+provinsi.nama_provinsi,
+
+atl.id_golongan_barang,
+golongan_barang.golongan_barang,
+LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang.kode_barang, 14) kode_barang,
+
+atl.nama_barang,
+
+kontrak_atl.tanggal_kontrak,
+kontrak_atl.nomor_kontrak,
+
+kontrak_atl.tanggal_sp2d,
+kontrak_atl.nomor_sp2d,
+
+harga_atl.tahun,
+harga_atl.tahun_mutasi,
+asal_usul.asal_usul,
+
+harga_atl.harga_bertambah,
+harga_atl.harga_berkurang,
+harga_atl.catatan as keterangan
+
+
+FROM
+atl as atl, harga_atl as harga_atl,
+asal_usul, golongan_barang, kontrak_atl,
+kode_barang,
+sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
+
+
+WHERE
+1 = 1  AND
+harga_atl.id_atl = atl.id AND
+harga_atl.id_asal_usul = asal_usul.id AND
+
+atl.id_golongan_barang = golongan_barang.id AND
+atl.id_kode_barang = kode_barang.id AND
+
+harga_atl.id_kontrak_atl = kontrak_atl.id AND
+
+atl.id_sub_skpd = sub_skpd.id AND
+sub_skpd.id_skpd = skpd.id AND
+skpd.id_lokasi_bidang = lokasi_bidang.id AND
+lokasi_bidang.id_kabupaten = kabupaten.id AND
+kabupaten.id_provinsi = provinsi.id
+
+;
+
+
+
+
+GRANT ALL PRIVILEGES ON view_mutasi_barang_l2_kabupaten TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_mutasi_barang_l2_kabupaten FROM lap_kabupaten;
+
+GRANT ALL PRIVILEGES ON skpd, sub_skpd, kode_barang TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd, kode_barang FROM lap_kabupaten;
+
+GRANT ALL PRIVILEGES ON asal_usul TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON asal_usul FROM lap_kabupaten;

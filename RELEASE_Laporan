@@ -23,6 +23,8 @@ RELEASE rel-8-0:
 	- cek lampiran sk yang ada: -OK-
 	    tanah, gedung, pm
 	- buat lampiran JIJ
+	- create view:
+	    psql -U kabupaten -h localhost kabupaten < sk_penghapusan_jij.sql
 
     - hapus kolom "asal-usul" pada semua KIB -OK-
 

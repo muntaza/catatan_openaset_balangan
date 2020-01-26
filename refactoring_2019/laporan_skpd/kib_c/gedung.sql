@@ -1,3 +1,9 @@
+create or replace function public.array_unique(arr anyarray)
+returns anyarray as $body$
+    select array( select distinct unnest($1) )
+$body$ language 'sql';
+
+
 DROP VIEW IF EXISTS view_gedung_bangunan_kabupaten;
 
 
@@ -49,7 +55,7 @@ view_tanah_tanpa_harga_kabupaten.luas as luas_tanah,
 
 view_tanah_tanpa_harga_kabupaten.id_tanah as nomor_kode_tanah,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_gedung_bangunan.harga_bertambah) - SUM(harga_gedung_bangunan.harga_berkurang) harga,
 
 gedung_bangunan.keterangan

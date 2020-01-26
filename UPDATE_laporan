@@ -25,5 +25,12 @@ UPDATE rel-8-1:
 	psql -U kabupaten -h localhost kabupaten < kib_e/atl.sql -OK-
     - cvs up pada php5_projects -OK-
 
+UPDATE rel-8-2:
+    - psql
+	psql -U kabupaten -h localhost kabupaten < penyusutan_gabungan_2020_r2_OK.sql
+	psql -U kabupaten -h localhost kabupaten < penyusutan_gabungan_2021_r2_OK.sql
+    - cvs up php5_projects
+
+
 
 

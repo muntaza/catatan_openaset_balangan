@@ -44,9 +44,20 @@ RELEASE rel-8-1:
     - cek local -OK-
 
     - md5 local -OK-
-    - cvs tag rel-8-1
+    - cvs tag rel-8-1 -OK-
 
 RELEASE rel-8-2:
+
+    - penyusutan 2020
+	psql gabungan_2020
+    - penyusutan 2021
+	psql gabungan_2021
+
+    - md5 local -OK-
+    - cvs tag rel-8-2 -OK-
+
+RELEASE rel-8-3:
+
 
     - KIB 108:
 	Perbaiki UML dan ER
@@ -55,8 +66,6 @@ RELEASE rel-8-2:
 	    Gedung Bangunan
 	    JIJ
 	    ATL
-    - penyusutan 2020
-    - penyusutan 2021
 
-    - cvs tag rel-8-2
+    - cvs tag rel-8-3
 

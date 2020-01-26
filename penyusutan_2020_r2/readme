@@ -1,0 +1,22 @@
+Ini folder untuk penyusutan LK-2019
+
+penyusutan_gabungan_2019_OK adalah file hasil perubahan
+dari tahun sbb:
+
+pada file OLD_copy, lakukan perubahan sbb:
+
+    2020 -> 2021
+    2019 -> 2020
+    2018 -> 2019
+    2017 -> 2018
+
+setelah script OLD_copy dirubah, baru eksekusi script tsb,
+baru tambahkan tahun 2019 untuk JIJ
+
+
+saat penambahan, posisi 2020 -> 2021, maka:
+    rubah _e47 -> _e50
+    rubah _e46 -> _e49
+    rubah _e45 -> _e48
+    rubah _e44 -> _e47
+

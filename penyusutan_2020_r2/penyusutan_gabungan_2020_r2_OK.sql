@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS view_penyusutan_gb_2019_r2_a1 CASCADE;
+DROP VIEW IF EXISTS view_penyusutan_gb_2020_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_gb_2019_r2_a1 AS
+CREATE VIEW view_penyusutan_gb_2020_r2_a1 AS
 
 
 
@@ -59,7 +59,7 @@ WHERE
 harga_gedung_bangunan.id_gedung_bangunan = gedung_bangunan.id AND
 harga_gedung_bangunan.id_asal_usul = asal_usul.id AND
 
-harga_gedung_bangunan.tahun <= 2019 AND
+harga_gedung_bangunan.tahun <= 2020 AND
 
 gedung_bangunan.id_kode_barang = kode_barang.id AND
 gedung_bangunan.id_mutasi_berkurang = mutasi_berkurang.id AND
@@ -118,12 +118,12 @@ gedung_bangunan.keterangan) AS QUERY_GEDUNG_BANGUNAN
 ;
 
 
-GRANT ALL PRIVILEGES ON view_penyusutan_gb_2019_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2019_r2_a1 FROM lap_kabupaten;
-DROP VIEW IF EXISTS view_penyusutan_jij_2019_r2_a1 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_gb_2020_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2020_r2_a1 FROM lap_kabupaten;
+DROP VIEW IF EXISTS view_penyusutan_jij_2020_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_jij_2019_r2_a1 AS
+CREATE VIEW view_penyusutan_jij_2020_r2_a1 AS
 
 
 SELECT * FROM
@@ -178,7 +178,7 @@ WHERE
 1 = 1  AND
 harga_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan = jalan_irigasi_jaringan.id AND
 harga_jalan_irigasi_jaringan.id_asal_usul = asal_usul.id AND
-harga_jalan_irigasi_jaringan.tahun <= 2019 AND
+harga_jalan_irigasi_jaringan.tahun <= 2020 AND
 
 jalan_irigasi_jaringan.id_kode_barang = kode_barang.id AND
 jalan_irigasi_jaringan.id_mutasi_berkurang = mutasi_berkurang.id AND
@@ -231,12 +231,12 @@ jalan_irigasi_jaringan.keterangan) AS QUERY_JALAN_IRIGASI_JARINGAN
 
 ;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2019_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2019_r2_a1 FROM lap_kabupaten;
-DROP VIEW IF EXISTS view_penyusutan_pm_2019_r2_a1 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_jij_2020_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2020_r2_a1 FROM lap_kabupaten;
+DROP VIEW IF EXISTS view_penyusutan_pm_2020_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_pm_2019_r2_a1 AS
+CREATE VIEW view_penyusutan_pm_2020_r2_a1 AS
 
 
 
@@ -292,7 +292,7 @@ WHERE
 1 = 1  AND
 harga_peralatan_mesin.id_peralatan_mesin = peralatan_mesin.id AND
 harga_peralatan_mesin.id_asal_usul = asal_usul.id AND
-harga_peralatan_mesin.tahun <= 2019 AND
+harga_peralatan_mesin.tahun <= 2020 AND
 
 peralatan_mesin.id_kode_barang = kode_barang.id AND
 peralatan_mesin.id_mutasi_berkurang = mutasi_berkurang.id AND
@@ -346,11 +346,11 @@ peralatan_mesin.keterangan) AS QUERY_PERALATAN_MESIN
 ;
 
 
-GRANT ALL PRIVILEGES ON view_penyusutan_pm_2019_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2019_r2_a1 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_gb_2019_r2_e2 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_pm_2020_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2020_r2_a1 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_gb_2020_r2_e2 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e2 as select
+create view view_penyusutan_gb_2020_r2_e2 as select
 nama_skpd,
 id_skpd,
 nama_lokasi_bidang,
@@ -368,37 +368,37 @@ register,
 harga,
 sum (harga) over (partition by register order by tahun asc) as nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_a1.kode_barang,
-left(view_penyusutan_gb_2019_r2_a1.kode_barang, 8) as kode_umur,
+view_penyusutan_gb_2020_r2_a1.kode_barang,
+left(view_penyusutan_gb_2020_r2_a1.kode_barang, 8) as kode_umur,
 rank() over (partition by register order by tahun asc) as rank,
-lead(tahun, 1, 2020) over (partition by register order by tahun asc) as tahun_akhir,
+lead(tahun, 1, 2021) over (partition by register order by tahun asc) as tahun_akhir,
 umur as masa_manfaat,
 0 as penambahan_umur,
 umur as umur_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN umur - ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN umur - ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun)
 ELSE
      0
 END as sisa_umur,
 
 harga as nilai_buku_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
 ELSE
      harga
 END as penyusutan,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-    THEN harga - (round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+    THEN harga - (round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
 ELSE
      0
 END as nilai_buku_akhir
 
-from view_penyusutan_gb_2019_r2_a1, kode_barang
+from view_penyusutan_gb_2020_r2_a1, kode_barang
 
-where view_penyusutan_gb_2019_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
+where view_penyusutan_gb_2020_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
 
 order by register, rank;
 
@@ -409,9 +409,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e3 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e3 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e3 as
+create view view_penyusutan_gb_2020_r2_e3 as
 
 select register,
 nama_skpd,
@@ -430,7 +430,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e2.kode_barang,
+view_penyusutan_gb_2020_r2_e2.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -523,7 +523,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e2
+view_penyusutan_gb_2020_r2_e2
  Window
 urutan as (partition by register order by rank)
 
@@ -548,9 +548,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e4 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e4 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e4 as
+create view view_penyusutan_gb_2020_r2_e4 as
 
 select register,
 nama_skpd,
@@ -569,7 +569,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e3.kode_barang,
+view_penyusutan_gb_2020_r2_e3.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -595,20 +595,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e3, penambahan_umur
+view_penyusutan_gb_2020_r2_e3, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e3.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e3.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e3.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e3.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e5 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e5 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e5 as
+create view view_penyusutan_gb_2020_r2_e5 as
 
 select register,
 nama_skpd,
@@ -722,7 +722,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e4
+view_penyusutan_gb_2020_r2_e4
  Window
 urutan as (partition by register order by rank)
 
@@ -733,9 +733,9 @@ order by register, rank;
 
 -------kunci angka baris ke 2
 
-DROP view if exists view_penyusutan_gb_2019_r2_e6 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e6 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e6 as
+create view view_penyusutan_gb_2020_r2_e6 as
 
 select register,
 nama_skpd,
@@ -754,7 +754,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e5.kode_barang,
+view_penyusutan_gb_2020_r2_e5.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -847,7 +847,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e5
+view_penyusutan_gb_2020_r2_e5
  Window
 urutan as (partition by register order by rank)
 
@@ -858,9 +858,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e7 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e7 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e7 as
+create view view_penyusutan_gb_2020_r2_e7 as
 
 select register,
 nama_skpd,
@@ -879,7 +879,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e6.kode_barang,
+view_penyusutan_gb_2020_r2_e6.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -905,20 +905,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e6, penambahan_umur
+view_penyusutan_gb_2020_r2_e6, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e6.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e6.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e6.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e6.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e8 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e8 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e8 as
+create view view_penyusutan_gb_2020_r2_e8 as
 
 select register,
 nama_skpd,
@@ -1032,7 +1032,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e7
+view_penyusutan_gb_2020_r2_e7
  Window
 urutan as (partition by register order by rank)
 
@@ -1045,9 +1045,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e9 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e9 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e9 as
+create view view_penyusutan_gb_2020_r2_e9 as
 
 select register,
 nama_skpd,
@@ -1066,7 +1066,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e8.kode_barang,
+view_penyusutan_gb_2020_r2_e8.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1159,7 +1159,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e8
+view_penyusutan_gb_2020_r2_e8
  Window
 urutan as (partition by register order by rank)
 
@@ -1170,9 +1170,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e10 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e10 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e10 as
+create view view_penyusutan_gb_2020_r2_e10 as
 
 select register,
 nama_skpd,
@@ -1191,7 +1191,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e9.kode_barang,
+view_penyusutan_gb_2020_r2_e9.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1217,20 +1217,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e9, penambahan_umur
+view_penyusutan_gb_2020_r2_e9, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e9.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e9.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e9.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e9.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e11 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e11 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e11 as
+create view view_penyusutan_gb_2020_r2_e11 as
 
 select register,
 nama_skpd,
@@ -1344,7 +1344,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e10
+view_penyusutan_gb_2020_r2_e10
  Window
 urutan as (partition by register order by rank)
 
@@ -1356,9 +1356,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e12 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e12 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e12 as
+create view view_penyusutan_gb_2020_r2_e12 as
 
 select register,
 nama_skpd,
@@ -1377,7 +1377,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e11.kode_barang,
+view_penyusutan_gb_2020_r2_e11.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1470,7 +1470,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e11
+view_penyusutan_gb_2020_r2_e11
  Window
 urutan as (partition by register order by rank)
 
@@ -1481,9 +1481,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e13 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e13 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e13 as
+create view view_penyusutan_gb_2020_r2_e13 as
 
 select register,
 nama_skpd,
@@ -1502,7 +1502,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e12.kode_barang,
+view_penyusutan_gb_2020_r2_e12.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1528,20 +1528,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e12, penambahan_umur
+view_penyusutan_gb_2020_r2_e12, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e12.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e12.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e12.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e12.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e14 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e14 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e14 as
+create view view_penyusutan_gb_2020_r2_e14 as
 
 select register,
 nama_skpd,
@@ -1655,7 +1655,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e13
+view_penyusutan_gb_2020_r2_e13
  Window
 urutan as (partition by register order by rank)
 
@@ -1668,9 +1668,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e15 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e15 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e15 as
+create view view_penyusutan_gb_2020_r2_e15 as
 
 select register,
 nama_skpd,
@@ -1689,7 +1689,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e14.kode_barang,
+view_penyusutan_gb_2020_r2_e14.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1782,7 +1782,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e14
+view_penyusutan_gb_2020_r2_e14
  Window
 urutan as (partition by register order by rank)
 
@@ -1793,9 +1793,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e16 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e16 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e16 as
+create view view_penyusutan_gb_2020_r2_e16 as
 
 select register,
 nama_skpd,
@@ -1814,7 +1814,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e15.kode_barang,
+view_penyusutan_gb_2020_r2_e15.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1840,20 +1840,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e15, penambahan_umur
+view_penyusutan_gb_2020_r2_e15, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e15.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e15.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e15.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e15.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e17 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e17 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e17 as
+create view view_penyusutan_gb_2020_r2_e17 as
 
 select register,
 nama_skpd,
@@ -1967,7 +1967,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e16
+view_penyusutan_gb_2020_r2_e16
  Window
 urutan as (partition by register order by rank)
 
@@ -1981,9 +1981,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e18 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e18 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e18 as
+create view view_penyusutan_gb_2020_r2_e18 as
 
 select register,
 nama_skpd,
@@ -2002,7 +2002,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e17.kode_barang,
+view_penyusutan_gb_2020_r2_e17.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2095,7 +2095,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e17
+view_penyusutan_gb_2020_r2_e17
  Window
 urutan as (partition by register order by rank)
 
@@ -2106,9 +2106,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e19 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e19 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e19 as
+create view view_penyusutan_gb_2020_r2_e19 as
 
 select register,
 nama_skpd,
@@ -2127,7 +2127,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e18.kode_barang,
+view_penyusutan_gb_2020_r2_e18.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2153,20 +2153,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e18, penambahan_umur
+view_penyusutan_gb_2020_r2_e18, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e18.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e18.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e18.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e18.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e20 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e20 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e20 as
+create view view_penyusutan_gb_2020_r2_e20 as
 
 select register,
 nama_skpd,
@@ -2280,7 +2280,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e19
+view_penyusutan_gb_2020_r2_e19
  Window
 urutan as (partition by register order by rank)
 
@@ -2296,9 +2296,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e21 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e21 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e21 as
+create view view_penyusutan_gb_2020_r2_e21 as
 
 select register,
 nama_skpd,
@@ -2317,7 +2317,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e20.kode_barang,
+view_penyusutan_gb_2020_r2_e20.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2410,7 +2410,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e20
+view_penyusutan_gb_2020_r2_e20
  Window
 urutan as (partition by register order by rank)
 
@@ -2421,9 +2421,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e22 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e22 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e22 as
+create view view_penyusutan_gb_2020_r2_e22 as
 
 select register,
 nama_skpd,
@@ -2442,7 +2442,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e21.kode_barang,
+view_penyusutan_gb_2020_r2_e21.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2468,20 +2468,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e21, penambahan_umur
+view_penyusutan_gb_2020_r2_e21, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e21.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e21.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e21.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e21.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e23 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e23 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e23 as
+create view view_penyusutan_gb_2020_r2_e23 as
 
 select register,
 nama_skpd,
@@ -2595,7 +2595,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e22
+view_penyusutan_gb_2020_r2_e22
  Window
 urutan as (partition by register order by rank)
 
@@ -2610,9 +2610,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e24 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e24 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e24 as
+create view view_penyusutan_gb_2020_r2_e24 as
 
 select register,
 nama_skpd,
@@ -2631,7 +2631,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e23.kode_barang,
+view_penyusutan_gb_2020_r2_e23.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2724,7 +2724,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e23
+view_penyusutan_gb_2020_r2_e23
  Window
 urutan as (partition by register order by rank)
 
@@ -2735,9 +2735,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e25 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e25 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e25 as
+create view view_penyusutan_gb_2020_r2_e25 as
 
 select register,
 nama_skpd,
@@ -2756,7 +2756,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e24.kode_barang,
+view_penyusutan_gb_2020_r2_e24.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2782,20 +2782,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e24, penambahan_umur
+view_penyusutan_gb_2020_r2_e24, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e24.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e24.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e24.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e24.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e26 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e26 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e26 as
+create view view_penyusutan_gb_2020_r2_e26 as
 
 select register,
 nama_skpd,
@@ -2909,7 +2909,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e25
+view_penyusutan_gb_2020_r2_e25
  Window
 urutan as (partition by register order by rank)
 
@@ -2922,9 +2922,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e27 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e27 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e27 as
+create view view_penyusutan_gb_2020_r2_e27 as
 
 select register,
 nama_skpd,
@@ -2943,7 +2943,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e26.kode_barang,
+view_penyusutan_gb_2020_r2_e26.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3036,7 +3036,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2019_r2_e26
+view_penyusutan_gb_2020_r2_e26
  Window
 urutan as (partition by register order by rank)
 
@@ -3047,9 +3047,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e28 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e28 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e28 as
+create view view_penyusutan_gb_2020_r2_e28 as
 
 select register,
 nama_skpd,
@@ -3068,7 +3068,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2019_r2_e27.kode_barang,
+view_penyusutan_gb_2020_r2_e27.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3094,20 +3094,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e27, penambahan_umur
+view_penyusutan_gb_2020_r2_e27, penambahan_umur
 
 where
-view_penyusutan_gb_2019_r2_e27.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2019_r2_e27.persentasi = penambahan_umur.persen
+view_penyusutan_gb_2020_r2_e27.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_gb_2020_r2_e27.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2019_r2_e29 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_e29 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_e29 as
+create view view_penyusutan_gb_2020_r2_e29 as
 
 select register,
 nama_skpd,
@@ -3221,7 +3221,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2019_r2_e28
+view_penyusutan_gb_2020_r2_e28
  Window
 urutan as (partition by register order by rank)
 
@@ -3230,9 +3230,9 @@ order by register, rank;
 
 
 -- kunci angka baris ke 10
-DROP view if exists view_penyusutan_jij_2019_r2_e2 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e2 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e2 as select
+create view view_penyusutan_jij_2020_r2_e2 as select
 nama_skpd,
 id_skpd,
 nama_lokasi_bidang,
@@ -3250,37 +3250,37 @@ register,
 harga,
 sum (harga) over (partition by register order by tahun asc) as nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_a1.kode_barang,
-left(view_penyusutan_jij_2019_r2_a1.kode_barang, 8) as kode_umur,
+view_penyusutan_jij_2020_r2_a1.kode_barang,
+left(view_penyusutan_jij_2020_r2_a1.kode_barang, 8) as kode_umur,
 rank() over (partition by register order by tahun asc) as rank,
-lead(tahun, 1, 2020) over (partition by register order by tahun asc) as tahun_akhir,
+lead(tahun, 1, 2021) over (partition by register order by tahun asc) as tahun_akhir,
 umur as masa_manfaat,
 0 as penambahan_umur,
 umur as umur_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN umur - ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN umur - ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun)
 ELSE
      0
 END as sisa_umur,
 
 harga as nilai_buku_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
 ELSE
      harga
 END as penyusutan,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-    THEN harga - (round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+    THEN harga - (round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
 ELSE
      0
 END as nilai_buku_akhir
 
-from view_penyusutan_jij_2019_r2_a1, kode_barang
+from view_penyusutan_jij_2020_r2_a1, kode_barang
 
-where view_penyusutan_jij_2019_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
+where view_penyusutan_jij_2020_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
 
 order by register, rank;
 
@@ -3291,9 +3291,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e3 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e3 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e3 as
+create view view_penyusutan_jij_2020_r2_e3 as
 
 select register,
 nama_skpd,
@@ -3312,7 +3312,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e2.kode_barang,
+view_penyusutan_jij_2020_r2_e2.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3405,7 +3405,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e2
+view_penyusutan_jij_2020_r2_e2
  Window
 urutan as (partition by register order by rank)
 
@@ -3430,9 +3430,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e4 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e4 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e4 as
+create view view_penyusutan_jij_2020_r2_e4 as
 
 select register,
 nama_skpd,
@@ -3451,7 +3451,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e3.kode_barang,
+view_penyusutan_jij_2020_r2_e3.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3477,20 +3477,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e3, penambahan_umur
+view_penyusutan_jij_2020_r2_e3, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e3.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e3.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e3.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e3.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e5 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e5 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e5 as
+create view view_penyusutan_jij_2020_r2_e5 as
 
 select register,
 nama_skpd,
@@ -3604,7 +3604,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e4
+view_penyusutan_jij_2020_r2_e4
  Window
 urutan as (partition by register order by rank)
 
@@ -3618,9 +3618,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e6 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e6 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e6 as
+create view view_penyusutan_jij_2020_r2_e6 as
 
 select register,
 nama_skpd,
@@ -3639,7 +3639,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e5.kode_barang,
+view_penyusutan_jij_2020_r2_e5.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3732,7 +3732,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e5
+view_penyusutan_jij_2020_r2_e5
  Window
 urutan as (partition by register order by rank)
 
@@ -3743,9 +3743,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e7 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e7 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e7 as
+create view view_penyusutan_jij_2020_r2_e7 as
 
 select register,
 nama_skpd,
@@ -3764,7 +3764,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e6.kode_barang,
+view_penyusutan_jij_2020_r2_e6.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -3790,20 +3790,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e6, penambahan_umur
+view_penyusutan_jij_2020_r2_e6, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e6.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e6.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e6.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e6.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e8 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e8 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e8 as
+create view view_penyusutan_jij_2020_r2_e8 as
 
 select register,
 nama_skpd,
@@ -3917,7 +3917,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e7
+view_penyusutan_jij_2020_r2_e7
  Window
 urutan as (partition by register order by rank)
 
@@ -3930,9 +3930,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e9 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e9 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e9 as
+create view view_penyusutan_jij_2020_r2_e9 as
 
 select register,
 nama_skpd,
@@ -3951,7 +3951,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e8.kode_barang,
+view_penyusutan_jij_2020_r2_e8.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4044,7 +4044,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e8
+view_penyusutan_jij_2020_r2_e8
  Window
 urutan as (partition by register order by rank)
 
@@ -4055,9 +4055,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e10 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e10 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e10 as
+create view view_penyusutan_jij_2020_r2_e10 as
 
 select register,
 nama_skpd,
@@ -4076,7 +4076,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e9.kode_barang,
+view_penyusutan_jij_2020_r2_e9.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4102,20 +4102,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e9, penambahan_umur
+view_penyusutan_jij_2020_r2_e9, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e9.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e9.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e9.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e9.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e11 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e11 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e11 as
+create view view_penyusutan_jij_2020_r2_e11 as
 
 select register,
 nama_skpd,
@@ -4229,7 +4229,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e10
+view_penyusutan_jij_2020_r2_e10
  Window
 urutan as (partition by register order by rank)
 
@@ -4241,9 +4241,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e12 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e12 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e12 as
+create view view_penyusutan_jij_2020_r2_e12 as
 
 select register,
 nama_skpd,
@@ -4262,7 +4262,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e11.kode_barang,
+view_penyusutan_jij_2020_r2_e11.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4355,7 +4355,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e11
+view_penyusutan_jij_2020_r2_e11
  Window
 urutan as (partition by register order by rank)
 
@@ -4366,9 +4366,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e13 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e13 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e13 as
+create view view_penyusutan_jij_2020_r2_e13 as
 
 select register,
 nama_skpd,
@@ -4387,7 +4387,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e12.kode_barang,
+view_penyusutan_jij_2020_r2_e12.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4413,20 +4413,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e12, penambahan_umur
+view_penyusutan_jij_2020_r2_e12, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e12.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e12.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e12.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e12.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e14 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e14 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e14 as
+create view view_penyusutan_jij_2020_r2_e14 as
 
 select register,
 nama_skpd,
@@ -4540,7 +4540,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e13
+view_penyusutan_jij_2020_r2_e13
  Window
 urutan as (partition by register order by rank)
 
@@ -4553,9 +4553,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e15 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e15 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e15 as
+create view view_penyusutan_jij_2020_r2_e15 as
 
 select register,
 nama_skpd,
@@ -4574,7 +4574,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e14.kode_barang,
+view_penyusutan_jij_2020_r2_e14.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4667,7 +4667,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e14
+view_penyusutan_jij_2020_r2_e14
  Window
 urutan as (partition by register order by rank)
 
@@ -4678,9 +4678,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e16 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e16 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e16 as
+create view view_penyusutan_jij_2020_r2_e16 as
 
 select register,
 nama_skpd,
@@ -4699,7 +4699,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e15.kode_barang,
+view_penyusutan_jij_2020_r2_e15.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4725,20 +4725,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e15, penambahan_umur
+view_penyusutan_jij_2020_r2_e15, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e15.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e15.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e15.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e15.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e17 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e17 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e17 as
+create view view_penyusutan_jij_2020_r2_e17 as
 
 select register,
 nama_skpd,
@@ -4852,7 +4852,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e16
+view_penyusutan_jij_2020_r2_e16
  Window
 urutan as (partition by register order by rank)
 
@@ -4866,9 +4866,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e18 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e18 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e18 as
+create view view_penyusutan_jij_2020_r2_e18 as
 
 select register,
 nama_skpd,
@@ -4887,7 +4887,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e17.kode_barang,
+view_penyusutan_jij_2020_r2_e17.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -4980,7 +4980,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e17
+view_penyusutan_jij_2020_r2_e17
  Window
 urutan as (partition by register order by rank)
 
@@ -4991,9 +4991,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e19 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e19 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e19 as
+create view view_penyusutan_jij_2020_r2_e19 as
 
 select register,
 nama_skpd,
@@ -5012,7 +5012,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e18.kode_barang,
+view_penyusutan_jij_2020_r2_e18.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5038,20 +5038,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e18, penambahan_umur
+view_penyusutan_jij_2020_r2_e18, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e18.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e18.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e18.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e18.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e20 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e20 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e20 as
+create view view_penyusutan_jij_2020_r2_e20 as
 
 select register,
 nama_skpd,
@@ -5165,7 +5165,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e19
+view_penyusutan_jij_2020_r2_e19
  Window
 urutan as (partition by register order by rank)
 
@@ -5181,9 +5181,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e21 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e21 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e21 as
+create view view_penyusutan_jij_2020_r2_e21 as
 
 select register,
 nama_skpd,
@@ -5202,7 +5202,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e20.kode_barang,
+view_penyusutan_jij_2020_r2_e20.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5295,7 +5295,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e20
+view_penyusutan_jij_2020_r2_e20
  Window
 urutan as (partition by register order by rank)
 
@@ -5306,9 +5306,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e22 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e22 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e22 as
+create view view_penyusutan_jij_2020_r2_e22 as
 
 select register,
 nama_skpd,
@@ -5327,7 +5327,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e21.kode_barang,
+view_penyusutan_jij_2020_r2_e21.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5353,20 +5353,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e21, penambahan_umur
+view_penyusutan_jij_2020_r2_e21, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e21.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e21.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e21.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e21.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e23 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e23 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e23 as
+create view view_penyusutan_jij_2020_r2_e23 as
 
 select register,
 nama_skpd,
@@ -5480,7 +5480,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e22
+view_penyusutan_jij_2020_r2_e22
  Window
 urutan as (partition by register order by rank)
 
@@ -5495,9 +5495,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e24 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e24 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e24 as
+create view view_penyusutan_jij_2020_r2_e24 as
 
 select register,
 nama_skpd,
@@ -5516,7 +5516,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e23.kode_barang,
+view_penyusutan_jij_2020_r2_e23.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5609,7 +5609,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e23
+view_penyusutan_jij_2020_r2_e23
  Window
 urutan as (partition by register order by rank)
 
@@ -5620,9 +5620,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e25 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e25 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e25 as
+create view view_penyusutan_jij_2020_r2_e25 as
 
 select register,
 nama_skpd,
@@ -5641,7 +5641,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e24.kode_barang,
+view_penyusutan_jij_2020_r2_e24.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5667,20 +5667,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e24, penambahan_umur
+view_penyusutan_jij_2020_r2_e24, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e24.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e24.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e24.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e24.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e26 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e26 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e26 as
+create view view_penyusutan_jij_2020_r2_e26 as
 
 select register,
 nama_skpd,
@@ -5794,7 +5794,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e25
+view_penyusutan_jij_2020_r2_e25
  Window
 urutan as (partition by register order by rank)
 
@@ -5807,9 +5807,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e27 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e27 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e27 as
+create view view_penyusutan_jij_2020_r2_e27 as
 
 select register,
 nama_skpd,
@@ -5828,7 +5828,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e26.kode_barang,
+view_penyusutan_jij_2020_r2_e26.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5921,7 +5921,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e26
+view_penyusutan_jij_2020_r2_e26
  Window
 urutan as (partition by register order by rank)
 
@@ -5932,9 +5932,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e28 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e28 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e28 as
+create view view_penyusutan_jij_2020_r2_e28 as
 
 select register,
 nama_skpd,
@@ -5953,7 +5953,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e27.kode_barang,
+view_penyusutan_jij_2020_r2_e27.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -5979,20 +5979,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e27, penambahan_umur
+view_penyusutan_jij_2020_r2_e27, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e27.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e27.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e27.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e27.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e29 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e29 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e29 as
+create view view_penyusutan_jij_2020_r2_e29 as
 
 select register,
 nama_skpd,
@@ -6106,7 +6106,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e28
+view_penyusutan_jij_2020_r2_e28
  Window
 urutan as (partition by register order by rank)
 
@@ -6125,9 +6125,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e30 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e30 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e30 as
+create view view_penyusutan_jij_2020_r2_e30 as
 
 select register,
 nama_skpd,
@@ -6146,7 +6146,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e29.kode_barang,
+view_penyusutan_jij_2020_r2_e29.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6239,7 +6239,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e29
+view_penyusutan_jij_2020_r2_e29
  Window
 urutan as (partition by register order by rank)
 
@@ -6250,9 +6250,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e31 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e31 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e31 as
+create view view_penyusutan_jij_2020_r2_e31 as
 
 select register,
 nama_skpd,
@@ -6271,7 +6271,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e30.kode_barang,
+view_penyusutan_jij_2020_r2_e30.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6297,20 +6297,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e30, penambahan_umur
+view_penyusutan_jij_2020_r2_e30, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e30.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e30.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e30.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e30.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e32 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e32 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e32 as
+create view view_penyusutan_jij_2020_r2_e32 as
 
 select register,
 nama_skpd,
@@ -6424,7 +6424,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e31
+view_penyusutan_jij_2020_r2_e31
  Window
 urutan as (partition by register order by rank)
 
@@ -6459,9 +6459,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e33 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e33 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e33 as
+create view view_penyusutan_jij_2020_r2_e33 as
 
 select register,
 nama_skpd,
@@ -6480,7 +6480,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e32.kode_barang,
+view_penyusutan_jij_2020_r2_e32.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6573,7 +6573,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e32
+view_penyusutan_jij_2020_r2_e32
  Window
 urutan as (partition by register order by rank)
 
@@ -6584,9 +6584,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e34 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e34 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e34 as
+create view view_penyusutan_jij_2020_r2_e34 as
 
 select register,
 nama_skpd,
@@ -6605,7 +6605,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e33.kode_barang,
+view_penyusutan_jij_2020_r2_e33.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6631,20 +6631,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e33, penambahan_umur
+view_penyusutan_jij_2020_r2_e33, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e33.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e33.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e33.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e33.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e35 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e35 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e35 as
+create view view_penyusutan_jij_2020_r2_e35 as
 
 select register,
 nama_skpd,
@@ -6758,7 +6758,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e34
+view_penyusutan_jij_2020_r2_e34
  Window
 urutan as (partition by register order by rank)
 
@@ -6781,9 +6781,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e36 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e36 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e36 as
+create view view_penyusutan_jij_2020_r2_e36 as
 
 select register,
 nama_skpd,
@@ -6802,7 +6802,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e35.kode_barang,
+view_penyusutan_jij_2020_r2_e35.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6895,7 +6895,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e35
+view_penyusutan_jij_2020_r2_e35
  Window
 urutan as (partition by register order by rank)
 
@@ -6906,9 +6906,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e37 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e37 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e37 as
+create view view_penyusutan_jij_2020_r2_e37 as
 
 select register,
 nama_skpd,
@@ -6927,7 +6927,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e36.kode_barang,
+view_penyusutan_jij_2020_r2_e36.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -6953,20 +6953,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e36, penambahan_umur
+view_penyusutan_jij_2020_r2_e36, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e36.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e36.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e36.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e36.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e38 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e38 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e38 as
+create view view_penyusutan_jij_2020_r2_e38 as
 
 select register,
 nama_skpd,
@@ -7080,7 +7080,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e37
+view_penyusutan_jij_2020_r2_e37
  Window
 urutan as (partition by register order by rank)
 
@@ -7095,9 +7095,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e39 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e39 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e39 as
+create view view_penyusutan_jij_2020_r2_e39 as
 
 select register,
 nama_skpd,
@@ -7116,7 +7116,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e38.kode_barang,
+view_penyusutan_jij_2020_r2_e38.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7209,7 +7209,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e38
+view_penyusutan_jij_2020_r2_e38
  Window
 urutan as (partition by register order by rank)
 
@@ -7220,9 +7220,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e40 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e40 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e40 as
+create view view_penyusutan_jij_2020_r2_e40 as
 
 select register,
 nama_skpd,
@@ -7241,7 +7241,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e39.kode_barang,
+view_penyusutan_jij_2020_r2_e39.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7267,20 +7267,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e39, penambahan_umur
+view_penyusutan_jij_2020_r2_e39, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e39.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e39.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e39.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e39.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e41 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e41 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e41 as
+create view view_penyusutan_jij_2020_r2_e41 as
 
 select register,
 nama_skpd,
@@ -7394,7 +7394,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e40
+view_penyusutan_jij_2020_r2_e40
  Window
 urutan as (partition by register order by rank)
 
@@ -7407,9 +7407,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e42 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e42 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e42 as
+create view view_penyusutan_jij_2020_r2_e42 as
 
 select register,
 nama_skpd,
@@ -7428,7 +7428,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e41.kode_barang,
+view_penyusutan_jij_2020_r2_e41.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7521,7 +7521,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e41
+view_penyusutan_jij_2020_r2_e41
  Window
 urutan as (partition by register order by rank)
 
@@ -7532,9 +7532,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e43 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e43 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e43 as
+create view view_penyusutan_jij_2020_r2_e43 as
 
 select register,
 nama_skpd,
@@ -7553,7 +7553,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e42.kode_barang,
+view_penyusutan_jij_2020_r2_e42.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7579,20 +7579,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e42, penambahan_umur
+view_penyusutan_jij_2020_r2_e42, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e42.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e42.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e42.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e42.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e44 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e44 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e44 as
+create view view_penyusutan_jij_2020_r2_e44 as
 
 select register,
 nama_skpd,
@@ -7706,7 +7706,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e43
+view_penyusutan_jij_2020_r2_e43
  Window
 urutan as (partition by register order by rank)
 
@@ -7719,9 +7719,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e45 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e45 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e45 as
+create view view_penyusutan_jij_2020_r2_e45 as
 
 select register,
 nama_skpd,
@@ -7740,7 +7740,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e44.kode_barang,
+view_penyusutan_jij_2020_r2_e44.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7833,7 +7833,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e44
+view_penyusutan_jij_2020_r2_e44
  Window
 urutan as (partition by register order by rank)
 
@@ -7844,9 +7844,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e46 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e46 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e46 as
+create view view_penyusutan_jij_2020_r2_e46 as
 
 select register,
 nama_skpd,
@@ -7865,7 +7865,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e45.kode_barang,
+view_penyusutan_jij_2020_r2_e45.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -7891,20 +7891,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e45, penambahan_umur
+view_penyusutan_jij_2020_r2_e45, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e45.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e45.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e45.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e45.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e47 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e47 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e47 as
+create view view_penyusutan_jij_2020_r2_e47 as
 
 select register,
 nama_skpd,
@@ -8018,7 +8018,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e46
+view_penyusutan_jij_2020_r2_e46
  Window
 urutan as (partition by register order by rank)
 
@@ -8031,9 +8031,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e48 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e48 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e48 as
+create view view_penyusutan_jij_2020_r2_e48 as
 
 select register,
 nama_skpd,
@@ -8052,7 +8052,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e47.kode_barang,
+view_penyusutan_jij_2020_r2_e47.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8145,7 +8145,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_jij_2019_r2_e47
+view_penyusutan_jij_2020_r2_e47
  Window
 urutan as (partition by register order by rank)
 
@@ -8156,9 +8156,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e49 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e49 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e49 as
+create view view_penyusutan_jij_2020_r2_e49 as
 
 select register,
 nama_skpd,
@@ -8177,7 +8177,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_jij_2019_r2_e48.kode_barang,
+view_penyusutan_jij_2020_r2_e48.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8203,20 +8203,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e48, penambahan_umur
+view_penyusutan_jij_2020_r2_e48, penambahan_umur
 
 where
-view_penyusutan_jij_2019_r2_e48.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_jij_2019_r2_e48.persentasi = penambahan_umur.persen
+view_penyusutan_jij_2020_r2_e48.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_jij_2020_r2_e48.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_jij_2019_r2_e50 CASCADE;
+DROP view if exists view_penyusutan_jij_2020_r2_e50 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_e50 as
+create view view_penyusutan_jij_2020_r2_e50 as
 
 select register,
 nama_skpd,
@@ -8330,7 +8330,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e49
+view_penyusutan_jij_2020_r2_e49
  Window
 urutan as (partition by register order by rank)
 
@@ -8343,9 +8343,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e2 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e2 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e2 as select
+create view view_penyusutan_pm_2020_r2_e2 as select
 nama_skpd,
 id_skpd,
 nama_lokasi_bidang,
@@ -8363,37 +8363,37 @@ register,
 harga,
 sum (harga) over (partition by register order by tahun asc) as nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_a1.kode_barang,
-left(view_penyusutan_pm_2019_r2_a1.kode_barang, 8) as kode_umur,
+view_penyusutan_pm_2020_r2_a1.kode_barang,
+left(view_penyusutan_pm_2020_r2_a1.kode_barang, 8) as kode_umur,
 rank() over (partition by register order by tahun asc) as rank,
-lead(tahun, 1, 2020) over (partition by register order by tahun asc) as tahun_akhir,
+lead(tahun, 1, 2021) over (partition by register order by tahun asc) as tahun_akhir,
 umur as masa_manfaat,
 0 as penambahan_umur,
 umur as umur_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN umur - ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN umur - ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun)
 ELSE
      0
 END as sisa_umur,
 
 harga as nilai_buku_awal,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-     THEN round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+     THEN round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0)
 ELSE
      harga
 END as penyusutan,
 
-CASE WHEN ((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) < umur
-    THEN harga - (round(((lead(tahun, 1, 2020) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
+CASE WHEN ((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) < umur
+    THEN harga - (round(((lead(tahun, 1, 2021) over (partition by register order by tahun asc)) - tahun) * harga / umur, 0))
 ELSE
      0
 END as nilai_buku_akhir
 
-from view_penyusutan_pm_2019_r2_a1, kode_barang
+from view_penyusutan_pm_2020_r2_a1, kode_barang
 
-where view_penyusutan_pm_2019_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
+where view_penyusutan_pm_2020_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
 
 order by register, rank;
 
@@ -8404,9 +8404,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e3 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e3 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e3 as
+create view view_penyusutan_pm_2020_r2_e3 as
 
 select register,
 nama_skpd,
@@ -8425,7 +8425,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e2.kode_barang,
+view_penyusutan_pm_2020_r2_e2.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8518,7 +8518,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e2
+view_penyusutan_pm_2020_r2_e2
  Window
 urutan as (partition by register order by rank)
 
@@ -8543,9 +8543,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e4 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e4 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e4 as
+create view view_penyusutan_pm_2020_r2_e4 as
 
 select register,
 nama_skpd,
@@ -8564,7 +8564,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e3.kode_barang,
+view_penyusutan_pm_2020_r2_e3.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8590,20 +8590,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e3, penambahan_umur
+view_penyusutan_pm_2020_r2_e3, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e3.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e3.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e3.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e3.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e5 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e5 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e5 as
+create view view_penyusutan_pm_2020_r2_e5 as
 
 select register,
 nama_skpd,
@@ -8717,7 +8717,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e4
+view_penyusutan_pm_2020_r2_e4
  Window
 urutan as (partition by register order by rank)
 
@@ -8728,9 +8728,9 @@ order by register, rank;
 
 -------kunci angka baris ke 2
 
-DROP view if exists view_penyusutan_pm_2019_r2_e6 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e6 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e6 as
+create view view_penyusutan_pm_2020_r2_e6 as
 
 select register,
 nama_skpd,
@@ -8749,7 +8749,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e5.kode_barang,
+view_penyusutan_pm_2020_r2_e5.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8842,7 +8842,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e5
+view_penyusutan_pm_2020_r2_e5
  Window
 urutan as (partition by register order by rank)
 
@@ -8853,9 +8853,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e7 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e7 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e7 as
+create view view_penyusutan_pm_2020_r2_e7 as
 
 select register,
 nama_skpd,
@@ -8874,7 +8874,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e6.kode_barang,
+view_penyusutan_pm_2020_r2_e6.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -8900,20 +8900,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e6, penambahan_umur
+view_penyusutan_pm_2020_r2_e6, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e6.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e6.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e6.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e6.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e8 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e8 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e8 as
+create view view_penyusutan_pm_2020_r2_e8 as
 
 select register,
 nama_skpd,
@@ -9027,7 +9027,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e7
+view_penyusutan_pm_2020_r2_e7
  Window
 urutan as (partition by register order by rank)
 
@@ -9040,9 +9040,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e9 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e9 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e9 as
+create view view_penyusutan_pm_2020_r2_e9 as
 
 select register,
 nama_skpd,
@@ -9061,7 +9061,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e8.kode_barang,
+view_penyusutan_pm_2020_r2_e8.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9154,7 +9154,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e8
+view_penyusutan_pm_2020_r2_e8
  Window
 urutan as (partition by register order by rank)
 
@@ -9165,9 +9165,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e10 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e10 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e10 as
+create view view_penyusutan_pm_2020_r2_e10 as
 
 select register,
 nama_skpd,
@@ -9186,7 +9186,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e9.kode_barang,
+view_penyusutan_pm_2020_r2_e9.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9212,20 +9212,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e9, penambahan_umur
+view_penyusutan_pm_2020_r2_e9, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e9.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e9.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e9.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e9.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e11 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e11 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e11 as
+create view view_penyusutan_pm_2020_r2_e11 as
 
 select register,
 nama_skpd,
@@ -9339,7 +9339,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e10
+view_penyusutan_pm_2020_r2_e10
  Window
 urutan as (partition by register order by rank)
 
@@ -9351,9 +9351,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e12 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e12 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e12 as
+create view view_penyusutan_pm_2020_r2_e12 as
 
 select register,
 nama_skpd,
@@ -9372,7 +9372,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e11.kode_barang,
+view_penyusutan_pm_2020_r2_e11.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9465,7 +9465,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e11
+view_penyusutan_pm_2020_r2_e11
  Window
 urutan as (partition by register order by rank)
 
@@ -9476,9 +9476,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e13 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e13 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e13 as
+create view view_penyusutan_pm_2020_r2_e13 as
 
 select register,
 nama_skpd,
@@ -9497,7 +9497,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e12.kode_barang,
+view_penyusutan_pm_2020_r2_e12.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9523,20 +9523,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e12, penambahan_umur
+view_penyusutan_pm_2020_r2_e12, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e12.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e12.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e12.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e12.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e14 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e14 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e14 as
+create view view_penyusutan_pm_2020_r2_e14 as
 
 select register,
 nama_skpd,
@@ -9650,7 +9650,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e13
+view_penyusutan_pm_2020_r2_e13
  Window
 urutan as (partition by register order by rank)
 
@@ -9663,9 +9663,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e15 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e15 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e15 as
+create view view_penyusutan_pm_2020_r2_e15 as
 
 select register,
 nama_skpd,
@@ -9684,7 +9684,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e14.kode_barang,
+view_penyusutan_pm_2020_r2_e14.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9777,7 +9777,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e14
+view_penyusutan_pm_2020_r2_e14
  Window
 urutan as (partition by register order by rank)
 
@@ -9788,9 +9788,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e16 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e16 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e16 as
+create view view_penyusutan_pm_2020_r2_e16 as
 
 select register,
 nama_skpd,
@@ -9809,7 +9809,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e15.kode_barang,
+view_penyusutan_pm_2020_r2_e15.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -9835,20 +9835,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e15, penambahan_umur
+view_penyusutan_pm_2020_r2_e15, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e15.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e15.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e15.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e15.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e17 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e17 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e17 as
+create view view_penyusutan_pm_2020_r2_e17 as
 
 select register,
 nama_skpd,
@@ -9962,7 +9962,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e16
+view_penyusutan_pm_2020_r2_e16
  Window
 urutan as (partition by register order by rank)
 
@@ -9976,9 +9976,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e18 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e18 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e18 as
+create view view_penyusutan_pm_2020_r2_e18 as
 
 select register,
 nama_skpd,
@@ -9997,7 +9997,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e17.kode_barang,
+view_penyusutan_pm_2020_r2_e17.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10090,7 +10090,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e17
+view_penyusutan_pm_2020_r2_e17
  Window
 urutan as (partition by register order by rank)
 
@@ -10101,9 +10101,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e19 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e19 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e19 as
+create view view_penyusutan_pm_2020_r2_e19 as
 
 select register,
 nama_skpd,
@@ -10122,7 +10122,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e18.kode_barang,
+view_penyusutan_pm_2020_r2_e18.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10148,20 +10148,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e18, penambahan_umur
+view_penyusutan_pm_2020_r2_e18, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e18.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e18.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e18.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e18.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e20 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e20 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e20 as
+create view view_penyusutan_pm_2020_r2_e20 as
 
 select register,
 nama_skpd,
@@ -10275,7 +10275,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e19
+view_penyusutan_pm_2020_r2_e19
  Window
 urutan as (partition by register order by rank)
 
@@ -10291,9 +10291,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e21 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e21 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e21 as
+create view view_penyusutan_pm_2020_r2_e21 as
 
 select register,
 nama_skpd,
@@ -10312,7 +10312,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e20.kode_barang,
+view_penyusutan_pm_2020_r2_e20.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10405,7 +10405,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e20
+view_penyusutan_pm_2020_r2_e20
  Window
 urutan as (partition by register order by rank)
 
@@ -10416,9 +10416,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e22 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e22 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e22 as
+create view view_penyusutan_pm_2020_r2_e22 as
 
 select register,
 nama_skpd,
@@ -10437,7 +10437,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e21.kode_barang,
+view_penyusutan_pm_2020_r2_e21.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10463,20 +10463,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e21, penambahan_umur
+view_penyusutan_pm_2020_r2_e21, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e21.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e21.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e21.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e21.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e23 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e23 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e23 as
+create view view_penyusutan_pm_2020_r2_e23 as
 
 select register,
 nama_skpd,
@@ -10590,7 +10590,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e22
+view_penyusutan_pm_2020_r2_e22
  Window
 urutan as (partition by register order by rank)
 
@@ -10605,9 +10605,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e24 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e24 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e24 as
+create view view_penyusutan_pm_2020_r2_e24 as
 
 select register,
 nama_skpd,
@@ -10626,7 +10626,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e23.kode_barang,
+view_penyusutan_pm_2020_r2_e23.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10719,7 +10719,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e23
+view_penyusutan_pm_2020_r2_e23
  Window
 urutan as (partition by register order by rank)
 
@@ -10730,9 +10730,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e25 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e25 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e25 as
+create view view_penyusutan_pm_2020_r2_e25 as
 
 select register,
 nama_skpd,
@@ -10751,7 +10751,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e24.kode_barang,
+view_penyusutan_pm_2020_r2_e24.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -10777,20 +10777,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e24, penambahan_umur
+view_penyusutan_pm_2020_r2_e24, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e24.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e24.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e24.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e24.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e26 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e26 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e26 as
+create view view_penyusutan_pm_2020_r2_e26 as
 
 select register,
 nama_skpd,
@@ -10904,7 +10904,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e25
+view_penyusutan_pm_2020_r2_e25
  Window
 urutan as (partition by register order by rank)
 
@@ -10917,9 +10917,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e27 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e27 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e27 as
+create view view_penyusutan_pm_2020_r2_e27 as
 
 select register,
 nama_skpd,
@@ -10938,7 +10938,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e26.kode_barang,
+view_penyusutan_pm_2020_r2_e26.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -11031,7 +11031,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_pm_2019_r2_e26
+view_penyusutan_pm_2020_r2_e26
  Window
 urutan as (partition by register order by rank)
 
@@ -11042,9 +11042,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e28 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e28 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e28 as
+create view view_penyusutan_pm_2020_r2_e28 as
 
 select register,
 nama_skpd,
@@ -11063,7 +11063,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_pm_2019_r2_e27.kode_barang,
+view_penyusutan_pm_2020_r2_e27.kode_barang,
 kode_umur,
 rank,
 tahun_akhir,
@@ -11089,20 +11089,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e27, penambahan_umur
+view_penyusutan_pm_2020_r2_e27, penambahan_umur
 
 where
-view_penyusutan_pm_2019_r2_e27.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_pm_2019_r2_e27.persentasi = penambahan_umur.persen
+view_penyusutan_pm_2020_r2_e27.kode_umur = penambahan_umur.kode_barang AND
+view_penyusutan_pm_2020_r2_e27.persentasi = penambahan_umur.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_pm_2019_r2_e29 CASCADE;
+DROP view if exists view_penyusutan_pm_2020_r2_e29 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_e29 as
+create view view_penyusutan_pm_2020_r2_e29 as
 
 select register,
 nama_skpd,
@@ -11216,7 +11216,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e28
+view_penyusutan_pm_2020_r2_e28
  Window
 urutan as (partition by register order by rank)
 
@@ -11225,58 +11225,9 @@ order by register, rank;
 
 
 -- kunci angka baris ke 10
-DROP view if exists view_penyusutan_gb_2019_r2_a3 CASCADE;
+DROP view if exists view_penyusutan_gb_2020_r2_a3 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_a3 as
-
-select register,
-nama_skpd,
-id_skpd,
-nama_lokasi_bidang,
-id_lokasi_bidang,
-nama_kabupaten,
-id_kabupaten,
-nama_provinsi,
-id_provinsi,
-id_mutasi_berkurang,
-mutasi_berkurang,
-keadaan_barang,
-nama_barang,
-
-harga,
-nilai_perolehan,
-sum(harga) over (partition by register) as harga_total,
-tahun,
-kode_barang,
-kode_umur,
-rank,
-tahun_akhir - 1 as tahun_akhir,
-persen_awal,
-
-persentasi,
-
-masa_manfaat,
-penambahan_umur,
-
-
-umur_awal,
-sisa_umur,
-nilai_buku_awal,
-penyusutan,
-nilai_buku_akhir
-
-
- from
-view_penyusutan_gb_2019_r2_e29
-
-
-order by register, rank;
-
-GRANT ALL PRIVILEGES ON view_penyusutan_gb_2019_r2_a3 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2019_r2_a3 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_jij_2019_r2_a3 CASCADE;
-
-create view view_penyusutan_jij_2019_r2_a3 as
+create view view_penyusutan_gb_2020_r2_a3 as
 
 select register,
 nama_skpd,
@@ -11316,16 +11267,16 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_jij_2019_r2_e50
+view_penyusutan_gb_2020_r2_e29
 
 
 order by register, rank;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2019_r2_a3 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2019_r2_a3 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_pm_2019_r2_a3 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_gb_2020_r2_a3 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2020_r2_a3 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_jij_2020_r2_a3 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_a3 as
+create view view_penyusutan_jij_2020_r2_a3 as
 
 select register,
 nama_skpd,
@@ -11365,16 +11316,65 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_pm_2019_r2_e29
+view_penyusutan_jij_2020_r2_e50
 
 
 order by register, rank;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_pm_2019_r2_a3 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2019_r2_a3 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_gb_2019_r2_a4 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_jij_2020_r2_a3 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2020_r2_a3 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_pm_2020_r2_a3 CASCADE;
 
-create view view_penyusutan_gb_2019_r2_a4 as
+create view view_penyusutan_pm_2020_r2_a3 as
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+harga,
+nilai_perolehan,
+sum(harga) over (partition by register) as harga_total,
+tahun,
+kode_barang,
+kode_umur,
+rank,
+tahun_akhir - 1 as tahun_akhir,
+persen_awal,
+
+persentasi,
+
+masa_manfaat,
+penambahan_umur,
+
+
+umur_awal,
+sisa_umur,
+nilai_buku_awal,
+penyusutan,
+nilai_buku_akhir
+
+
+ from
+view_penyusutan_pm_2020_r2_e29
+
+
+order by register, rank;
+
+GRANT ALL PRIVILEGES ON view_penyusutan_pm_2020_r2_a3 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2020_r2_a3 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_gb_2020_r2_a4 CASCADE;
+
+create view view_penyusutan_gb_2020_r2_a4 as
 
 select register,
 nama_skpd,
@@ -11399,7 +11399,7 @@ sum(harga) - sum(penyusutan) as nilai_buku
 
 
  from
-view_penyusutan_gb_2019_r2_a3
+view_penyusutan_gb_2020_r2_a3
 
 GROUP BY
 register,
@@ -11420,11 +11420,11 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_gb_2019_r2_a4 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2019_r2_a4 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_jij_2019_r2_a4 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_gb_2020_r2_a4 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_gb_2020_r2_a4 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_jij_2020_r2_a4 CASCADE;
 
-create view view_penyusutan_jij_2019_r2_a4 as
+create view view_penyusutan_jij_2020_r2_a4 as
 
 select register,
 nama_skpd,
@@ -11449,7 +11449,7 @@ sum(harga) - sum(penyusutan) as nilai_buku
 
 
  from
-view_penyusutan_jij_2019_r2_a3
+view_penyusutan_jij_2020_r2_a3
 
 GROUP BY
 register,
@@ -11470,11 +11470,11 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2019_r2_a4 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2019_r2_a4 FROM lap_kabupaten;
-DROP view if exists view_penyusutan_pm_2019_r2_a4 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_jij_2020_r2_a4 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2020_r2_a4 FROM lap_kabupaten;
+DROP view if exists view_penyusutan_pm_2020_r2_a4 CASCADE;
 
-create view view_penyusutan_pm_2019_r2_a4 as
+create view view_penyusutan_pm_2020_r2_a4 as
 
 select register,
 nama_skpd,
@@ -11499,7 +11499,7 @@ sum(harga) - sum(penyusutan) as nilai_buku
 
 
  from
-view_penyusutan_pm_2019_r2_a3
+view_penyusutan_pm_2020_r2_a3
 
 GROUP BY
 register,
@@ -11520,11 +11520,11 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_pm_2019_r2_a4 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2019_r2_a4 FROM lap_kabupaten;
-DROP view if exists view_beban_penyusutan_gb_2019_r2_a1 CASCADE;
+GRANT ALL PRIVILEGES ON view_penyusutan_pm_2020_r2_a4 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2020_r2_a4 FROM lap_kabupaten;
+DROP view if exists view_beban_penyusutan_gb_2020_r2_a1 CASCADE;
 
-create view view_beban_penyusutan_gb_2019_r2_a1 as
+create view view_beban_penyusutan_gb_2020_r2_a1 as
 
 
 select register,
@@ -11544,54 +11544,54 @@ nama_barang,
 kode_barang,
 tahun_awal,
 
-nilai_perolehan as nilai_perolehan_sd_2018,
-0 as nilai_perolehan_sd_2019,
-
-nilai_buku as nilai_buku_sd_2018,
-0 as nilai_buku_sd_2019
-
-
- from
-view_penyusutan_gb_2018_r2_a4
-
-
-UNION ALL
-
-select register,
-nama_skpd,
-id_skpd,
-nama_lokasi_bidang,
-id_lokasi_bidang,
-nama_kabupaten,
-id_kabupaten,
-nama_provinsi,
-id_provinsi,
-id_mutasi_berkurang,
-mutasi_berkurang,
-keadaan_barang,
-nama_barang,
-
-kode_barang,
-tahun_awal,
-
-0 as nilai_perolehan_sd_2018,
 nilai_perolehan as nilai_perolehan_sd_2019,
+0 as nilai_perolehan_sd_2020,
 
-0 as nilai_buku_sd_2018,
-nilai_buku as nilai_buku_sd_2019
+nilai_buku as nilai_buku_sd_2019,
+0 as nilai_buku_sd_2020
 
 
  from
 view_penyusutan_gb_2019_r2_a4
 
 
+UNION ALL
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+kode_barang,
+tahun_awal,
+
+0 as nilai_perolehan_sd_2019,
+nilai_perolehan as nilai_perolehan_sd_2020,
+
+0 as nilai_buku_sd_2019,
+nilai_buku as nilai_buku_sd_2020
+
+
+ from
+view_penyusutan_gb_2020_r2_a4
+
+
 order by register;
 
 
 
-DROP view if exists view_beban_penyusutan_gb_2019_r2_a2 CASCADE;
+DROP view if exists view_beban_penyusutan_gb_2020_r2_a2 CASCADE;
 
-create view view_beban_penyusutan_gb_2019_r2_a2 as
+create view view_beban_penyusutan_gb_2020_r2_a2 as
 
 
 select register,
@@ -11611,24 +11611,24 @@ nama_barang,
 kode_barang,
 min(tahun_awal) as tahun_awal,
 
-sum(nilai_perolehan_sd_2018) as nilai_perolehan_sd_2018,
-sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018) as penambahan_nilai_di_2019,
 sum(nilai_perolehan_sd_2019) as nilai_perolehan_sd_2019,
-
-sum(nilai_perolehan_sd_2018) - sum(nilai_buku_sd_2018) as nilai_penyusutan_sd_2018,
-
-sum(nilai_buku_sd_2018) as nilai_buku_sd_2018,
-
-sum(nilai_buku_sd_2018) +
-(sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018)) -
-sum(nilai_buku_sd_2019) as beban_penyusutan_2019,
+sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019) as penambahan_nilai_di_2020,
+sum(nilai_perolehan_sd_2020) as nilai_perolehan_sd_2020,
 
 sum(nilai_perolehan_sd_2019) - sum(nilai_buku_sd_2019) as nilai_penyusutan_sd_2019,
-sum(nilai_buku_sd_2019) as nilai_buku_sd_2019
+
+sum(nilai_buku_sd_2019) as nilai_buku_sd_2019,
+
+sum(nilai_buku_sd_2019) +
+(sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019)) -
+sum(nilai_buku_sd_2020) as beban_penyusutan_2020,
+
+sum(nilai_perolehan_sd_2020) - sum(nilai_buku_sd_2020) as nilai_penyusutan_sd_2020,
+sum(nilai_buku_sd_2020) as nilai_buku_sd_2020
 
 
  from
-view_beban_penyusutan_gb_2019_r2_a1
+view_beban_penyusutan_gb_2020_r2_a1
 
 GROUP BY
 register,
@@ -11649,11 +11649,11 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_beban_penyusutan_gb_2019_r2_a2 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_gb_2019_r2_a2 FROM lap_kabupaten;
-DROP view if exists view_beban_penyusutan_jij_2019_r2_a1 CASCADE;
+GRANT ALL PRIVILEGES ON view_beban_penyusutan_gb_2020_r2_a2 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_gb_2020_r2_a2 FROM lap_kabupaten;
+DROP view if exists view_beban_penyusutan_jij_2020_r2_a1 CASCADE;
 
-create view view_beban_penyusutan_jij_2019_r2_a1 as
+create view view_beban_penyusutan_jij_2020_r2_a1 as
 
 
 select register,
@@ -11673,54 +11673,54 @@ nama_barang,
 kode_barang,
 tahun_awal,
 
-nilai_perolehan as nilai_perolehan_sd_2018,
-0 as nilai_perolehan_sd_2019,
-
-nilai_buku as nilai_buku_sd_2018,
-0 as nilai_buku_sd_2019
-
-
- from
-view_penyusutan_jij_2018_r2_a4
-
-
-UNION ALL
-
-select register,
-nama_skpd,
-id_skpd,
-nama_lokasi_bidang,
-id_lokasi_bidang,
-nama_kabupaten,
-id_kabupaten,
-nama_provinsi,
-id_provinsi,
-id_mutasi_berkurang,
-mutasi_berkurang,
-keadaan_barang,
-nama_barang,
-
-kode_barang,
-tahun_awal,
-
-0 as nilai_perolehan_sd_2018,
 nilai_perolehan as nilai_perolehan_sd_2019,
+0 as nilai_perolehan_sd_2020,
 
-0 as nilai_buku_sd_2018,
-nilai_buku as nilai_buku_sd_2019
+nilai_buku as nilai_buku_sd_2019,
+0 as nilai_buku_sd_2020
 
 
  from
 view_penyusutan_jij_2019_r2_a4
 
 
+UNION ALL
+
+select register,
+nama_skpd,
+id_skpd,
+nama_lokasi_bidang,
+id_lokasi_bidang,
+nama_kabupaten,
+id_kabupaten,
+nama_provinsi,
+id_provinsi,
+id_mutasi_berkurang,
+mutasi_berkurang,
+keadaan_barang,
+nama_barang,
+
+kode_barang,
+tahun_awal,
+
+0 as nilai_perolehan_sd_2019,
+nilai_perolehan as nilai_perolehan_sd_2020,
+
+0 as nilai_buku_sd_2019,
+nilai_buku as nilai_buku_sd_2020
+
+
+ from
+view_penyusutan_jij_2020_r2_a4
+
+
 order by register;
 
 
 
-DROP view if exists view_beban_penyusutan_jij_2019_r2_a2 CASCADE;
+DROP view if exists view_beban_penyusutan_jij_2020_r2_a2 CASCADE;
 
-create view view_beban_penyusutan_jij_2019_r2_a2 as
+create view view_beban_penyusutan_jij_2020_r2_a2 as
 
 
 select register,
@@ -11740,24 +11740,24 @@ nama_barang,
 kode_barang,
 min(tahun_awal) as tahun_awal,
 
-sum(nilai_perolehan_sd_2018) as nilai_perolehan_sd_2018,
-sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018) as penambahan_nilai_di_2019,
 sum(nilai_perolehan_sd_2019) as nilai_perolehan_sd_2019,
-
-sum(nilai_perolehan_sd_2018) - sum(nilai_buku_sd_2018) as nilai_penyusutan_sd_2018,
-
-sum(nilai_buku_sd_2018) as nilai_buku_sd_2018,
-
-sum(nilai_buku_sd_2018) +
-(sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018)) -
-sum(nilai_buku_sd_2019) as beban_penyusutan_2019,
+sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019) as penambahan_nilai_di_2020,
+sum(nilai_perolehan_sd_2020) as nilai_perolehan_sd_2020,
 
 sum(nilai_perolehan_sd_2019) - sum(nilai_buku_sd_2019) as nilai_penyusutan_sd_2019,
-sum(nilai_buku_sd_2019) as nilai_buku_sd_2019
+
+sum(nilai_buku_sd_2019) as nilai_buku_sd_2019,
+
+sum(nilai_buku_sd_2019) +
+(sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019)) -
+sum(nilai_buku_sd_2020) as beban_penyusutan_2020,
+
+sum(nilai_perolehan_sd_2020) - sum(nilai_buku_sd_2020) as nilai_penyusutan_sd_2020,
+sum(nilai_buku_sd_2020) as nilai_buku_sd_2020
 
 
  from
-view_beban_penyusutan_jij_2019_r2_a1
+view_beban_penyusutan_jij_2020_r2_a1
 
 GROUP BY
 register,
@@ -11778,11 +11778,11 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_beban_penyusutan_jij_2019_r2_a2 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_jij_2019_r2_a2 FROM lap_kabupaten;
-DROP view if exists view_beban_penyusutan_pm_2019_r2_a1 CASCADE;
+GRANT ALL PRIVILEGES ON view_beban_penyusutan_jij_2020_r2_a2 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_jij_2020_r2_a2 FROM lap_kabupaten;
+DROP view if exists view_beban_penyusutan_pm_2020_r2_a1 CASCADE;
 
-create view view_beban_penyusutan_pm_2019_r2_a1 as
+create view view_beban_penyusutan_pm_2020_r2_a1 as
 
 
 select register,
@@ -11802,15 +11802,15 @@ nama_barang,
 kode_barang,
 tahun_awal,
 
-nilai_perolehan as nilai_perolehan_sd_2018,
-0 as nilai_perolehan_sd_2019,
+nilai_perolehan as nilai_perolehan_sd_2019,
+0 as nilai_perolehan_sd_2020,
 
-nilai_buku as nilai_buku_sd_2018,
-0 as nilai_buku_sd_2019
+nilai_buku as nilai_buku_sd_2019,
+0 as nilai_buku_sd_2020
 
 
  from
-view_penyusutan_pm_2018_r2_a4
+view_penyusutan_pm_2019_r2_a4
 
 
 UNION ALL
@@ -11832,24 +11832,24 @@ nama_barang,
 kode_barang,
 tahun_awal,
 
-0 as nilai_perolehan_sd_2018,
-nilai_perolehan as nilai_perolehan_sd_2019,
+0 as nilai_perolehan_sd_2019,
+nilai_perolehan as nilai_perolehan_sd_2020,
 
-0 as nilai_buku_sd_2018,
-nilai_buku as nilai_buku_sd_2019
+0 as nilai_buku_sd_2019,
+nilai_buku as nilai_buku_sd_2020
 
 
  from
-view_penyusutan_pm_2019_r2_a4
+view_penyusutan_pm_2020_r2_a4
 
 
 order by register;
 
 
 
-DROP view if exists view_beban_penyusutan_pm_2019_r2_a2 CASCADE;
+DROP view if exists view_beban_penyusutan_pm_2020_r2_a2 CASCADE;
 
-create view view_beban_penyusutan_pm_2019_r2_a2 as
+create view view_beban_penyusutan_pm_2020_r2_a2 as
 
 
 select register,
@@ -11869,24 +11869,24 @@ nama_barang,
 kode_barang,
 min(tahun_awal) as tahun_awal,
 
-sum(nilai_perolehan_sd_2018) as nilai_perolehan_sd_2018,
-sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018) as penambahan_nilai_di_2019,
 sum(nilai_perolehan_sd_2019) as nilai_perolehan_sd_2019,
-
-sum(nilai_perolehan_sd_2018) - sum(nilai_buku_sd_2018) as nilai_penyusutan_sd_2018,
-
-sum(nilai_buku_sd_2018) as nilai_buku_sd_2018,
-
-sum(nilai_buku_sd_2018) +
-(sum(nilai_perolehan_sd_2019) - sum(nilai_perolehan_sd_2018)) -
-sum(nilai_buku_sd_2019) as beban_penyusutan_2019,
+sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019) as penambahan_nilai_di_2020,
+sum(nilai_perolehan_sd_2020) as nilai_perolehan_sd_2020,
 
 sum(nilai_perolehan_sd_2019) - sum(nilai_buku_sd_2019) as nilai_penyusutan_sd_2019,
-sum(nilai_buku_sd_2019) as nilai_buku_sd_2019
+
+sum(nilai_buku_sd_2019) as nilai_buku_sd_2019,
+
+sum(nilai_buku_sd_2019) +
+(sum(nilai_perolehan_sd_2020) - sum(nilai_perolehan_sd_2019)) -
+sum(nilai_buku_sd_2020) as beban_penyusutan_2020,
+
+sum(nilai_perolehan_sd_2020) - sum(nilai_buku_sd_2020) as nilai_penyusutan_sd_2020,
+sum(nilai_buku_sd_2020) as nilai_buku_sd_2020
 
 
  from
-view_beban_penyusutan_pm_2019_r2_a1
+view_beban_penyusutan_pm_2020_r2_a1
 
 GROUP BY
 register,
@@ -11907,5 +11907,5 @@ kode_barang
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_beban_penyusutan_pm_2019_r2_a2 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_pm_2019_r2_a2 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_beban_penyusutan_pm_2020_r2_a2 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_pm_2020_r2_a2 FROM lap_kabupaten;

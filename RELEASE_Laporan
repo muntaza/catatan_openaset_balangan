@@ -32,6 +32,16 @@ RELEASE rel-8-0:
     - cvs tag rel-8-0 -OK-
 
 RELEASE rel-8-1:
+
+    - tampil kan asal-usul per kib, namun secara unique
+	psql
+    - edit laporan
+	tanah
+	pm
+	gedung -OK-
+	jij
+	atl
+
     - penyusutan 2020
     - penyusutan 2021
 

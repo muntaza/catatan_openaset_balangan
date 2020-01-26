@@ -1,5 +1,5 @@
 #!/bin/bash
-#edit file penyusutan ke tahun 2019
+#edit file penyusutan ke tahun 2020
 
 
 

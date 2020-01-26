@@ -17,6 +17,15 @@ RELEASE rel-7-14:
 
 RELEASE rel-8-0:
 
+    - sk penghapusan
+	- cek md5 local -OK-
+	- cek md5 remote -OK-
+	- cek lampiran sk yang ada: -OK-
+	    tanah, gedung, pm
+	- buat lampiran JIJ
+
+    - hapus kolom "asal-usul" pada semua KIB -OK-
+
     - penyusutan 2020
     - penyusutan 2021
 

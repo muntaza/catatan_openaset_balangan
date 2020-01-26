@@ -6,3 +6,6 @@ UPDATE rel-7-14:
     - sh chmod_plus -OK-
     - cvs up pada php5_projects -OK-
     - sh chmod_min -OK-
+
+UPDATE rel-8-0:
+    - cvs up pada php5_projects

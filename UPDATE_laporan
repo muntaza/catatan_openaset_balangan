@@ -11,3 +11,8 @@ UPDATE rel-8-0:
     - chmod_plus.sh -OK-
     - cvs up pada php5_projects -OK-
     - psql
+	psql -U kabupaten -h localhost kabupaten < sk_penghapusan_jij.sql
+	psql -U kabupaten -h localhost kabupaten < sk_penghapusan_atl.sql
+    - cvs up pada php5_projects
+
+

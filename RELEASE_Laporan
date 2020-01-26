@@ -36,11 +36,11 @@ RELEASE rel-8-1:
     - tampil kan asal-usul per kib, namun secara unique
 	psql
     - edit laporan
-	tanah
-	pm
+	tanah -OK-
+	pm -OK-
 	gedung -OK-
-	jij
-	atl
+	jij -OK-
+	atl -OK-
 
     - penyusutan 2020
     - penyusutan 2021

@@ -22,14 +22,18 @@ RELEASE rel-8-0:
 	- cek md5 remote -OK-
 	- cek lampiran sk yang ada: -OK-
 	    tanah, gedung, pm
-	- buat lampiran JIJ
-	- create view:
+	- create view: -OK-
 	    psql -U kabupaten -h localhost kabupaten < sk_penghapusan_jij.sql
+	    psql -U kabupaten -h localhost kabupaten < sk_penghapusan_atl.sql
+	- Laporan JIJ dan ATL -OK-
 
     - hapus kolom "asal-usul" pada semua KIB -OK-
 
+    - cvs tag rel-8-0 -OK-
+
+RELEASE rel-8-1:
     - penyusutan 2020
     - penyusutan 2021
 
 
-    - cvs tag rel-8-0
+    - cvs tag rel-8-1

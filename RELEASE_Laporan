@@ -11,7 +11,14 @@ RELEASE rel-7-14:
     - script laporan_penyusutan_2019 untuk merubah seluruh script 2018 -> 2019 -OK-
     - test local folder php5_projects -OK-
     - buat view:
-	psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2019_r2_OK.sql
-    - cvs tag rel-7-14
+	psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2019_r2_OK.sql -OK-
+    - cvs tag rel-7-14 -OK-
 
 
+RELEASE rel-8-0:
+
+    - penyusutan 2020
+    - penyusutan 2021
+
+
+    - cvs tag rel-8-0

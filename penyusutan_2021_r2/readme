@@ -5,10 +5,10 @@ dari tahun sbb:
 
 pada file OLD_copy, lakukan perubahan sbb:
 
+    2021 -> 2022
     2020 -> 2021
     2019 -> 2020
     2018 -> 2019
-    2017 -> 2018
 
 setelah script OLD_copy dirubah, baru eksekusi script tsb,
 baru tambahkan tahun 2019 untuk JIJ

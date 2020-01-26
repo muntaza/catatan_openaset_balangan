@@ -13,6 +13,16 @@ UPDATE rel-8-0:
     - psql
 	psql -U kabupaten -h localhost kabupaten < sk_penghapusan_jij.sql
 	psql -U kabupaten -h localhost kabupaten < sk_penghapusan_atl.sql
+    - cvs up pada php5_projects -OK-
+
+UPDATE rel-8-1:
+    - psql
+	psql -U kabupaten -h localhost kabupaten < kib_a/tanah.sql
+	psql -U kabupaten -h localhost kabupaten < kib_b/peralatan_mesin.sql
+	psql -U kabupaten -h localhost kabupaten < kib_c/gedung.sql
+	psql -U kabupaten -h localhost kabupaten < kib_d/jij.sql
+	psql -U kabupaten -h localhost kabupaten < kib_e/atl.sql
     - cvs up pada php5_projects
+
 
 

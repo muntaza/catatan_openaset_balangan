@@ -1,0 +1,1412 @@
+Bismillahirrahmanirrahim
+
+
+versi 1:
+
+- sebelum semua file admin di standardisasi untuk memudahkan proses edit berikutnya
+
+
+Tag:
+2.0
+- pertama di tag saat sudah di standardisasi kode di admin kecuali disdik
+
+
+Tag:
+rel-2-0
+
+ini pertama di tag
+dengan perintah:
+cvs tag rel-2-0
+
+
+cara checkout dengan perintah:
+cvs checkout -r rel-2-0 kabupaten
+
+
+sudah RELEASE versi:
+rel-2-1
+
+
+sudah di cek per modul tanah dan gedung semua skpd kecuali disdik, dan OK
+maka di Release versi: rel-2-2
+
+relese rel-2-3 OK
+1. Cek dan Perbaiki Disdik Tanah OK
+2. Buat Gedung dan Cek Group OK
+3. Cek dan Test input Disdik Halong OK
+	cvs tag rel-2-3 OK
+
+
+Release rel-2-4
+1.   Pecah SLTA dan SLTP Tanah OK
+2.   Pecah SLTA dan SLTP Gedung OK
+	cvs tag rel-2-4 OK
+
+
+Release rel-2-5
+data_awal
+	cvs tag rel-2-5
+
+
+
+RELEASE rel-2-8
+   - modul KIB B -OK-
+   - hapus inline gedung pada entry an tanah, karena pengurus barang dapat
+     menghapus gedung beserta ruangan dan PM skpd Lain (SECURITY HOLE) -OK-
+   - buat model pada app peralatanmesin -OK-
+   - buat admin.py agar PM aktif pada semua skpd -OK-
+   - pecah dinkes pada tanah, gedung  dan peralatanmesin -OK-
+   - menambah user untuk dinkes -OK-
+   - Group pada umumdinkes dan umumdisdik tidak bisa menghapus kontrak skpd
+     (SECURITY HOLE) -OK-
+   - tambah gedung ruangan pada sma dan smp -OK-
+   - aktivasi PM pada sma smp -OK-
+   - tambah gedung ruangan pada puskesmas -OK-
+   - tambah peralatan mesin dan harga peralatan mesin pada puskesmas -OK-
+   - atur group sma smp agar bisa mengakses peralatan mesin -OK-
+   - atur dinkes puskesmas group dan user -OK-
+   - atur dinkes kantor dan disdik kantor -OK-
+   - tambah model untuk upt disdik KIB B, setting group, tes 2 buah -OK-
+   - Laporan KIB B -OK-
+   - disdik kantor, dinkes kantor -OK-
+   - cek group dinkes kantor dan disdik kantor -OK-
+   - cvs tag rel-2-8 pada entrian
+
+
+RELEASE rel-2-9
+   - cek group dinkes kantor dan disdik kantor -OK-
+   - rubah setting tanggal ke WITA -OK-
+   - Penambahan Model KIB D -OK-
+   - aktivasi KIB D di semua SKPD, UPT.Disdik, SMA, SMP, Puskesmas -OK-
+   - Panjang di KIB D di rubah dari KM menjadi M. -OK-
+   - Buat Model KIB E, dan Admin -OK-
+   - cvs tag rel-2-9 pada entrian
+
+
+RELEASE rel-3-0
+   - non aktifkan DEBUG (SECURITY HOLE) -OK-
+   - cvs tag -F rel-3-0 settings.py (agar hanya aset.balangankab.go.id yang aktif)
+   - cvs tag rel-3-0 pada entrian
+
+RELEASE rel-3-1
+   - laporan, update ke REPORTICO 4.2 -OK-
+   - buat admin untuk Puskesmas, SMA, SMP, UPT KIB E -OK-
+   - testing KIB E SMA, Dinkes, UPT -OK-
+   - atur edit_bpbd.sh agar korpri dan BPBD bisa entri ruangan -OK-
+   - laporan khusus log_user -OK-
+   - Laporan Daftar Pengadaan -OK-
+   - Laporan KIB D -OK-
+   - Laporan KIB E -OK-
+   - Default Baik untuk semua barang -OK-
+   - Audit Laporan Daftar Pengadaan L2 -OK-
+   - buat laporan untuk BPBD -OK-
+   - cvs tag rel-3-1 pada entrian
+
+
+RELEASE rel-3-2
+   - Tambah SMAN 2 Halong, SMAN 2 Juai, SMAN 1 Lampihong -OK-
+   - KIB F, cek tanpa centang golongan barang -OK-
+   - Laporan KIB E, implementasi dan verifikasi -diguda OK-
+   - Entrian KIB F (Gedung) dan CEK laporan Daftar Pengadaan -OK-
+   - Review KIB F (Gedung) !! (diff HEAD dan rel-3-1) -OK-
+     * REVIEW models.py pada GedungBangunan 1.36 <> 1.44 -OK-
+     * REVIEW admin.py pada GedungBangunan 1.15 <> 1.19 -OK-
+     * REVIEW admin.py pada DPPKAD 1.21 <> 1.26 -OK-
+   - Aktifasi Admin KIB F (Gedung) pada semua SKPD -OK-
+     * manage.py makemigrations, migrate -OK-
+   - Validasi Inputan KIB F (Gedung) pada SKPD -OK-
+   - Edit laporan KIB B agar bisa filter per tahun -OK-
+   - Ganti Password balangan -OK-
+   - REFACTORING VIEW KIB A SKPD -OK-
+
+   - Laporan Buku Inventaris Aset Tetap  -OK-
+     dengan filter pada harga >= 500.000
+     dan filter pada keadaan barang = 'Baik', keadaan barang = 'Rusak Ringan'
+     status = tidak_dihapus
+     CRETERIA berdasar tahun
+
+   - Laporan Extra Comptable -OK-
+     dengan filter pada harga < 500.000
+     dan filter pada keadaan barang = 'Baik', keadaan barang = 'Rusak Ringan'
+     status = tidak_dihapus
+     CRETERIA berdasar tahun
+
+   - Laporan Usul Hapus -OK-
+     status = usul_hapus
+     CRETERIA berdasar tahun
+
+   - Laporan Barang Rusak Berat, Hilang, Musnah, Tidak Ditemukan -OK-
+     filter pada keadaan barang <> 'Baik', keadaan barang <> 'Rusak Ringan'
+     status = tidak_dihapus
+     CRETERIA berdasar tahun
+
+   - Filter pada KIB untuk exclude keadaan "tidak ditemukan",     -OK-
+     "hilang", "rusak Berat", "Di musnahkan" dan Filter < 500000
+
+   - Laporan Daftar Barang Dihapus, Laporan Barang Reklasifikasi Berkurang -OK-
+   - cvs tag rel-3-2 pada entrian
+
+
+RELEASE rel-4-0:
+   - laporan Kabupaten pindah -OK-
+   - laporan Mutasi Barang (dari daftar pengadaan) -OK-
+   - program dari WTP sampai dengan Nopember 2015
+   - cvs tag rel-4-0 pada entrian
+
+
+
+
+RELEASE rel-4-2:
+   - laporan KIR -OK-
+   - Filter pada Entryan KIB SKPD hanya barang dengan status "Tidak Dihapus" -OK-
+   - Entrian KIB F (JIJ) -OK-
+   - Pada KIB C dan D, Filter berdasarkan "Golongan" -OK-
+   - Perbaikan Laporan KIR tanpa default SKPD -OK-
+   - Rubah Default pada Laporan Daftar Pengadaan Tahun dari 2014 ke 2015 -OK-
+   - Perbaiki filter pada SD,SMP agar usul hapus tidak tampil di menu entry -OK-
+   - Penambahan Laporan Kode Barang dan Kode Lokasi pada Tiap SKPD -OK-
+
+   - Perbaikan Menu Mutasi Kurang Gedung: -OK-
+     * kembali ke versi model 1.48 -OK-
+     * edit return -OK-
+     * delete migratins 0028 gedung -OK-
+     * stop apache2 -OK-
+     * restore file sql -OK-
+     * manage.py makemigrations -OK
+     * manage.py migrate -OK-
+     * restart apache2 -OK-
+     * test edit menu Penghapusan -OK-
+
+   - Menu Usul Hapus Gedung
+     * penambahan Model Tahun Usul Hapus -OK-
+     * pembuatan Admin untuk Tahun Usul Hapus kabupaten -OK-
+     * pembuatan Admin seluruh SKPD Tahun Usul Hapus Gedung -OK-
+     * perbaiki penomoran pada Model Usul Hapus Gedung -OK-
+
+   - Penambahan TahunUsulHapus pada Model Gedung: -OK-
+     * Model TahunBerkurangUsulHapusGedung -OK-
+     * Buat Proxy Model GedungBangunanUsulHapus untuk menampung inline
+       TahunBerkurangUsulHapusGedung -OK-
+     * buat Admin untuk Inline TahunBerkurangUsulHapusGedungInline -OK-
+     * buat Admin untuk GedungBangunanUsulHapusAdmin -OK-
+     * aktifavasi dengan register GedungBangunanUsulHapusAdmin -OK-
+
+   - cvs tag rel-4-2 pada entrian dan laporan
+
+
+
+
+RELEASE rel-4-3:
+   - DEBUG = TRUE sudah di comment out sehingga menjadi FALSE -OK-
+   - Aktivasi user SKPD
+
+   - Pembuatan Menu Mutasi Kurang pada KIB TANAH: -OK-
+     * perbaikan model penghapusan tanah -OK-
+     * admin usul hapus utama -OK-
+     * model usul hapus per skpd -OK-
+     * admin usul hapus per skpd -OK-
+
+   - Menu Usul Hapus Tanah -OK-
+   - cvs tag rel-4-3 pada entrian
+
+RELEASE rel-4-4:
+   - Menu Usul Hapus Peralatan dan Mesin -OK-
+   - cvs tag rel-4-4 pada entrian
+
+
+RELEASE rel-4-5:
+   - Aktivasi pada semua USER, entryan KDP -OK-
+   - Aktivasi KPD JIJ, Usul Hapus Gedung, PM, Tanah PER SKPD -OK-
+   - Perbaiki laporan log user agar tampil register barang -OK-
+   - Menu Usul Hapus Aset Tetap Lainnya -OK-
+   - Testing Menu Usul Hapus Aset Tetap Lainnya -OK-
+   - cvs tag rel-4-5 pada entrian
+
+
+RELEASE rel-4-6:
+   - SECURITY HOLE, simpan sebagai baru pada menu usul hapus yang
+     ada pada Peralatan Mesin dan ATL harus di Hilangkan -OK-
+   - Menu Usul Hapus Jalan, Irigasi dan Jaringan -OK-
+   - CEK Usul Hapus Jalan, Irigasi dan Jaringan -OK-
+   - cvs tag rel-4-6 pada entrian
+
+
+RELEASE rel-4-7:
+   - Laporan Usul Hapus berdasar kan tahun -OK-
+
+   - Laporan KIB disesuaikan dengan kebijakan Baru:
+     * Tanah Tanpa Batas Kapitalisasi -OK-
+     * Peralatan Mesin Rp1.000.000 -OK-
+     * Gedung dan Bangunan Rp5.000.000 -OK-
+     * Jalan, Irigasi dan Jaringan Tanpa Batas Kapitalisasi -OK-
+     * Aset Tetap Lainnya Rp500.000 -OK-
+     * Konstruksi dalam Pengerjaan Tanpa Batas Kapitalisasi -OK-
+   - Laporan Extracomtable sesuai kebijakan baru Kabupaten -OK-, SKPD -OK-
+
+   - Laporan REKLASIFIKASI ke Extracomtable 2006-2014 perubahan kebijakan -OK-
+
+
+   - Laporan Extracomtable_lama di beri tanda SEBELUM KEBIJAKAN, khusus kabupaten di kabupaten_total -OK-
+
+
+   - Laporan Usul Hapus berdasar keadaan Barang dan Tahun Usul Hapus Aset Tetap
+	- tahun usul >= 2015
+	- harga tanah >= Rp1           -OK-
+	- harga pm >= Rp1.000.000      -OK-
+	- harga gedung >= Rp5.000.000  -OK-
+	- harga jij >= Rp1             -OK-
+	- harga atl >= Rp500.000       -OK-
+	    pada query:
+	    * sub query -OK-
+	    * pada from, tahun_berkurang_table
+            * pada select
+            * pada grup by
+            * pada where sub query
+	    * pada where
+	- SKPD -OK-
+	- Filter Keadaan kabupaten -OK-, SKPD -OK-
+	- perbaiki file cp_usul_hapus.sh yang berisi usul_hapus_skpd.xml -OK-
+
+   - cvs tag rel-4-7 pada laporan
+
+
+
+
+RELEASE rel-4-8:
+
+
+   - Laporan Usul Hapus berdasar keadaan Barang dan Tahun Usul Hapus Extracomptable -OK-
+	- tahun usul >= 2015
+	- harga pm < Rp1.000.000
+	- harga gedung < Rp5.000.000
+	- harga atl < Rp500.000
+	    pada query:
+	    * pada from, tahun_berkurang_table
+            * pada select
+            * pada grup by
+            * pada where sub query
+	    * pada where
+	- Kabupaten -OK-
+	- SKPD -OK-
+	- Filter Keadaan kabupaten -OK-, SKPD -OK-
+
+
+   - Laporan Usul Hapus berdasarkan keadaan Barang dan Tahun Usul Hapus 2014 -OK-
+	- tahun usul <= 2014 -OK-
+	- Kabupaten -OK-
+	- SKPD -OK-
+	- Perbaikan agar memasukkan barang dengan nilai berapapun, contoh
+	  kasus pada BKD -OK-
+
+   - Laporan Buku Inventaris disesuaikan dengan kebijakan Baru
+	- harga tanah >= Rp1
+	- harga pm >= Rp1.000.000
+	- harga gedung >= Rp5.000.000
+	- harga jij >= Rp1
+	- harga atl >= Rp500.000
+	- kdp >= Rp1
+	    - Perbaiki di SQL -OK-
+	    - Perbaiki di Report Kabupaten -OK-
+	    - Perbaiki di Report Buku Induk Inventaris Kabupaten -OK-
+	    - Perbaiki di Report SKPD -OK-
+
+   - cvs tag rel-4-8 pada laporan
+
+
+
+
+
+
+RELEASE rel-4-9:
+
+   - Perubahan sementara pada Laporan Mutasi ke SKPD Lain dengan basis Buku
+     Inventaris yang menyertakan semua harga untuk mengecek dinkes -OK-
+
+   - Menu Usul Hapus menginzinkan untuk merubah field keadaan barang dan
+     keterangan -OK-
+
+   - Daftar Pengadaan:
+	- Hanya bisa Belanja Modal, Belanja Barang/Jasa, Belanja Pegawai
+	  Hibah, BOS, DAK
+	    Kabupaten -OK-, SKPD -OK-
+	- Menampilkan kode_barang, kabupaten -OK-, SKPD -OK-
+	- Menampilkan register, Kabupaten -OK-, SKPD -OK-
+
+   - Daftar Mutasi Barang:
+	- Dari Daftar Mutasi Barang, lalu ada field tahun_mutasi,
+          sehingga catat baru, reklasifikasi, mutasi ke skpd lain
+	  tidak merubah riwayat umur barang
+     meliputi mutasi tambah dan koreksi berkurang
+	    - Merubah ER dan UML semua Golongan Barang -OK-
+	    - menambah tahun_mutasi pada file models.py di setiap golongan
+	      barang -OK-
+	- Laporan Mutasi Barang, kabupaten -OK-, SKPD
+	  order by Tahun harus terakhir -OK-
+	- Perbaikan Tampilan urutan laporan Kabupaten -OK-, SKPD -OK-
+
+	- Hibah:
+	    - Tahun I tahun Hibah
+	    - Tahun II umur Barang (bisa juga tahun hibah)
+	    - Tahun III tahun Hibah
+	- Catat Baru:
+	    - Tahun I tahun Catat Baru
+	    - Tahun II tahun Umur
+	    - Tahun III tahun Catat Baru
+	- Mutasi dari SKPD lain:
+	    - Tahun I tahun mutasi
+	    - Tahun II tahun Umur
+	    - Tahun III tahun mutasi
+	- Koreksi Bertambah, Revisi Bertambah, koreksi berkurang,revisi berkurang
+	    - Tahun I tahun Koreksi, bila barang baru
+	    - Tahun II sesuai tahun angka yang di koreksi, agar penambahan
+	      harga tidak dianggap sebagai rehab
+	    - Tahun III tahun Koreksi
+
+   - cvs tag rel-4-9 pada laporan
+   - cvs tag rel-4-9 pada menu entry
+
+
+RELEASE rel-5-0:
+
+
+   - Perbaikan pada Menu Tanah Penghapusan, menambahkan TahunBerkurangTanah -OK-
+
+   - Daftar Mutasi Berkurang
+     dari Menu Entri Berkurang, meliputi:
+	-  dengan menyertakan
+	    - Tahun Berkurang
+	- Mutasi Ke SKPD Lain
+	- Usul Dihapus
+	- Reklasifikasi Berkurang
+	- Penyertaan Modal
+	- Koreksi Barang Berkurang
+
+	- Laporan mengambil dari Query aset_tetap_usul_hapus -OK-
+	- Laporan Kabupaten -OK-, SKPD -OK-
+	- Perbaikan BUG karena tampilnya usul dihapus, dihapus, dan tidak
+	  dihapus -OK-
+	- Extracomptable masuk di sini juga saat ini -OK- (CATATAN)
+
+
+    - Buat direktori Back_up untuk memindah laporan yang tidak terpakai:
+	- password tetap sama dengan kabupaten -OK-
+	- Daftar Mutasi ke SKPD LAIN -OK-
+	- Daftar Reklasifikasi Berkurang, dan Koreksi Berkurang -OK-
+	- Buku Induk-buku induk, karena akan di susun di kabupaten_total -OK-
+	- Daftar Pengadaan (non L2) -OK-
+
+    - Rubah ER dan UML gedung, tambahkan: -OK-
+	- table persen:
+	    persen
+	- table penambahan_umur:
+	    id
+	    kode_barang
+	    persen
+	    umur
+    - Rubah ER dan UML, Umum, Peralatan Mesin, Gedung, JIJ, ATL -OK-
+	- table kode_barang:
+	    umur (ditambahkan)
+
+    - Rubah gedungbangunan/models.py: -OK-
+	- tambahkan table persen
+	- tambahkan table penambahan_umur
+
+    - Daftar Pengadaan Kabupaten:
+	- copy dari kabupaten -OK-
+	- rename -OK-
+	- cek sum total se-kabupaten -OK-
+
+   - cvs tag rel-5-0 pada laporan -OK-
+   - cvs tag rel-5-0 pada menu entry -OK-
+
+RELEASE rel-5-1:
+
+    - password kabupaten_total, kabupaten, back_up sama -OK-
+    - delete KIB A, B, C, D, E, F dari back_up -OK-
+
+    - BUG: perbaikan pada Laporan extracomptable, agar
+      golongan barang KPD tidak masuk ke laporan -OK-
+
+
+    - Masukkan data umur ke table kode barang dengan sql -OK-
+    - Masukkan sisa data umur ke table kode barang dengan entry manual -running-
+    - Pindah dari Kabupaten total laporan penting ke back_up -OK-
+
+    - Isi kabupaten_total dengan laporan tingkat kabupaten:
+	- KIB A, B, C, D, E, F -OK-
+	- Daftar Pengadaan -OK-
+	- Buku Induk Inventaris (perbaikan total) -OK-
+	- extra_comptable_2006_2014 -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- hapus trailer untuk sum skpd -OK-
+			- copy dari daftar pengadaan total_kabupaten -OK-
+			- atur urutan total_kabupaten diatas harga -OK-
+			- hide total_kabupaten -OK-
+			- aktifkan trailer total_kabupaten pada id_kabupaten group-OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+		- validasi angka -OK-
+
+	- extra_comptable, -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- hapus trailer untuk sum skpd -OK-
+			- copy dari daftar pengadaan total_kabupaten -OK-
+			- atur urutan total_kabupaten diatas harga -OK-
+			- hide total_kabupaten -OK-
+			- aktifkan trailer total_kabupaten pada id_kabupaten group -OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+		- validasi angka -OK-
+		- tahun default 2015 -OK-
+
+	- mutasi barang, -OK-
+		- asal default menjadi Mutasi dari SKPD Lain -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- aktifkan trailer total_kabupaten_bertambah
+			  dan total_kabupaten_berkurang pada id_kabupaten group -OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+			- hapus trailer untuk sum skpd -OK-
+		- validasi angka -OK-, Insya Allah
+
+	- mutasi_barang_berkurang,
+		- Tambah default mutasi kurang: Mutasi ke SKPD Lain -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- copy dari daftar pengadaan total_kabupaten -OK-
+			- atur urutan total_kabupaten diatas harga -OK-
+			- hide total_kabupaten -OK-
+			- aktifkan trailer total_kabupaten pada id_kabupaten group -OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+			- hapus trailer untuk sum skpd -OK-
+		- validasi angka, -OK-, Insya Allah
+
+	- usul_hapus, -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- copy dari daftar pengadaan total_kabupaten -OK-
+			- atur urutan total_kabupaten diatas harga -OK-
+			- hide total_kabupaten -OK-
+			- aktifkan trailer total_kabupaten pada id_kabupaten group -OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+			- hapus trailer untuk sum skpd -OK-
+		- validasi angka, -OK-
+
+	- usul_hapus_extra_comptable -OK-
+		- Tambah nama SKPD -OK-
+		- Hapus skpd default pada criteria -OK-
+		- Total Kabupaten:
+			- copy dari daftar pengadaan total_kabupaten -OK-
+			- atur urutan total_kabupaten diatas harga -OK-
+			- hide total_kabupaten -OK-
+			- aktifkan trailer total_kabupaten pada id_kabupaten group -OK-
+		- hapus order by id_skpd pada query -OK-
+		- hapus group id_skpd -OK-
+			- hapus trailer untuk sum skpd -OK-
+		- validasi angka -OK-, InsyaAllah
+
+   - cvs tag rel-5-1 pada laporan
+
+RELEASE rel-6-0:
+   - Rubah umum/models.py untuk menambahkan kan umur pada kode_barang: -OK-
+	- umur sudah masuk, tapi masih belum read ONLY, sehingga
+	  bisa di rubah user -OK-
+	- Pengecekan umur -OK-
+
+
+
+    - Buat Query Penyusutan LK 2015 s/d 2015 KIB D -OK-
+    - Buat Query Penyusutan LK 2015 s/d 2015 KIB C -OK-
+    - Buat Query Penyusutan LK 2015 s/d 2015 KIB B -OK-
+
+    - Buat Query Penyusutan LK 2015 s/d 2014 KIB D -OK-
+    - Buat Query Penyusutan LK 2015 s/d 2014 KIB C -OK-
+    - Buat Query Penyusutan LK 2015 s/d 2014 KIB B -OK-
+
+    - Buat Query Beban Penyusutan LK 2015 KIB D -OK-
+    - Buat Query Beban Penyusutan LK 2015 KIB C -OK-
+    - Buat Query Beban Penyusutan LK 2015 KIB B -OK-
+
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 rinci JIJ -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 JIJ -OK-
+	- Query modul 4
+	- validasi
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 rinci JIJ -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 JIJ -OK-
+	- Query modul 4
+	- validasi
+
+    - Beban Penyusutan 2015 JIJ -OK-
+	- Query beban
+	- validasi
+
+
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 rinci GB -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 GB -OK-
+	- Query modul 4
+	- validasi
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 rinci GB -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 GB -OK-
+	- Query modul 4
+	- validasi
+
+    - Beban Penyusutan 2015 GB -OK-
+	- Query beban
+	- validasi
+
+
+
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 rinci PM -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2015 PM -OK-
+	- Query modul 4
+	- validasi
+
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 rinci PM -OK-
+	- Query modul 3
+	- validasi -OK-
+    - Laporan Penyusutan LK 2015 s/d Pengadaan 2014 PM -OK-
+	- Query modul 4
+	- validasi
+
+    - Beban Penyusutan 2015 PM -OK-
+	- Query beban
+	- validasi
+
+
+    - Validasasi kabupaten
+	- Beban PM
+	- Beban GB
+	- Beban JIJ
+
+    - Buat Laporan Kabupaten
+	- Beban PM
+	    - nama_skpd pada field laporan -OK-
+	    - hapus order by id_skpd -OK-
+	    - criteria default any for skpd -OK-
+	- Beban GB
+	    - nama_skpd pada field laporan -OK-
+	    - hapus order by id_skpd -OK-
+	    - criteria default any for skpd -OK-
+	- Beban JIJ
+	    - nama_skpd pada field laporan -OK-
+	    - hapus order by id_skpd -OK-
+	    - criteria default any for skpd -OK-
+
+	- Penyusutan PM rinci dan ringkas 2014
+	    - ganti nama awal jadi buku induk dari laporan -OK- -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+	- Penyusutan GB rinci dan ringkas 2014
+	    - ganti nama awal jadi buku induk dari laporan -OK- -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+	- Penyusutan JIJ rinci dan ringkas 2014
+	    - ganti nama awal jadi buku induk dari laporan -OK- -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+
+	- Penyusutan PM rinci dan ringkas 2015
+	    - ganti nama awal jadi buku induk dari laporan -OK- -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+	- Penyusutan GB rinci dan ringkas 2015
+	    - ganti nama awal jadi buku induk dari laporan -ok-  -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+	- Penyusutan JIJ rinci dan ringkas 2015
+	    - ganti nama awal jadi buku induk dari laporan -OK- -OK-
+	    - nama_skpd pada field laporan -OK- -OK-
+	    - hapus order by id_skpd -OK- -OK-
+	    - criteria default any for skpd -OK- -OK-
+	    - hapus group by id_skpd -OK- -OK-
+
+   - cvs tag rel-6-0 pada menu_entry -OK-
+
+RELEASE rel-6-1:
+
+    Fitur Defrecated, dapat di review lagi di lain waktu
+
+   - Laporan Reklasifikasi dari Aset Tetap 2006-2014 Ke Extracomptable Tambahan:
+	- untuk mencegah barang extracomptable yang di usul hapus tahun 2015
+	  terikut dalam reklasifikasi ke Extracomptable, contoh BKD -Gagal-
+
+   - Rubah umum/models.py untuk menambahkan kan umur pada kode_barang: -OK-
+	- umur sudah masuk, tapi masih belum read ONLY, sehingga
+	  bisa di rubah user -BUG-
+	- Pengecekan umur -PENTING-
+
+   - Pembuatan Buku Inventaris Tahun 2015 berdasar Tahun Anggaran, -Gagal-
+
+   - pemanfaan masuk sebagai inline pada entrian barang "menu pemanfaatan" -Pending-
+
+   - Tahun entry-an tahun sekarang, cek apakah berpengaruh pada database atau
+     tidak di kolom defaultnya, kalau tidak berpengaruh pada default database,
+     maka bisa diaktifkan pada 5 golongan barang dan 5 harga barang, menggunakan
+     fungsi datetime python -Gagal-
+
+   - Aktivasi User Aplikasi Usul Hapus JIJ dan Usul Hapus ATL, -Pending-
+
+
+   - Laporan Buku Inventaris Aset Tetap 2014 ---PENTING---, -Gagal-
+
+   - Laporan REKLASIFIKASI dari Extracomtable 2006-2014 perubahan kebijakan
+	KIB A, KIB D, -Gagal-
+
+   - pecah UPT Disdik ke SD untuk KIB B __BELUM__ -Pending-
+   - laporan khusus UPT.Disdik, SMA, SMP, Puskesmas __BELUM__ -Pending-
+   - Laporan Buku Inventaris Aset Tetap 2013, -Gagal-
+
+   - BUG: KDP untuk saat INI juga menampung KPD yang reklasifikasi
+     berkurang atau Mutasi ke SKPD Lain, untuk penambahan tahun berkurang -OK-
+     adapun ke depan, akan ada KDP Gedung Penghapusan, untuk menampung khusus
+     KDP Gedung yang akan mutasi berkurang
+
+   - Perubahan pada Laporan Rusak Berat dengan query baru:
+	- view_rusak_berat_tidak_dihapus_l2.sql dengan menyertakan semua
+	  barang baik aset tetap atau extracomptable
+	- Kabupaten -OK-
+	- SKPD ...
+
+   - Daftar Mutasi Barang Berkurang Extracomptable -PENDING-
+	- Laporan dan Query mengambil dari Query mutasi_barang_berkurang
+	- PENDING: karena untuk saat ini, barang yang kurang dari 5 juta
+	  yang akan di reklas ke KDP tidak perlu di reklas dulu ke Extracomptable
+
+   - Ruangan, agar ada fitur pencarian, -Pending-
+
+    Penyusutan lama:
+
+	- Penyusutan PM rinci dan ringkas 2015 -OK-
+	- Penyusutan GB rinci dan ringkas 2015 -OK-
+	- Penyusutan JIJ rinci dan ringkas 2015 -OK-
+
+   - tambah keadaan "Di Musnahkan" -OK-
+
+   - cvs tag rel-6-1 pada menu_entry -OK-
+
+
+RELEASE 6.2:
+
+    Refactoring 2017
+
+   - md5_test, -OK-
+   - hapus skpd yang berubah nama di menu entry:
+	- script hapus_app_aset.sh -OK-
+	- execute script hapus_app_aset.sh -OK-
+   - tambah modul skpd baru
+	- script start_app.sh -OK-
+	- script cvs_add_module.sh, cvs_add_isi_module.sh, cvs_add_migrations.sh -OK-
+
+   - buat script builder edit_models_persediaan7.sh
+	untuk generate models tanpa menghilangkan app skpd yang dihapus -OK-
+	    - umum -OK-
+	    - peralatan mesin -OK-
+	    - gedung bangunan -OK-
+	    - jalan irigasi jaringan -OK-
+	    - aset tetap lainnya -OK-
+
+    - hapus seluruh proxy models lama
+	    - umum -OK-
+	    - peralatan mesin -OK-
+	    - gedung bangunan -OK-
+	    - jalan irigasi jaringan -OK-
+	    - aset tetap lainnya -OK-
+
+    - generate seluruh proxy models baru
+	    - umum -OK-
+	    - peralatan mesin -OK-
+	    - gedung bangunan -OK-
+	    - jalan irigasi jaringan -OK-
+	    - aset tetap lainnya -OK-
+
+
+    - Pembuatan Modul Peralatan Mesin Reklas untuk mutasi
+	Barang antar SKPD -OK-
+
+
+   - cvs tag rel-6-2 pada menu_entry -OK-
+
+
+
+
+RELEASE 6.3:
+
+    - Tambah Model TanahReklas -OK-
+    - Tambah Model ATLReklas -OK-
+    - Tambah Admin TanahReklas -OK-
+    - Tambah Admin ATLReklas -OK-
+
+    - Perbaiki Gedung Admin Reklas untuk menampilkan harga, ruangan dan Tahun Hapus -OK-
+    - Perbaiki KDP Admin Reklas untuk menampilkan harga, ruangan dan Tahun Hapus -OK-
+    - Perbaiki PM Reklas untuk menampilkan harga dan tahun Hapus -OK-
+    - Perbaiki PM Reklas pada 'return super' nya -OK-
+
+   - cvs tag rel-6-3 pada menu_entry
+
+RELEASE 6.4:
+
+
+    - Tambah Model Puskesmas
+	-PM -OK-, JIJ -OK-, ATL -OK-, GB -OK-, Tanah -OK-
+	    - Semua Puskesmas dari SMPN 1 Awayan -OK-
+	-Simpan sebagai baru tidak bisa
+	-read only kecuali ruangan dan keterangan
+
+    - Tambah Model SMPN dan UPT Disdik
+	-PM -OK-, JIJ -OK-, ATL -OK-, GB -OK-, Tanah -OK-
+	    - SMPN dari SMPN 1 Awayan -OK-
+	    - UPT Disdik dari SMPN 1 Awayan -OK-
+	    - Disdik Kantor -OK-
+	    - Dinkes Kantor -OK-
+
+    - Perbaiki Disdik Lampihong:
+	Tanah -OK-
+	GB -OK-
+	    - sekaligus perbaikan ruangan -OK-
+	PM -OK-
+	JIJ -OK-
+	ATL -OK-
+
+    - Hapus migrations untuk SMPN pada
+	Tanah-OK
+	GB-OK
+	PM-OK
+	JIJ-OK
+	ATL-OK
+
+    - Hapus modul SMAN dengan script hapus_app_aset_sman.sh -OK-
+
+    - cek Menu Gedung Ruangan apakah bisa di edit oleh user pengurus barang smpn? -OK- bisa
+
+   - cvs tag rel-6-4 pada menu_entry -OK-
+
+
+RELEASE 6.5:
+
+    - PM Penghapusan:
+	- Menampung Tahun Berkurang PM
+	    Model -OK-
+	- Menampung Nomor SK Penghapusan
+	    Model -OK-
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Model -OK-
+
+
+    - GB Penghapusan:
+	- Menampung Tahun Berkurang GB
+	    Model -OK-
+	- Menampung Nomor SK Penghapusan
+	    Model -OK-
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Model -OK-
+
+
+    - Tanah Penghapusan:
+	- Menampung Tahun Berkurang Tanah
+	    Model -OK-
+	- Menampung Nomor SK Penghapusan
+	    Model -OK-
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Model -OK-
+
+
+
+    - JIJ Penghapusan:
+	- Menampung Tahun Berkurang JIJ
+	    Model -OK-
+	- Menampung Nomor SK Penghapusan
+	    Model -OK-
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Model -OK-
+
+
+    - ATL Penghapusan:
+	- Menampung Tahun Berkurang ATL
+	    Model -OK-
+	- Menampung Nomor SK Penghapusan
+	    Model -OK-
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Model -OK-
+
+
+   - cvs tag rel-6-5 pada menu_entry -OK-
+
+
+RELEASE 6.6:
+
+    - PM Penghapusan: -OK-
+	- Menampung Tahun Berkurang PM
+	    Admin
+	- Menampung Nomor SK Penghapusan
+	    Admin
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Admin
+	- rubah pilihan SK Penghapusan menjadi listbox -OK-
+	- testing -OK-
+
+
+    - GB Penghapusan: -OK-
+	- Menampung Tahun Berkurang GB
+	    Admin
+	- Menampung Nomor SK Penghapusan
+	    Admin
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Admin
+	- rubah pilihan SK Penghapusan menjadi listbox -OK-
+	- keadaan barang bisa di rubah -OK-
+	- testing -OK-
+
+
+    - Tanah Penghapusan: -OK-
+	- Menampung Tahun Berkurang Tanah
+	    Admin
+	- Menampung Nomor SK Penghapusan
+	    Admin
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Admin
+	- testing -OK-
+
+
+
+    - JIJ Penghapusan: -OK-
+	- Menampung Tahun Berkurang JIJ
+	    Admin
+	- Menampung Nomor SK Penghapusan
+	    Admin
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Admin
+	- rubah pilihan SK Penghapusan menjadi listbox -OK-
+	- keadaan barang bisa di rubah -OK-
+	- testing -OK-
+
+
+    - ATL Penghapusan: -OK-
+	- Menampung Tahun Berkurang ATL
+	    Admin
+	- Menampung Nomor SK Penghapusan
+	    Admin
+	- Menampung "Mutasi ke SKPD Lain", dan "Dihapus"
+	    Admin
+	- rubah pilihan SK Penghapusan menjadi listbox -OK-
+	- testing -OK-
+
+
+    - Penghapusan menampung: -OK-
+	    Dihapus
+	    Mutasi ke SKPD Lain
+	    Reklasifikasi Berkurang
+	    Penyertaan Modal
+	    Koreksi Berkurang Total
+	- testing -OK-
+
+
+   - cvs tag rel-6-6 pada menu_entry -OK-
+
+
+
+RELEASE 6.7:
+
+    - Laksanakan Script Builder Admin Sub SKPD -OK-
+	- Testing diff semua Sub SKPD: Hasil = Baik -OK-
+
+    - Perbaikan Dinkes Tebing Tinggi semua Golongan Barang -OK-
+
+    - Tambah Modul Dinkes Tanah Habang -OK-
+
+    - cvs tag rel-6-7 pada menu_entry -OK-
+
+
+
+
+RELEASE 6.8:
+
+
+    - Tambah Modul Dinkes RSUD
+	- Models -OK
+	- Admin -OK-
+	- makemigrations -OK-
+	- migrate -OK-
+	- sh clean.sh -OK-
+	- cvs add migrations file -OK-
+	- test file -OK-
+
+   - cvs tag rel-6-8 pada menu_entry -OK-
+
+RELEASE 6.9:
+
+    - SKPD Asal pada Menu Entry link ke table 1to1 SKPD asal dan SKPD tujuan
+	- Rubah ER dan UML Tanah -OK-
+	- Rubah ER dan UML PeralatanMesin -OK-
+	- Rubah ER dan UML GedungBangunan -OK-
+	- Rubah ER dan UML JalanIrigasiJaringan -OK-
+	- Rubah ER dan UML ATL -OK-
+	- SKPD asal link ke table 1to1 skpd_asal_tanah -OK-
+	- SKPD asal link ke table 1to1 skpd_tujuan_tanah -OK-
+	- SKPD asal link ke table 1to1 skpd_asal_peralatan_mesin -OK-
+	- SKPD asal link ke table 1to1 skpd_tujuan_peralatan_mesin -OK-
+	- SKPD asal link ke table 1to1 skpd_asal_gedung_bangunan -OK-
+	- SKPD asal link ke table 1to1 skpd_tujuan_gedung_bangunan -OK-
+	- SKPD asal link ke table 1to1 skpd_asal_jalan_irigasi_jarinan -OK-
+	- SKPD asal link ke table 1to1 skpd_tujuan_jalan_irigasi_jarinan -OK-
+	- SKPD asal link ke table 1to1 skpd_asal_atl -OK-
+	- SKPD asal link ke table 1to1 skpd_tujuan_atl -OK-
+
+    - Admin Menu untuk inline SKPD asal dan SKPD tujuan Tanah -OK-
+	- Inline di menu utama untuk SKPD Asal
+	    - Tanah
+	    - Usul Hapus Tanah
+	    - Penghapusan Tanah
+	    - Tanah Reklas
+	- Inline di menu utama untuk SKPD Tujuan
+	    - Penghapusan Tanah
+
+    - Model perSKPD menu SKPD asal dan SKPD Tujuan
+	- models_tt.py -OK-
+	- cek diff pada models_tt.py per Golongan Barang -OK-
+	- models pada masing-masing SKPD -OK-
+	- makemigrations -OK- migrate -OK-
+
+
+    - Penambahan Foto pada Menu Entry
+	- ER Tanah, ER Peralatan Mesin, ER Gedung Bangunan -OK-
+	- ER Jalan Irigasi Jaringan, ER Aset Tetap Lainnya -OK-
+	- UML Tanah, UML Peralatan Mesin, ER Gedung Bangunan -OK-
+	- UML Jalan Irigasi Jaringan, UML Aset Tetap Lainnya -OK-
+
+    - Models untuk Foto Pada Modul (utama):
+	- Tanah -OK-
+	- Peralatan Mesin -OK-
+	- Gedung Bangunan -OK-
+	- Jalan Irigasi Jaringan -OK-
+	- Aset Tetap Lainnya  -OK-
+
+    - Models Foto:
+	- Models FotoTanah, FotoPeralatanMesin, FotoGedungBangunan -OK-
+	- Models FotoJalanIrigasiJaringan, FotoATL -OK-
+
+   - cvs tag rel-6-9 pada menu_entry -OK-
+
+RELEASE 6.10:
+
+    - Models Foto untuk SKPD -OK-
+    - Models Foto untuk SUB SKPD -OK-
+
+   - cvs tag rel-6-10 pada menu_entry -OK-
+
+RELEASE 6.11:
+
+    - File Migrations di tambahkan ke Source Tree -OK-
+
+   - cvs tag rel-6-10 pada menu_entry -OK-
+
+RELEASE 6.12:
+
+    - Admin Menu untuk inline SKPD asal dan SKPD tujuan Peralatan Mesin
+	- Inline di menu utama untuk SKPD Asal
+	    - Peralatan Mesin -OK-
+	    - Usul Hapus Peralatan Mesin -OK-
+	    - Penghapusan Peralatan Mesin -OK-
+	    - Peralatan Mesin Reklas -OK-
+	- Inline di menu utama untuk SKPD Tujuan
+	    - Penghapusan Peralatan Mesin -OK-
+
+
+    - Admin Menu untuk inline SKPD asal dan SKPD tujuan Gedung Bangunan
+	- Inline di menu utama untuk SKPD Asal
+	    - Gedung Bangunan -OK-
+	    - KDP Gedung Bangunan -OK-
+	    - Usul Hapus Gedung Bangunan -OK-
+	    - Penghapusan Gedung Bangunan -OK-
+	    - Gedung Bangunan Reklas -OK-
+	- Inline di menu utama untuk SKPD Tujuan
+	    - Penghapusan Gedung Bangunan -OK-
+	    - KDP Gedung Bangunan -OK-
+	    - Gedung Bangunan Reklas -OK-
+
+    - Admin Menu untuk inline SKPD asal dan SKPD tujuan Jalan Irigasi Jaringan
+	- Inline di menu utama untuk SKPD Asal
+	    - Jalan Irigasi Jaringan -OK-
+	    - Usul Hapus Jalan Irigasi Jaringan -OK-
+	    - Penghapusan Jalan Irigasi Jaringan -OK-
+	    - KDP Jalan Irigasi Jaringan Reklas -OK-
+	    - KDP Jalan Irigasi Jaringan -OK-
+	    - Jalan Irigasi Jaringan Pemanfaatan -OK-
+	- Inline di menu utama untuk SKPD Tujuan
+	    - KDP Jalan Irigasi Jaringan Reklas -OK-
+	    - Jalan Irigasi Jaringan Pemanfaatan -OK-
+	    - Penghapusan Jalan Irigasi Jaringan -OK-
+
+    - Admin Menu untuk inline SKPD asal dan SKPD tujuan ATL
+	- Inline di menu utama untuk SKPD Asal
+	    - ATL -OK-
+	    - Usul Hapus ATL -OK-
+	    - Penghapusan ATL -OK-
+	    - ATL Reklas -OK-
+	- Inline di menu utama untuk SKPD Tujuan
+	    - Penghapusan ATL -OK-
+	    - ATL Reklas -OK-
+
+
+
+   - cvs tag rel-6-12 pada menu_entry -OK-
+
+
+RELEASE 6.13:
+    - Admin Menu untuk inline Foto Tanah
+	    - Tanah -OK-
+	    - Usul Hapus Tanah
+	    - Penghapusan Tanah -OK-
+	    - Tanah Reklas -OK-
+
+    - Admin Menu untuk inline Foto Peralatan Mesin
+	    - Peralatan Mesin -OK-
+	    - Usul Hapus Peralatan Mesin -OK-
+	    - Penghapusan Peralatan Mesin -OK-
+	    - Peralatan Mesin Reklas -OK-
+
+    - Admin Menu untuk inline Foto Gedung Bangunan
+	    - Gedung Bangunan -OK-
+	    - Usul Hapus Gedung Bangunan -OK-
+	    - Penghapusan Gedung Bangunan -OK-
+	    - KDP Gedung Bangunan -OK-
+	    - Gedung Bangunan Reklas -OK-
+
+    - Admin Menu untuk inline Foto Jalan Irigasi Jaringan
+	    - Jalan Irigasi Jaringan -OK-
+	    - Usul Hapus Jalan Irigasi Jaringan -OK-
+	    - Penghapusan Jalan Irigasi Jaringan -OK-
+	    - KDP Jalan Irigasi Jaringan
+	    - Jalan Irigasi Jaringan Reklas
+
+    - Admin Menu untuk inline Foto ATL
+	    - ATL -OK-
+	    - Usul Hapus ATL -OK-
+	    - Penghapusan ATL -OK-
+	    - ATL Reklas -OK-
+
+
+   - cvs tag rel-6-13 pada menu_entry -OK-
+
+
+RELEASE 6.14:
+
+    - Setting: aktifkan MEDIA_ROOT dan MEDIA_URL -OK-
+
+    - Admin SKPD Menu untuk inline Foto dan SKPDAsal Tanah
+	    - Tanah -OK-
+	    - Usul Hapus Tanah -OK-
+	    - Penghapusan Tanah -OK-
+    - Admin SKPD Menu untuk inline SKPDTujuan Tanah
+	    - Penghapusan Tanah -OK-
+
+    - Admin SKPD Menu untuk inline Foto dan SKPDAsal Peralatan Mesin
+	    - Peralatan Mesin -OK-
+	    - Usul Hapus Peralatan Mesin -OK-
+	    - Penghapusan Peralatan Mesin -OK-
+    - Admin SKPD Menu untuk inline SKPDTujuan Peralatan Mesin
+	    - Penghapusan Peralatan Mesin -OK-
+
+    - Admin SKPD Menu untuk inline Foto dan SKPDAsal Gedung Bangunan
+	    - Gedung Bangunan -OK-
+	    - Usul Hapus Gedung Bangunan -OK-
+	    - Penghapusan Gedung Bangunan -OK-
+	    - KDP Gedung Bangunan -OK-
+    - Admin SKPD Menu untuk inline SKPDTujuan Gedung Bangunan
+	    - Penghapusan Gedung Bangunan -OK-
+
+    - Admin SKPD Menu untuk inline Foto dan SKPDAsal Jalan Irigasi Jaringan
+	    - Jalan Irigasi Jaringan -OK-
+	    - Usul Hapus Jalan Irigasi Jaringan -OK-
+	    - Penghapusan Jalan Irigasi Jaringan
+	    - KDP Jalan Irigasi Jaringan -OK-
+    - Admin SKPD Menu untuk inline SKPDTujuan Jalan Irigasi Jaringan
+	    - Penghapusan Jalan Irigasi Jaringan -OK-
+
+    - Admin SKPD Menu untuk inline Foto dan SKPDAsal ATL
+	    - ATL -OK-
+	    - Usul Hapus ATL -OK-
+	    - Penghapusan ATL -OK-
+    - Admin SKPD Menu untuk inline SKPDTujuan ATL
+	    - Penghapusan ATL -OK-
+
+    - Review file.diff dpppa/admin dari rel-6-13 ke HEAD (rel-6-14) -OK-
+
+    - cvs tag rel-6-14 pada menu_entry -OK-
+
+
+
+RELEASE 6.15:
+
+    - Read Only di buat satu baris baru, untuk di comment in saat read only
+      tersebut tidak di aktifkan. -OK-
+
+    - Read Only pada Tanah
+	tahun_awal -OK-
+	keadaan_barang -OK-
+	mutasi_berkurang -OK-
+
+    - Read Only pada Harga Tanah
+	asal_usul -OK-
+	tahun -OK-
+	harga_bertambah -OK-
+	harga_berkurang -OK-
+	tahun_mutasi -OK-
+
+    - Read Only pada PM
+	keadaan_barang -OK-
+	tahun_awal -OK-
+	mutasi_berkurang -OK-
+
+    - Read Only pada Harga PM
+	asal_usul -OK-
+	tahun -OK-
+	harga_bertambah -OK-
+	harga_berkurang -OK-
+	tahun_mutasi -OK-
+
+    - Read Only pada Gedung
+	keadaan_barang -OK-
+	tahun_awal -OK-
+	mutasi_berkurang -OK-
+
+    - Read Only pada Harga Gedung
+	asal_usul -OK-
+	tahun -OK-
+	harga_bertambah -OK-
+	harga_berkurang -OK-
+	tahun_mutasi -OK-
+
+    - Read Only pada JIJ
+	keadaan_barang -OK-
+	tahun_awal -OK-
+	mutasi_berkurang -OK-
+
+    - Read Only pada Harga JIJ
+	asal_usul -OK-
+	tahun -OK-
+	harga_bertambah -OK-
+	harga_berkurang -OK-
+	tahun_mutasi -OK-
+
+    - Read Only pada ATL
+	keadaan_barang -OK-
+	tahun_awal -OK-
+	mutasi_berkurang -OK-
+
+    - Read Only pada Harga ATL
+	asal_usul -OK-
+	tahun -OK-
+	harga_bertambah -OK-
+	harga_berkurang -OK-
+	tahun_mutasi -OK-
+
+    - Testing pengecekan di Menu Entry -OK-
+
+    - cvs tag rel-6-15 pada menu_entry -OK-
+
+
+
+RELEASE 6.16:
+
+    - Read Only pada kode barang:
+	 OK
+
+    - cvs tag rel-6-16 pada menu_entry -OK-
+
+
+    - Admin Sub SKPD Dinkes dan Disdik: (PENDING)
+	- Simpan sebagai baru tidak bisa
+	- read only kecuali ruangan dan keterangan
+
+    - cvs tag rel-6-16 pada menu_entry -OK-
+
+
+
+RELEASE 6.17:
+
+    - Perbaikan read only pada menu entry: -OK-
+
+    - cvs tag rel-6-17 pada menu_entry -OK-
+
+
+
+RELEASE 6.18:
+
+    - Rubah Read only menjadi read write. -OK-
+
+    - cvs tag rel-6-18 pada menu_entry -OK-
+
+
+RELEASE 7.0:
+
+    - Perbaikan field konstruksi pada modul jalanirigasijaringan -OK-
+
+    - Project Perubahan: Menambahkan usul Penetapan Status pada Menu Entry
+
+    - Penambahan field di table tanah:
+	- ER_Tanah3 -OK-
+	- UML_Tanah -OK-
+	    posisi usul_mutasi di bawah keadaan barang -OK-
+	- usul_mutasi
+	    - Tambahkan usul_mutasi di bawah keadaan barang -OK-
+	    - edit file utama_models.py lalu execute gabung_models.sh -OK-
+	- admin
+	    - tambah field usul_mutasi pada field dan read_only -OK-
+	- penambahan SKPD Tujuan di Menu Utama
+
+
+
+	- adapun SKPD tujuan, akan jadi menu di bawah harga_tanah, sehingga data yang
+	  masuk usul_mutasi akan langsung terisi di laporan usul mutasi ke SKPD Lain
+	    nama SKPD Tujuannya. Saat di eksekusi, di mutasikan oleh admin, field SKPD
+	    tujuan nya harus di hapus di register lama yang di bawa ke SKPD baru.
+
+    - Penambahan field di table peralatan_mesin:
+	- ER_PeralatanMesin -OK-
+	- UML_PeralatanMesin -OK-
+	- usul_mutasi
+	    - Tambahkan usul_mutasi di bawah keadaan barang -OK-
+	    - edit file utama_models.py lalu execute gabung_models.sh -OK-
+	- admin
+	    - tambah field usul_mutasi pada field dan read_only -OK-
+
+    - Penambahan field di table gedungbangunan:
+	- ER_GedungBangunan -OK-
+	- UML_GedungBangunan -OK-
+	- usul_mutasi
+	    - Tambahkan usul_mutasi di bawah keadaan barang -OK-
+	    - edit file utama_models.py lalu execute gabung_models.sh -OK-
+	- admin
+	    - tambah field usul_mutasi pada field dan read_only -OK-
+
+    - Penambahan field di table jalan_irigasi_jaringan:
+	- ER_JalanIrigasiJaringan -OK-
+	- UML_JalanIrigasiJaringan -OK-
+	- usul_mutasi
+	    - Tambahkan usul_mutasi di bawah keadaan barang -OK-
+	    - edit file utama_models.py lalu execute gabung_models.sh -OK-
+	- admin
+	    - tambah field usul_mutasi pada field dan read_only -OK-
+
+    - Penambahan field di table atl:
+	- ER_ATL -OK-
+	- UML_ATL -OK-
+	- usul_mutasi
+	    - Tambahkan usul_mutasi di bawah keadaan barang -OK-
+	    - edit file utama_models.py lalu execute gabung_models.sh -OK-
+	- admin
+	    - tambah field usul_mutasi pada field dan read_only -OK-
+
+    - cvs tag rel-7-0 pada menu_entry -OK-
+
+
+RELEASE 7.1:
+
+    - Penambahan SKPDTujuan pada masing-masing modul
+
+    - cvs tag rel-7-1 pada menu_entry
+
+
+
+Refactoring 2018:
+RELEASE 7.2:
+
+
+    - cvs tag rel-7-2 pada menu_entry
+
+
+Refactoring 2019:
+
+RELEASE 7.3:
+
+
+RELEASE 8.0:
+    - cvs tag rel-8-0 pada menu_entry -OK-
+
+RELEASE 8.1:
+
+    - UML dan ER Tambah Kode Barang 108:
+	UML Tanah -OK-
+	ER Tanah -OK-
+
+    - back_up kabupaten_b -OK-
+	rsync ke gateway -OK-
+    - back_up global -OK-
+	rsync ke gateway -OK-
+
+    - tambah table kode_barang_108 -OK-
+    - link entry an tanah ke kode_barang_108 -OK-
+
+    - cvs tag rel-8-1 pada menu_entry -OK-
+
+RELEASE 8.2:
+    - add file migrations di umum -OK-
+    - link entry an peralatan mesin ke kode_barang_108 -OK-
+    - add file migrations di peralatan mesin -OK-
+    - link entry an gedung bangunan ke kode_barang_108 -OK-
+    - link entry an jalan irigasi jaringan ke kode_barang_108 -OK-
+    - link entry an aset tetap lainnya mesin ke kode_barang_108 -OK-
+
+    - md5 test -OK-
+    - cvs tag rel-8-2 pada menu_entry -OK-
+
+
+RELEASE 8.3:
+
+    - aktifkan nomor BKU di semua KIB:
+	- Tanah -OK-
+	- Peralatan Mesin -OK-
+	- Gedung Bangunan -OK-
+	- Jalan Irigasi Jaringan -OK-
+	- ATL -OK-
+
+    - testing:
+	- python manage.py makemigrations -OK-
+	- python manage.py migrate -OK
+	- test entry data setda:
+	    - tanah OK-
+	    - peralatan mesin -OK-
+	    - gedung bangunan -OK-
+	    - jalan irigasi jaringan -OK-
+	    - atl -OK-
+
+    - md5 -OK-
+    - cvs tag rel-8-3 pada menu_entry -OK-
+
+
+RELEASE 8.4

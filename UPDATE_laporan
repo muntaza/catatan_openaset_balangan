@@ -26,10 +26,11 @@ UPDATE rel-8-1:
     - cvs up pada php5_projects -OK-
 
 UPDATE rel-8-2:
-    - psql
+    - psql -OK-
 	psql -U kabupaten -h localhost kabupaten < penyusutan_gabungan_2020_r2_OK.sql
 	psql -U kabupaten -h localhost kabupaten < penyusutan_gabungan_2021_r2_OK.sql
-    - cvs up php5_projects
+    - sh ~/bin/chmod_plus.sh -OK-
+    - cvs up php5_projects -OK-
 
 
 

@@ -1,0 +1,11 @@
+RELEASE 8.4:
+    - perbaikan foto -OK-
+          cd /home/django/
+          mkdir -p openaset/media
+          cd openaset/media/
+          mkdir {tanah,peralatan_mesin,gedung_bangunan,jalan_irigasi_jaringin,atl}
+          cd ../..
+          sudo chown -R www-data:www-data openaset
+          sudo chmod -R u+w openaset
+
+    - cek upload foto -OK-

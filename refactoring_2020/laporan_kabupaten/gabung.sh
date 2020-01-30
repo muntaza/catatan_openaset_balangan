@@ -1,1 +1,1 @@
-cat *108.sql > gabungan_baru.sql
+cat *108.sql > kode_barang_baru.sql

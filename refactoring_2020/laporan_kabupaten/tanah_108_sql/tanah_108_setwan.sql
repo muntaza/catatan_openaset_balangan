@@ -1,4 +1,6 @@
-CREATE OR REPLACE VIEW view_tanah_108_setwan AS
+DROP VIEW IF EXISTS view_tanah_108_setwan;
+
+CREATE VIEW view_tanah_108_setwan AS
 
 SELECT
 *

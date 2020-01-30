@@ -59,6 +59,7 @@ RELEASE rel-8-2:
 RELEASE rel-8-3:
 
 
+    - sql KIB -OK-
     - perbaikan judul tahun pada Penyusutan 2021 -OK-
     - KIB 108:
 	Perbaiki UML dan ER

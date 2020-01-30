@@ -1,6 +1,4 @@
-DROP VIEW IF EXISTS view_gedung_bangunan_108_setwan;
-
-CREATE VIEW view_gedung_bangunan_108_setwan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_setwan AS
 
 SELECT
 *

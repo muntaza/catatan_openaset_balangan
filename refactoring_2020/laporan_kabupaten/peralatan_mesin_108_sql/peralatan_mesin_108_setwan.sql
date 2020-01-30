@@ -1,6 +1,4 @@
-DROP VIEW IF EXISTS view_peralatan_mesin_108_setwan;
-
-CREATE VIEW view_peralatan_mesin_108_setwan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_setwan AS
 
 SELECT
 *

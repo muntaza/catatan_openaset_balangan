@@ -110,9 +110,7 @@ ORDER BY id_skpd, kode_barang_108;
 
 GRANT ALL PRIVILEGES ON view_atl_108_kabupaten TO lap_kabupaten;
 REVOKE INSERT, UPDATE, DELETE ON view_atl_108_kabupaten FROM lap_kabupaten;
-DROP VIEW IF EXISTS view_atl_108_awayan;
-
-CREATE VIEW view_atl_108_awayan AS
+CREATE OR REPLACE VIEW view_atl_108_awayan AS
 
 SELECT
 *
@@ -132,9 +130,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_bappeda;
-
-CREATE VIEW view_atl_108_bappeda AS
+CREATE OR REPLACE VIEW view_atl_108_bappeda AS
 
 SELECT
 *
@@ -154,9 +150,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_batumandi;
-
-CREATE VIEW view_atl_108_batumandi AS
+CREATE OR REPLACE VIEW view_atl_108_batumandi AS
 
 SELECT
 *
@@ -176,9 +170,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_batupiring;
-
-CREATE VIEW view_atl_108_batupiring AS
+CREATE OR REPLACE VIEW view_atl_108_batupiring AS
 
 SELECT
 *
@@ -198,9 +190,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_bkd;
-
-CREATE VIEW view_atl_108_bkd AS
+CREATE OR REPLACE VIEW view_atl_108_bkd AS
 
 SELECT
 *
@@ -220,9 +210,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_bkppd;
-
-CREATE VIEW view_atl_108_bkppd AS
+CREATE OR REPLACE VIEW view_atl_108_bkppd AS
 
 SELECT
 *
@@ -242,9 +230,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_bpbd;
-
-CREATE VIEW view_atl_108_bpbd AS
+CREATE OR REPLACE VIEW view_atl_108_bpbd AS
 
 SELECT
 *
@@ -264,9 +250,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_bppd;
-
-CREATE VIEW view_atl_108_bppd AS
+CREATE OR REPLACE VIEW view_atl_108_bppd AS
 
 SELECT
 *
@@ -286,9 +270,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dinkes;
-
-CREATE VIEW view_atl_108_dinkes AS
+CREATE OR REPLACE VIEW view_atl_108_dinkes AS
 
 SELECT
 *
@@ -308,9 +290,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_disdik;
-
-CREATE VIEW view_atl_108_disdik AS
+CREATE OR REPLACE VIEW view_atl_108_disdik AS
 
 SELECT
 *
@@ -330,9 +310,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dishub;
-
-CREATE VIEW view_atl_108_dishub AS
+CREATE OR REPLACE VIEW view_atl_108_dishub AS
 
 SELECT
 *
@@ -352,9 +330,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_disnakertrans;
-
-CREATE VIEW view_atl_108_disnakertrans AS
+CREATE OR REPLACE VIEW view_atl_108_disnakertrans AS
 
 SELECT
 *
@@ -374,9 +350,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_distamben;
-
-CREATE VIEW view_atl_108_distamben AS
+CREATE OR REPLACE VIEW view_atl_108_distamben AS
 
 SELECT
 *
@@ -396,9 +370,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dko;
-
-CREATE VIEW view_atl_108_dko AS
+CREATE OR REPLACE VIEW view_atl_108_dko AS
 
 SELECT
 *
@@ -418,9 +390,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dkp;
-
-CREATE VIEW view_atl_108_dkp AS
+CREATE OR REPLACE VIEW view_atl_108_dkp AS
 
 SELECT
 *
@@ -440,9 +410,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dkukmp;
-
-CREATE VIEW view_atl_108_dkukmp AS
+CREATE OR REPLACE VIEW view_atl_108_dkukmp AS
 
 SELECT
 *
@@ -462,9 +430,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dlh;
-
-CREATE VIEW view_atl_108_dlh AS
+CREATE OR REPLACE VIEW view_atl_108_dlh AS
 
 SELECT
 *
@@ -484,9 +450,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dpkp;
-
-CREATE VIEW view_atl_108_dpkp AS
+CREATE OR REPLACE VIEW view_atl_108_dpkp AS
 
 SELECT
 *
@@ -506,9 +470,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dpmd;
-
-CREATE VIEW view_atl_108_dpmd AS
+CREATE OR REPLACE VIEW view_atl_108_dpmd AS
 
 SELECT
 *
@@ -528,9 +490,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dpmptsp;
-
-CREATE VIEW view_atl_108_dpmptsp AS
+CREATE OR REPLACE VIEW view_atl_108_dpmptsp AS
 
 SELECT
 *
@@ -550,9 +510,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dppkb;
-
-CREATE VIEW view_atl_108_dppkb AS
+CREATE OR REPLACE VIEW view_atl_108_dppkb AS
 
 SELECT
 *
@@ -572,9 +530,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dpppa;
-
-CREATE VIEW view_atl_108_dpppa AS
+CREATE OR REPLACE VIEW view_atl_108_dpppa AS
 
 SELECT
 *
@@ -594,9 +550,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dpupr;
-
-CREATE VIEW view_atl_108_dpupr AS
+CREATE OR REPLACE VIEW view_atl_108_dpupr AS
 
 SELECT
 *
@@ -616,9 +570,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_dukcatpil;
-
-CREATE VIEW view_atl_108_dukcatpil AS
+CREATE OR REPLACE VIEW view_atl_108_dukcatpil AS
 
 SELECT
 *
@@ -638,9 +590,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_halong;
-
-CREATE VIEW view_atl_108_halong AS
+CREATE OR REPLACE VIEW view_atl_108_halong AS
 
 SELECT
 *
@@ -660,9 +610,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_inspektorat;
-
-CREATE VIEW view_atl_108_inspektorat AS
+CREATE OR REPLACE VIEW view_atl_108_inspektorat AS
 
 SELECT
 *
@@ -682,9 +630,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_juai;
-
-CREATE VIEW view_atl_108_juai AS
+CREATE OR REPLACE VIEW view_atl_108_juai AS
 
 SELECT
 *
@@ -704,9 +650,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_kearsipan;
-
-CREATE VIEW view_atl_108_kearsipan AS
+CREATE OR REPLACE VIEW view_atl_108_kearsipan AS
 
 SELECT
 *
@@ -726,9 +670,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_kehutanan;
-
-CREATE VIEW view_atl_108_kehutanan AS
+CREATE OR REPLACE VIEW view_atl_108_kehutanan AS
 
 SELECT
 *
@@ -748,9 +690,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_kesbangpol;
-
-CREATE VIEW view_atl_108_kesbangpol AS
+CREATE OR REPLACE VIEW view_atl_108_kesbangpol AS
 
 SELECT
 *
@@ -770,9 +710,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_kominfo;
-
-CREATE VIEW view_atl_108_kominfo AS
+CREATE OR REPLACE VIEW view_atl_108_kominfo AS
 
 SELECT
 *
@@ -792,9 +730,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_korpri;
-
-CREATE VIEW view_atl_108_korpri AS
+CREATE OR REPLACE VIEW view_atl_108_korpri AS
 
 SELECT
 *
@@ -814,9 +750,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_lampihong;
-
-CREATE VIEW view_atl_108_lampihong AS
+CREATE OR REPLACE VIEW view_atl_108_lampihong AS
 
 SELECT
 *
@@ -836,9 +770,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_paringin;
-
-CREATE VIEW view_atl_108_paringin AS
+CREATE OR REPLACE VIEW view_atl_108_paringin AS
 
 SELECT
 *
@@ -858,9 +790,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_paringinkota;
-
-CREATE VIEW view_atl_108_paringinkota AS
+CREATE OR REPLACE VIEW view_atl_108_paringinkota AS
 
 SELECT
 *
@@ -880,9 +810,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_paringinselatan;
-
-CREATE VIEW view_atl_108_paringinselatan AS
+CREATE OR REPLACE VIEW view_atl_108_paringinselatan AS
 
 SELECT
 *
@@ -902,9 +830,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_paringintimur;
-
-CREATE VIEW view_atl_108_paringintimur AS
+CREATE OR REPLACE VIEW view_atl_108_paringintimur AS
 
 SELECT
 *
@@ -924,9 +850,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_pariwisata;
-
-CREATE VIEW view_atl_108_pariwisata AS
+CREATE OR REPLACE VIEW view_atl_108_pariwisata AS
 
 SELECT
 *
@@ -946,9 +870,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_perdagangan;
-
-CREATE VIEW view_atl_108_perdagangan AS
+CREATE OR REPLACE VIEW view_atl_108_perdagangan AS
 
 SELECT
 *
@@ -968,9 +890,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_perikanan;
-
-CREATE VIEW view_atl_108_perikanan AS
+CREATE OR REPLACE VIEW view_atl_108_perikanan AS
 
 SELECT
 *
@@ -990,9 +910,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_perpustakaan;
-
-CREATE VIEW view_atl_108_perpustakaan AS
+CREATE OR REPLACE VIEW view_atl_108_perpustakaan AS
 
 SELECT
 *
@@ -1012,9 +930,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_pertanian;
-
-CREATE VIEW view_atl_108_pertanian AS
+CREATE OR REPLACE VIEW view_atl_108_pertanian AS
 
 SELECT
 *
@@ -1034,9 +950,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_rsud;
-
-CREATE VIEW view_atl_108_rsud AS
+CREATE OR REPLACE VIEW view_atl_108_rsud AS
 
 SELECT
 *
@@ -1056,9 +970,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_satpolpp;
-
-CREATE VIEW view_atl_108_satpolpp AS
+CREATE OR REPLACE VIEW view_atl_108_satpolpp AS
 
 SELECT
 *
@@ -1078,9 +990,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_setda;
-
-CREATE VIEW view_atl_108_setda AS
+CREATE OR REPLACE VIEW view_atl_108_setda AS
 
 SELECT
 *
@@ -1100,9 +1010,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_setwan;
-
-CREATE VIEW view_atl_108_setwan AS
+CREATE OR REPLACE VIEW view_atl_108_setwan AS
 
 SELECT
 *
@@ -1122,9 +1030,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_sosial;
-
-CREATE VIEW view_atl_108_sosial AS
+CREATE OR REPLACE VIEW view_atl_108_sosial AS
 
 SELECT
 *
@@ -1144,9 +1050,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
 
 
 
-DROP VIEW IF EXISTS view_atl_108_tebingtinggi;
-
-CREATE VIEW view_atl_108_tebingtinggi AS
+CREATE OR REPLACE VIEW view_atl_108_tebingtinggi AS
 
 SELECT
 *
@@ -1166,9 +1070,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_tebingtinggi;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_awayan;
-
-CREATE VIEW view_gedung_bangunan_108_awayan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_awayan AS
 
 SELECT
 *
@@ -1188,9 +1090,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_bappeda;
-
-CREATE VIEW view_gedung_bangunan_108_bappeda AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_bappeda AS
 
 SELECT
 *
@@ -1210,9 +1110,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_batumandi;
-
-CREATE VIEW view_gedung_bangunan_108_batumandi AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_batumandi AS
 
 SELECT
 *
@@ -1232,9 +1130,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_batupiring;
-
-CREATE VIEW view_gedung_bangunan_108_batupiring AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_batupiring AS
 
 SELECT
 *
@@ -1254,9 +1150,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_bkd;
-
-CREATE VIEW view_gedung_bangunan_108_bkd AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_bkd AS
 
 SELECT
 *
@@ -1276,9 +1170,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_bkppd;
-
-CREATE VIEW view_gedung_bangunan_108_bkppd AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_bkppd AS
 
 SELECT
 *
@@ -1298,9 +1190,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_bpbd;
-
-CREATE VIEW view_gedung_bangunan_108_bpbd AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_bpbd AS
 
 SELECT
 *
@@ -1320,9 +1210,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_bppd;
-
-CREATE VIEW view_gedung_bangunan_108_bppd AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_bppd AS
 
 SELECT
 *
@@ -1342,9 +1230,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dinkes;
-
-CREATE VIEW view_gedung_bangunan_108_dinkes AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dinkes AS
 
 SELECT
 *
@@ -1364,9 +1250,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_disdik;
-
-CREATE VIEW view_gedung_bangunan_108_disdik AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_disdik AS
 
 SELECT
 *
@@ -1386,9 +1270,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dishub;
-
-CREATE VIEW view_gedung_bangunan_108_dishub AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dishub AS
 
 SELECT
 *
@@ -1408,9 +1290,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_disnakertrans;
-
-CREATE VIEW view_gedung_bangunan_108_disnakertrans AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_disnakertrans AS
 
 SELECT
 *
@@ -1430,9 +1310,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_distamben;
-
-CREATE VIEW view_gedung_bangunan_108_distamben AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_distamben AS
 
 SELECT
 *
@@ -1452,9 +1330,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dko;
-
-CREATE VIEW view_gedung_bangunan_108_dko AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dko AS
 
 SELECT
 *
@@ -1474,9 +1350,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dkp;
-
-CREATE VIEW view_gedung_bangunan_108_dkp AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dkp AS
 
 SELECT
 *
@@ -1496,9 +1370,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dkukmp;
-
-CREATE VIEW view_gedung_bangunan_108_dkukmp AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dkukmp AS
 
 SELECT
 *
@@ -1518,9 +1390,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dlh;
-
-CREATE VIEW view_gedung_bangunan_108_dlh AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dlh AS
 
 SELECT
 *
@@ -1540,9 +1410,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dpkp;
-
-CREATE VIEW view_gedung_bangunan_108_dpkp AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dpkp AS
 
 SELECT
 *
@@ -1562,9 +1430,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dpmd;
-
-CREATE VIEW view_gedung_bangunan_108_dpmd AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dpmd AS
 
 SELECT
 *
@@ -1584,9 +1450,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dpmptsp;
-
-CREATE VIEW view_gedung_bangunan_108_dpmptsp AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dpmptsp AS
 
 SELECT
 *
@@ -1606,9 +1470,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dppkb;
-
-CREATE VIEW view_gedung_bangunan_108_dppkb AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dppkb AS
 
 SELECT
 *
@@ -1628,9 +1490,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dpppa;
-
-CREATE VIEW view_gedung_bangunan_108_dpppa AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dpppa AS
 
 SELECT
 *
@@ -1650,9 +1510,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dpupr;
-
-CREATE VIEW view_gedung_bangunan_108_dpupr AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dpupr AS
 
 SELECT
 *
@@ -1672,9 +1530,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_dukcatpil;
-
-CREATE VIEW view_gedung_bangunan_108_dukcatpil AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_dukcatpil AS
 
 SELECT
 *
@@ -1694,9 +1550,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_halong;
-
-CREATE VIEW view_gedung_bangunan_108_halong AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_halong AS
 
 SELECT
 *
@@ -1716,9 +1570,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_inspektorat;
-
-CREATE VIEW view_gedung_bangunan_108_inspektorat AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_inspektorat AS
 
 SELECT
 *
@@ -1738,9 +1590,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_juai;
-
-CREATE VIEW view_gedung_bangunan_108_juai AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_juai AS
 
 SELECT
 *
@@ -1760,9 +1610,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_kearsipan;
-
-CREATE VIEW view_gedung_bangunan_108_kearsipan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_kearsipan AS
 
 SELECT
 *
@@ -1782,9 +1630,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_kehutanan;
-
-CREATE VIEW view_gedung_bangunan_108_kehutanan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_kehutanan AS
 
 SELECT
 *
@@ -1804,9 +1650,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_kesbangpol;
-
-CREATE VIEW view_gedung_bangunan_108_kesbangpol AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_kesbangpol AS
 
 SELECT
 *
@@ -1826,9 +1670,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_kominfo;
-
-CREATE VIEW view_gedung_bangunan_108_kominfo AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_kominfo AS
 
 SELECT
 *
@@ -1848,9 +1690,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_korpri;
-
-CREATE VIEW view_gedung_bangunan_108_korpri AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_korpri AS
 
 SELECT
 *
@@ -1870,9 +1710,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_lampihong;
-
-CREATE VIEW view_gedung_bangunan_108_lampihong AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_lampihong AS
 
 SELECT
 *
@@ -1892,9 +1730,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_paringin;
-
-CREATE VIEW view_gedung_bangunan_108_paringin AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_paringin AS
 
 SELECT
 *
@@ -1914,9 +1750,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_paringinkota;
-
-CREATE VIEW view_gedung_bangunan_108_paringinkota AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_paringinkota AS
 
 SELECT
 *
@@ -1936,9 +1770,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_paringinselatan;
-
-CREATE VIEW view_gedung_bangunan_108_paringinselatan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_paringinselatan AS
 
 SELECT
 *
@@ -1958,9 +1790,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_paringintimur;
-
-CREATE VIEW view_gedung_bangunan_108_paringintimur AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_paringintimur AS
 
 SELECT
 *
@@ -1980,9 +1810,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_pariwisata;
-
-CREATE VIEW view_gedung_bangunan_108_pariwisata AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_pariwisata AS
 
 SELECT
 *
@@ -2002,9 +1830,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_perdagangan;
-
-CREATE VIEW view_gedung_bangunan_108_perdagangan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_perdagangan AS
 
 SELECT
 *
@@ -2024,9 +1850,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_perikanan;
-
-CREATE VIEW view_gedung_bangunan_108_perikanan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_perikanan AS
 
 SELECT
 *
@@ -2046,9 +1870,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_perpustakaan;
-
-CREATE VIEW view_gedung_bangunan_108_perpustakaan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_perpustakaan AS
 
 SELECT
 *
@@ -2068,9 +1890,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_pertanian;
-
-CREATE VIEW view_gedung_bangunan_108_pertanian AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_pertanian AS
 
 SELECT
 *
@@ -2090,9 +1910,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_rsud;
-
-CREATE VIEW view_gedung_bangunan_108_rsud AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_rsud AS
 
 SELECT
 *
@@ -2112,9 +1930,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_satpolpp;
-
-CREATE VIEW view_gedung_bangunan_108_satpolpp AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_satpolpp AS
 
 SELECT
 *
@@ -2134,9 +1950,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_setda;
-
-CREATE VIEW view_gedung_bangunan_108_setda AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_setda AS
 
 SELECT
 *
@@ -2156,9 +1970,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_setwan;
-
-CREATE VIEW view_gedung_bangunan_108_setwan AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_setwan AS
 
 SELECT
 *
@@ -2178,9 +1990,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_sosial;
-
-CREATE VIEW view_gedung_bangunan_108_sosial AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_sosial AS
 
 SELECT
 *
@@ -2200,9 +2010,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
 
 
 
-DROP VIEW IF EXISTS view_gedung_bangunan_108_tebingtinggi;
-
-CREATE VIEW view_gedung_bangunan_108_tebingtinggi AS
+CREATE OR REPLACE VIEW view_gedung_bangunan_108_tebingtinggi AS
 
 SELECT
 *
@@ -2222,9 +2030,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_tebingtinggi;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_awayan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_awayan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_awayan AS
 
 SELECT
 *
@@ -2244,9 +2050,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_bappeda;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_bappeda AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_bappeda AS
 
 SELECT
 *
@@ -2266,9 +2070,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_batumandi;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_batumandi AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_batumandi AS
 
 SELECT
 *
@@ -2288,9 +2090,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_batupiring;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_batupiring AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_batupiring AS
 
 SELECT
 *
@@ -2310,9 +2110,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_bkd;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_bkd AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_bkd AS
 
 SELECT
 *
@@ -2332,9 +2130,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_bkppd;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_bkppd AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_bkppd AS
 
 SELECT
 *
@@ -2354,9 +2150,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_bpbd;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_bpbd AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_bpbd AS
 
 SELECT
 *
@@ -2376,9 +2170,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_bppd;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_bppd AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_bppd AS
 
 SELECT
 *
@@ -2398,9 +2190,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dinkes;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dinkes AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dinkes AS
 
 SELECT
 *
@@ -2420,9 +2210,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_disdik;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_disdik AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_disdik AS
 
 SELECT
 *
@@ -2442,9 +2230,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dishub;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dishub AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dishub AS
 
 SELECT
 *
@@ -2464,9 +2250,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_disnakertrans;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_disnakertrans AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_disnakertrans AS
 
 SELECT
 *
@@ -2486,9 +2270,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_distamben;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_distamben AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_distamben AS
 
 SELECT
 *
@@ -2508,9 +2290,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dko;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dko AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dko AS
 
 SELECT
 *
@@ -2530,9 +2310,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dkp;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dkp AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dkp AS
 
 SELECT
 *
@@ -2552,9 +2330,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dkukmp;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dkukmp AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dkukmp AS
 
 SELECT
 *
@@ -2574,9 +2350,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dlh;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dlh AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dlh AS
 
 SELECT
 *
@@ -2596,9 +2370,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dpkp;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dpkp AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dpkp AS
 
 SELECT
 *
@@ -2618,9 +2390,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dpmd;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dpmd AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dpmd AS
 
 SELECT
 *
@@ -2640,9 +2410,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dpmptsp;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dpmptsp AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dpmptsp AS
 
 SELECT
 *
@@ -2662,9 +2430,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dppkb;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dppkb AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dppkb AS
 
 SELECT
 *
@@ -2684,9 +2450,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dpppa;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dpppa AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dpppa AS
 
 SELECT
 *
@@ -2706,9 +2470,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dpupr;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dpupr AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dpupr AS
 
 SELECT
 *
@@ -2728,9 +2490,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_dukcatpil;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_dukcatpil AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_dukcatpil AS
 
 SELECT
 *
@@ -2750,9 +2510,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_halong;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_halong AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_halong AS
 
 SELECT
 *
@@ -2772,9 +2530,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_inspektorat;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_inspektorat AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_inspektorat AS
 
 SELECT
 *
@@ -2794,9 +2550,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_juai;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_juai AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_juai AS
 
 SELECT
 *
@@ -2816,9 +2570,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_kearsipan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_kearsipan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_kearsipan AS
 
 SELECT
 *
@@ -2838,9 +2590,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_kehutanan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_kehutanan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_kehutanan AS
 
 SELECT
 *
@@ -2860,9 +2610,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_kesbangpol;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_kesbangpol AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_kesbangpol AS
 
 SELECT
 *
@@ -2882,9 +2630,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_kominfo;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_kominfo AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_kominfo AS
 
 SELECT
 *
@@ -2904,9 +2650,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_korpri;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_korpri AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_korpri AS
 
 SELECT
 *
@@ -2926,9 +2670,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_lampihong;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_lampihong AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_lampihong AS
 
 SELECT
 *
@@ -2948,9 +2690,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_paringin;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_paringin AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_paringin AS
 
 SELECT
 *
@@ -2970,9 +2710,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_paringinkota;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_paringinkota AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_paringinkota AS
 
 SELECT
 *
@@ -2992,9 +2730,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_paringinselatan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_paringinselatan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_paringinselatan AS
 
 SELECT
 *
@@ -3014,9 +2750,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_paringintimur;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_paringintimur AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_paringintimur AS
 
 SELECT
 *
@@ -3036,9 +2770,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_pariwisata;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_pariwisata AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_pariwisata AS
 
 SELECT
 *
@@ -3058,9 +2790,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_perdagangan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_perdagangan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_perdagangan AS
 
 SELECT
 *
@@ -3080,9 +2810,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_perikanan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_perikanan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_perikanan AS
 
 SELECT
 *
@@ -3102,9 +2830,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_perpustakaan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_perpustakaan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_perpustakaan AS
 
 SELECT
 *
@@ -3124,9 +2850,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_pertanian;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_pertanian AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_pertanian AS
 
 SELECT
 *
@@ -3146,9 +2870,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_rsud;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_rsud AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_rsud AS
 
 SELECT
 *
@@ -3168,9 +2890,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_satpolpp;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_satpolpp AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_satpolpp AS
 
 SELECT
 *
@@ -3190,9 +2910,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_setda;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_setda AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_setda AS
 
 SELECT
 *
@@ -3212,9 +2930,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_setwan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_setwan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_setwan AS
 
 SELECT
 *
@@ -3234,9 +2950,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_sosial;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_sosial AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_sosial AS
 
 SELECT
 *
@@ -3256,9 +2970,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
 
 
 
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_tebingtinggi;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_tebingtinggi AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_tebingtinggi AS
 
 SELECT
 *
@@ -3278,9 +2990,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_tebingtinggi;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_awayan;
-
-CREATE VIEW view_peralatan_mesin_108_awayan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_awayan AS
 
 SELECT
 *
@@ -3300,9 +3010,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_bappeda;
-
-CREATE VIEW view_peralatan_mesin_108_bappeda AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_bappeda AS
 
 SELECT
 *
@@ -3322,9 +3030,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_batumandi;
-
-CREATE VIEW view_peralatan_mesin_108_batumandi AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_batumandi AS
 
 SELECT
 *
@@ -3344,9 +3050,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_batupiring;
-
-CREATE VIEW view_peralatan_mesin_108_batupiring AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_batupiring AS
 
 SELECT
 *
@@ -3366,9 +3070,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_bkd;
-
-CREATE VIEW view_peralatan_mesin_108_bkd AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_bkd AS
 
 SELECT
 *
@@ -3388,9 +3090,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_bkppd;
-
-CREATE VIEW view_peralatan_mesin_108_bkppd AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_bkppd AS
 
 SELECT
 *
@@ -3410,9 +3110,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_bpbd;
-
-CREATE VIEW view_peralatan_mesin_108_bpbd AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_bpbd AS
 
 SELECT
 *
@@ -3432,9 +3130,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_bppd;
-
-CREATE VIEW view_peralatan_mesin_108_bppd AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_bppd AS
 
 SELECT
 *
@@ -3454,9 +3150,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dinkes;
-
-CREATE VIEW view_peralatan_mesin_108_dinkes AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dinkes AS
 
 SELECT
 *
@@ -3476,9 +3170,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_disdik;
-
-CREATE VIEW view_peralatan_mesin_108_disdik AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_disdik AS
 
 SELECT
 *
@@ -3498,9 +3190,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dishub;
-
-CREATE VIEW view_peralatan_mesin_108_dishub AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dishub AS
 
 SELECT
 *
@@ -3520,9 +3210,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_disnakertrans;
-
-CREATE VIEW view_peralatan_mesin_108_disnakertrans AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_disnakertrans AS
 
 SELECT
 *
@@ -3542,9 +3230,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_distamben;
-
-CREATE VIEW view_peralatan_mesin_108_distamben AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_distamben AS
 
 SELECT
 *
@@ -3564,9 +3250,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dko;
-
-CREATE VIEW view_peralatan_mesin_108_dko AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dko AS
 
 SELECT
 *
@@ -3586,9 +3270,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dkp;
-
-CREATE VIEW view_peralatan_mesin_108_dkp AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dkp AS
 
 SELECT
 *
@@ -3608,9 +3290,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dkukmp;
-
-CREATE VIEW view_peralatan_mesin_108_dkukmp AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dkukmp AS
 
 SELECT
 *
@@ -3630,9 +3310,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dlh;
-
-CREATE VIEW view_peralatan_mesin_108_dlh AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dlh AS
 
 SELECT
 *
@@ -3652,9 +3330,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dpkp;
-
-CREATE VIEW view_peralatan_mesin_108_dpkp AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dpkp AS
 
 SELECT
 *
@@ -3674,9 +3350,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dpmd;
-
-CREATE VIEW view_peralatan_mesin_108_dpmd AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dpmd AS
 
 SELECT
 *
@@ -3696,9 +3370,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dpmptsp;
-
-CREATE VIEW view_peralatan_mesin_108_dpmptsp AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dpmptsp AS
 
 SELECT
 *
@@ -3718,9 +3390,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dppkb;
-
-CREATE VIEW view_peralatan_mesin_108_dppkb AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dppkb AS
 
 SELECT
 *
@@ -3740,9 +3410,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dpppa;
-
-CREATE VIEW view_peralatan_mesin_108_dpppa AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dpppa AS
 
 SELECT
 *
@@ -3762,9 +3430,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dpupr;
-
-CREATE VIEW view_peralatan_mesin_108_dpupr AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dpupr AS
 
 SELECT
 *
@@ -3784,9 +3450,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_dukcatpil;
-
-CREATE VIEW view_peralatan_mesin_108_dukcatpil AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_dukcatpil AS
 
 SELECT
 *
@@ -3806,9 +3470,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_halong;
-
-CREATE VIEW view_peralatan_mesin_108_halong AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_halong AS
 
 SELECT
 *
@@ -3828,9 +3490,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_inspektorat;
-
-CREATE VIEW view_peralatan_mesin_108_inspektorat AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_inspektorat AS
 
 SELECT
 *
@@ -3850,9 +3510,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_juai;
-
-CREATE VIEW view_peralatan_mesin_108_juai AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_juai AS
 
 SELECT
 *
@@ -3872,9 +3530,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_kearsipan;
-
-CREATE VIEW view_peralatan_mesin_108_kearsipan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_kearsipan AS
 
 SELECT
 *
@@ -3894,9 +3550,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_kehutanan;
-
-CREATE VIEW view_peralatan_mesin_108_kehutanan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_kehutanan AS
 
 SELECT
 *
@@ -3916,9 +3570,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_kesbangpol;
-
-CREATE VIEW view_peralatan_mesin_108_kesbangpol AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_kesbangpol AS
 
 SELECT
 *
@@ -3938,9 +3590,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_kominfo;
-
-CREATE VIEW view_peralatan_mesin_108_kominfo AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_kominfo AS
 
 SELECT
 *
@@ -3960,9 +3610,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_korpri;
-
-CREATE VIEW view_peralatan_mesin_108_korpri AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_korpri AS
 
 SELECT
 *
@@ -3982,9 +3630,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_lampihong;
-
-CREATE VIEW view_peralatan_mesin_108_lampihong AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_lampihong AS
 
 SELECT
 *
@@ -4004,9 +3650,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_paringin;
-
-CREATE VIEW view_peralatan_mesin_108_paringin AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_paringin AS
 
 SELECT
 *
@@ -4026,9 +3670,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_paringinkota;
-
-CREATE VIEW view_peralatan_mesin_108_paringinkota AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_paringinkota AS
 
 SELECT
 *
@@ -4048,9 +3690,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_paringinselatan;
-
-CREATE VIEW view_peralatan_mesin_108_paringinselatan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_paringinselatan AS
 
 SELECT
 *
@@ -4070,9 +3710,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_paringintimur;
-
-CREATE VIEW view_peralatan_mesin_108_paringintimur AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_paringintimur AS
 
 SELECT
 *
@@ -4092,9 +3730,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_pariwisata;
-
-CREATE VIEW view_peralatan_mesin_108_pariwisata AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_pariwisata AS
 
 SELECT
 *
@@ -4114,9 +3750,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_perdagangan;
-
-CREATE VIEW view_peralatan_mesin_108_perdagangan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_perdagangan AS
 
 SELECT
 *
@@ -4136,9 +3770,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_perikanan;
-
-CREATE VIEW view_peralatan_mesin_108_perikanan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_perikanan AS
 
 SELECT
 *
@@ -4158,9 +3790,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_perpustakaan;
-
-CREATE VIEW view_peralatan_mesin_108_perpustakaan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_perpustakaan AS
 
 SELECT
 *
@@ -4180,9 +3810,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_pertanian;
-
-CREATE VIEW view_peralatan_mesin_108_pertanian AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_pertanian AS
 
 SELECT
 *
@@ -4202,9 +3830,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_rsud;
-
-CREATE VIEW view_peralatan_mesin_108_rsud AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_rsud AS
 
 SELECT
 *
@@ -4224,9 +3850,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_satpolpp;
-
-CREATE VIEW view_peralatan_mesin_108_satpolpp AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_satpolpp AS
 
 SELECT
 *
@@ -4246,9 +3870,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_setda;
-
-CREATE VIEW view_peralatan_mesin_108_setda AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_setda AS
 
 SELECT
 *
@@ -4268,9 +3890,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_setwan;
-
-CREATE VIEW view_peralatan_mesin_108_setwan AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_setwan AS
 
 SELECT
 *
@@ -4290,9 +3910,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_sosial;
-
-CREATE VIEW view_peralatan_mesin_108_sosial AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_sosial AS
 
 SELECT
 *
@@ -4312,9 +3930,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
 
 
 
-DROP VIEW IF EXISTS view_peralatan_mesin_108_tebingtinggi;
-
-CREATE VIEW view_peralatan_mesin_108_tebingtinggi AS
+CREATE OR REPLACE VIEW view_peralatan_mesin_108_tebingtinggi AS
 
 SELECT
 *
@@ -4334,9 +3950,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_tebingtinggi;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_awayan;
-
-CREATE VIEW view_tanah_108_awayan AS
+CREATE OR REPLACE VIEW view_tanah_108_awayan AS
 
 SELECT
 *
@@ -4356,9 +3970,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_bappeda;
-
-CREATE VIEW view_tanah_108_bappeda AS
+CREATE OR REPLACE VIEW view_tanah_108_bappeda AS
 
 SELECT
 *
@@ -4378,9 +3990,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_batumandi;
-
-CREATE VIEW view_tanah_108_batumandi AS
+CREATE OR REPLACE VIEW view_tanah_108_batumandi AS
 
 SELECT
 *
@@ -4400,9 +4010,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_batupiring;
-
-CREATE VIEW view_tanah_108_batupiring AS
+CREATE OR REPLACE VIEW view_tanah_108_batupiring AS
 
 SELECT
 *
@@ -4422,9 +4030,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_bkd;
-
-CREATE VIEW view_tanah_108_bkd AS
+CREATE OR REPLACE VIEW view_tanah_108_bkd AS
 
 SELECT
 *
@@ -4444,9 +4050,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_bkppd;
-
-CREATE VIEW view_tanah_108_bkppd AS
+CREATE OR REPLACE VIEW view_tanah_108_bkppd AS
 
 SELECT
 *
@@ -4466,9 +4070,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_bpbd;
-
-CREATE VIEW view_tanah_108_bpbd AS
+CREATE OR REPLACE VIEW view_tanah_108_bpbd AS
 
 SELECT
 *
@@ -4488,9 +4090,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_bppd;
-
-CREATE VIEW view_tanah_108_bppd AS
+CREATE OR REPLACE VIEW view_tanah_108_bppd AS
 
 SELECT
 *
@@ -4510,9 +4110,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dinkes;
-
-CREATE VIEW view_tanah_108_dinkes AS
+CREATE OR REPLACE VIEW view_tanah_108_dinkes AS
 
 SELECT
 *
@@ -4532,9 +4130,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_disdik;
-
-CREATE VIEW view_tanah_108_disdik AS
+CREATE OR REPLACE VIEW view_tanah_108_disdik AS
 
 SELECT
 *
@@ -4554,9 +4150,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dishub;
-
-CREATE VIEW view_tanah_108_dishub AS
+CREATE OR REPLACE VIEW view_tanah_108_dishub AS
 
 SELECT
 *
@@ -4576,9 +4170,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_disnakertrans;
-
-CREATE VIEW view_tanah_108_disnakertrans AS
+CREATE OR REPLACE VIEW view_tanah_108_disnakertrans AS
 
 SELECT
 *
@@ -4598,9 +4190,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_distamben;
-
-CREATE VIEW view_tanah_108_distamben AS
+CREATE OR REPLACE VIEW view_tanah_108_distamben AS
 
 SELECT
 *
@@ -4620,9 +4210,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dko;
-
-CREATE VIEW view_tanah_108_dko AS
+CREATE OR REPLACE VIEW view_tanah_108_dko AS
 
 SELECT
 *
@@ -4642,9 +4230,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dkp;
-
-CREATE VIEW view_tanah_108_dkp AS
+CREATE OR REPLACE VIEW view_tanah_108_dkp AS
 
 SELECT
 *
@@ -4664,9 +4250,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dkukmp;
-
-CREATE VIEW view_tanah_108_dkukmp AS
+CREATE OR REPLACE VIEW view_tanah_108_dkukmp AS
 
 SELECT
 *
@@ -4686,9 +4270,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dlh;
-
-CREATE VIEW view_tanah_108_dlh AS
+CREATE OR REPLACE VIEW view_tanah_108_dlh AS
 
 SELECT
 *
@@ -4708,9 +4290,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dpkp;
-
-CREATE VIEW view_tanah_108_dpkp AS
+CREATE OR REPLACE VIEW view_tanah_108_dpkp AS
 
 SELECT
 *
@@ -4730,9 +4310,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dpmd;
-
-CREATE VIEW view_tanah_108_dpmd AS
+CREATE OR REPLACE VIEW view_tanah_108_dpmd AS
 
 SELECT
 *
@@ -4752,9 +4330,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dpmptsp;
-
-CREATE VIEW view_tanah_108_dpmptsp AS
+CREATE OR REPLACE VIEW view_tanah_108_dpmptsp AS
 
 SELECT
 *
@@ -4774,9 +4350,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dppkb;
-
-CREATE VIEW view_tanah_108_dppkb AS
+CREATE OR REPLACE VIEW view_tanah_108_dppkb AS
 
 SELECT
 *
@@ -4796,9 +4370,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dpppa;
-
-CREATE VIEW view_tanah_108_dpppa AS
+CREATE OR REPLACE VIEW view_tanah_108_dpppa AS
 
 SELECT
 *
@@ -4818,9 +4390,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dpupr;
-
-CREATE VIEW view_tanah_108_dpupr AS
+CREATE OR REPLACE VIEW view_tanah_108_dpupr AS
 
 SELECT
 *
@@ -4840,9 +4410,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_dukcatpil;
-
-CREATE VIEW view_tanah_108_dukcatpil AS
+CREATE OR REPLACE VIEW view_tanah_108_dukcatpil AS
 
 SELECT
 *
@@ -4862,9 +4430,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_halong;
-
-CREATE VIEW view_tanah_108_halong AS
+CREATE OR REPLACE VIEW view_tanah_108_halong AS
 
 SELECT
 *
@@ -4884,9 +4450,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_inspektorat;
-
-CREATE VIEW view_tanah_108_inspektorat AS
+CREATE OR REPLACE VIEW view_tanah_108_inspektorat AS
 
 SELECT
 *
@@ -4906,9 +4470,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_juai;
-
-CREATE VIEW view_tanah_108_juai AS
+CREATE OR REPLACE VIEW view_tanah_108_juai AS
 
 SELECT
 *
@@ -4928,9 +4490,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_kearsipan;
-
-CREATE VIEW view_tanah_108_kearsipan AS
+CREATE OR REPLACE VIEW view_tanah_108_kearsipan AS
 
 SELECT
 *
@@ -4950,9 +4510,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_kehutanan;
-
-CREATE VIEW view_tanah_108_kehutanan AS
+CREATE OR REPLACE VIEW view_tanah_108_kehutanan AS
 
 SELECT
 *
@@ -4972,9 +4530,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_kesbangpol;
-
-CREATE VIEW view_tanah_108_kesbangpol AS
+CREATE OR REPLACE VIEW view_tanah_108_kesbangpol AS
 
 SELECT
 *
@@ -4994,9 +4550,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_kominfo;
-
-CREATE VIEW view_tanah_108_kominfo AS
+CREATE OR REPLACE VIEW view_tanah_108_kominfo AS
 
 SELECT
 *
@@ -5016,9 +4570,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_korpri;
-
-CREATE VIEW view_tanah_108_korpri AS
+CREATE OR REPLACE VIEW view_tanah_108_korpri AS
 
 SELECT
 *
@@ -5038,9 +4590,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_lampihong;
-
-CREATE VIEW view_tanah_108_lampihong AS
+CREATE OR REPLACE VIEW view_tanah_108_lampihong AS
 
 SELECT
 *
@@ -5060,9 +4610,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_paringin;
-
-CREATE VIEW view_tanah_108_paringin AS
+CREATE OR REPLACE VIEW view_tanah_108_paringin AS
 
 SELECT
 *
@@ -5082,9 +4630,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_paringinkota;
-
-CREATE VIEW view_tanah_108_paringinkota AS
+CREATE OR REPLACE VIEW view_tanah_108_paringinkota AS
 
 SELECT
 *
@@ -5104,9 +4650,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_paringinselatan;
-
-CREATE VIEW view_tanah_108_paringinselatan AS
+CREATE OR REPLACE VIEW view_tanah_108_paringinselatan AS
 
 SELECT
 *
@@ -5126,9 +4670,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_paringintimur;
-
-CREATE VIEW view_tanah_108_paringintimur AS
+CREATE OR REPLACE VIEW view_tanah_108_paringintimur AS
 
 SELECT
 *
@@ -5148,9 +4690,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_pariwisata;
-
-CREATE VIEW view_tanah_108_pariwisata AS
+CREATE OR REPLACE VIEW view_tanah_108_pariwisata AS
 
 SELECT
 *
@@ -5170,9 +4710,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_perdagangan;
-
-CREATE VIEW view_tanah_108_perdagangan AS
+CREATE OR REPLACE VIEW view_tanah_108_perdagangan AS
 
 SELECT
 *
@@ -5192,9 +4730,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_perikanan;
-
-CREATE VIEW view_tanah_108_perikanan AS
+CREATE OR REPLACE VIEW view_tanah_108_perikanan AS
 
 SELECT
 *
@@ -5214,9 +4750,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_perpustakaan;
-
-CREATE VIEW view_tanah_108_perpustakaan AS
+CREATE OR REPLACE VIEW view_tanah_108_perpustakaan AS
 
 SELECT
 *
@@ -5236,9 +4770,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_pertanian;
-
-CREATE VIEW view_tanah_108_pertanian AS
+CREATE OR REPLACE VIEW view_tanah_108_pertanian AS
 
 SELECT
 *
@@ -5258,9 +4790,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_rsud;
-
-CREATE VIEW view_tanah_108_rsud AS
+CREATE OR REPLACE VIEW view_tanah_108_rsud AS
 
 SELECT
 *
@@ -5280,9 +4810,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_satpolpp;
-
-CREATE VIEW view_tanah_108_satpolpp AS
+CREATE OR REPLACE VIEW view_tanah_108_satpolpp AS
 
 SELECT
 *
@@ -5302,9 +4830,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_setda;
-
-CREATE VIEW view_tanah_108_setda AS
+CREATE OR REPLACE VIEW view_tanah_108_setda AS
 
 SELECT
 *
@@ -5324,9 +4850,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_setwan;
-
-CREATE VIEW view_tanah_108_setwan AS
+CREATE OR REPLACE VIEW view_tanah_108_setwan AS
 
 SELECT
 *
@@ -5346,9 +4870,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_sosial;
-
-CREATE VIEW view_tanah_108_sosial AS
+CREATE OR REPLACE VIEW view_tanah_108_sosial AS
 
 SELECT
 *
@@ -5368,9 +4890,7 @@ REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
 
 
 
-DROP VIEW IF EXISTS view_tanah_108_tebingtinggi;
-
-CREATE VIEW view_tanah_108_tebingtinggi AS
+CREATE OR REPLACE VIEW view_tanah_108_tebingtinggi AS
 
 SELECT
 *

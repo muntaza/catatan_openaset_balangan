@@ -1,6 +1,4 @@
-DROP VIEW IF EXISTS view_jalan_irigasi_jaringan_108_setwan;
-
-CREATE VIEW view_jalan_irigasi_jaringan_108_setwan AS
+CREATE OR REPLACE VIEW view_jalan_irigasi_jaringan_108_setwan AS
 
 SELECT
 *

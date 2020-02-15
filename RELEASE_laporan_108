@@ -3,6 +3,11 @@ rel-1-0:
     - cvs add php -OK-
     - cvs add xml -OK-
     - cvs add kabupaten, kabupaten isi -OK-
-    - test framework php5_projects_108
+    - test framework php5_projects_108 -OK-
+    - cvs tag rel-1-0 -OK-
 
-    - cvs tag rel-1-0
+rel-1-1:
+
+
+
+    - cvs tag rel-1-1

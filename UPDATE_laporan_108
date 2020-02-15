@@ -1,4 +1,4 @@
 rel-1-0:
 
-    psql < ..
+    psql -U kabupaten -h localhost kabupaten < kode_barang_baru.sql
     cvs up

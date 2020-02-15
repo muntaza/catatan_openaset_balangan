@@ -6,7 +6,7 @@ FROM
 
 (SELECT
 left(kode_barang_108,8) as kode,
-right(kode_barang_108,(length(kode_barang_108)-18)) as nama_bidang_barang
+right(kode_barang_108,(length(kode_barang_108)-9)) as nama_bidang_barang
 
 FROM
 kode_barang_108
@@ -16,7 +16,11 @@ WHERE
 
 WHERE
 nama_bidang_barang NOT LIKE '%.%'
-AND kode NOT LIKE '%T%';
+AND kode NOT LIKE '%T%'
+AND kode NOT LIKE '%E%'
+AND kode NOT LIKE '%O%'
+AND kode NOT LIKE ''
+AND kode NOT LIKE '%A%';
 
 
 

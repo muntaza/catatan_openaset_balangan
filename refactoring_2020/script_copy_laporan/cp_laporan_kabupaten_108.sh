@@ -42,6 +42,7 @@ cat /var/www/html/php5_laporan/php5_projects/kabupaten/kdp_jij_skpd.xml  | \
 
 cat /var/www/html/php5_laporan/php5_projects/kabupaten/buku_inventaris_skpd.xml  | \
 	sed -e s/kode_barang/kode_barang_108/g | \
-	sed -e s/view_buku_inventaris_aset_tetap_l2/view_buku_inventaris_108_kabupaten/g  \
+	sed -e s/view_buku_inventaris_aset_tetap_l2/view_buku_inventaris_108_kabupaten/g | \
+	sed -e s/kode_level_2/kode_level_2_108/g  \
         > buku_inventaris_skpd_108.xml
 

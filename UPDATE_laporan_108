@@ -1,0 +1,4 @@
+rel-1-0:
+
+    psql < ..
+    cvs up

@@ -1,19 +1,16 @@
-DROP VIEW IF EXISTS view_kode_level_2;
-
-CREATE VIEW view_kode_level_2 AS
+CREATE OR REPLACE VIEW view_kode_level_2_108 AS
 
 SELECT
-left(kode_barang_108,5) as kode,
-right(kode_barang_108,(length(kode_barang_108)-12)) as nama_bidang_barang
+left(kode_barang_108,8) as kode,
+right(kode_barang_108,(length(kode_barang_108)-18)) as nama_bidang_barang
 
 FROM
 kode_barang_108
 
 WHERE
-kode_barang_108 LIKE '%*.*.*%' AND
-kode_barang_108 NOT LIKE '%GOLONGAN%';
+1 = 1;
 
 
 
-GRANT ALL PRIVILEGES ON view_kode_level_2 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_kode_level_2 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_kode_level_2_108 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_kode_level_2_108 FROM lap_kabupaten;

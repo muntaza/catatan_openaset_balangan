@@ -1,6 +1,4 @@
-DROP VIEW IF EXISTS view_kode_level_2;
-
-CREATE VIEW view_kode_level_2 AS
+CREATE OR REPLACE VIEW view_kode_level_2 AS
 
 SELECT
 left(kode_barang,5) as kode,
@@ -10,8 +8,7 @@ FROM
 kode_barang
 
 WHERE
-kode_barang LIKE '%*.*.*%' AND
-kode_barang NOT LIKE '%GOLONGAN%';
+1 = 1;
 
 
 

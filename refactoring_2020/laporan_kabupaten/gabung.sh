@@ -25,5 +25,8 @@ cat ./gabungan_buku_inventaris_108.sql >> ./kode_barang_baru.sql
 
 cat ./kode_level_2_108.sql >> ./kode_barang_baru.sql
 
+cat ./daftar_pengadaan_108.sql >> ./kode_barang_baru.sql
+cat ./gabungan_daftar_pengadaan_108.sql >> ./kode_barang_baru.sql
+
 
 #cat ./tanah_108.sql >> ./kode_barang_baru.sql

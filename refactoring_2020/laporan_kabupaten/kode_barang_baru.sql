@@ -7146,12 +7146,7 @@ AND kode NOT LIKE '%A%';
 
 GRANT ALL PRIVILEGES ON view_kode_level_2_108 TO lap_kabupaten;
 REVOKE INSERT, UPDATE, DELETE ON view_kode_level_2_108 FROM lap_kabupaten;
-DROP VIEW IF EXISTS view_daftar_pengadaan_108_kabupaten CASCADE;
-
-
-
-
-CREATE VIEW view_daftar_pengadaan_108_kabupaten AS
+CREATE OR REPLACE VIEW view_daftar_pengadaan_108_kabupaten AS
 
 SELECT
 tanah.id_sub_skpd,

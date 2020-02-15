@@ -1,9 +1,4 @@
-DROP VIEW IF EXISTS view_daftar_pengadaan_108_kabupaten CASCADE;
-
-
-
-
-CREATE VIEW view_daftar_pengadaan_108_kabupaten AS
+CREATE OR REPLACE VIEW view_daftar_pengadaan_108_kabupaten AS
 
 SELECT
 tanah.id_sub_skpd,

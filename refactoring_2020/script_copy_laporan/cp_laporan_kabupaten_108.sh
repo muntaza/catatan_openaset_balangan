@@ -46,3 +46,13 @@ cat /var/www/html/php5_laporan/php5_projects/kabupaten/buku_inventaris_skpd.xml 
 	sed -e s/kode_level_2/kode_level_2_108/g  \
         > buku_inventaris_skpd_108.xml
 
+cat /var/www/html/php5_laporan/php5_projects/kabupaten/daftar_pengadaan_skpd_l2.xml  | \
+	sed -e s/kode_barang/kode_barang_108/g | \
+	sed -e s/view_daftar_pengadaan_l2/view_daftar_pengadaan_108/g | \
+	sed -e s/kode_level_2/kode_level_2_108/g  \
+        > daftar_pengadaan_skpd_108.xml
+
+
+
+
+

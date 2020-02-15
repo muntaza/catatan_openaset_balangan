@@ -30,7 +30,7 @@ tanah.id_golongan_barang,
 
 tanah.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 tanah.id register,
 
 '' as merk_type,
@@ -134,7 +134,7 @@ peralatan_mesin.id_golongan_barang,
 
 peralatan_mesin.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 peralatan_mesin.id register,
 
 peralatan_mesin.merk_type,
@@ -242,7 +242,7 @@ gedung_bangunan.id_golongan_barang,
 
 gedung_bangunan.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 gedung_bangunan.id register,
 
 '' as merk_type,
@@ -360,7 +360,7 @@ jalan_irigasi_jaringan.id_golongan_barang,
 
 jalan_irigasi_jaringan.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 jalan_irigasi_jaringan.id register,
 
 '' as merk_type,
@@ -468,7 +468,7 @@ atl.id_golongan_barang,
 
 atl.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 atl.id register,
 
 '' as merk_type,
@@ -575,7 +575,7 @@ jalan_irigasi_jaringan.id_golongan_barang,
 
 jalan_irigasi_jaringan.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 jalan_irigasi_jaringan.id register,
 
 '' as merk_type,
@@ -684,7 +684,7 @@ gedung_bangunan.id_golongan_barang,
 
 gedung_bangunan.nama_barang,
 LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
-LEFT(kode_barang_108.kode_barang_108, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 gedung_bangunan.id register,
 
 '' as merk_type,

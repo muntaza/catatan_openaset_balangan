@@ -23,8 +23,8 @@ cat atl.sql | sed -e s/kode_barang/kode_barang_108/g | \
         sed -e s/14/18/g   > atl_108.sql
 
 cat buku_inventaris_aset_tetap_l2.sql | sed -e s/kode_barang/kode_barang_108/g | \
-	sed -e s/view_buku_inventaris_aset_tetap_l2/view_buku_inventaris_aset_tetap_l2_108_kabupaten/g | \
-        sed -e s/14/18/g   > buku_inventaris_aset_tetap_l2_108.sql
+	sed -e s/view_buku_inventaris_aset_tetap_l2/view_buku_inventaris_108_kabupaten/g | \
+        sed -e s/14/18/g   > buku_inventaris_108.sql
 
 
 

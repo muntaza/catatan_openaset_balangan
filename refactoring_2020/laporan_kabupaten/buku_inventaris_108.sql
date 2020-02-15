@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW view_buku_inventaris_aset_tetap_l2_108_kabupaten AS
+CREATE OR REPLACE VIEW view_buku_inventaris_108_kabupaten AS
 
 
 SELECT * FROM
@@ -768,8 +768,8 @@ gedung_bangunan.keterangan) AS QUERY_KDP_GEDUNG_BANGUNAN
 ;
 
 
-GRANT ALL PRIVILEGES ON view_buku_inventaris_aset_tetap_l2_108_kabupaten TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_buku_inventaris_aset_tetap_l2_108_kabupaten FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_buku_inventaris_108_kabupaten TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_buku_inventaris_108_kabupaten FROM lap_kabupaten;
 
 GRANT ALL PRIVILEGES ON skpd, sub_skpd, kode_barang_108 TO lap_kabupaten;
 REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd, kode_barang_108 FROM lap_kabupaten;

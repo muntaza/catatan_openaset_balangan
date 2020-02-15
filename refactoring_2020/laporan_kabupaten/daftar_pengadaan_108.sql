@@ -1,9 +1,9 @@
-DROP VIEW IF EXISTS view_daftar_pengadaan_108_kabupaten_kabupaten CASCADE;
+DROP VIEW IF EXISTS view_daftar_pengadaan_108_kabupaten CASCADE;
 
 
 
 
-CREATE VIEW view_daftar_pengadaan_108_kabupaten_kabupaten AS
+CREATE VIEW view_daftar_pengadaan_108_kabupaten AS
 
 SELECT
 tanah.id_sub_skpd,
@@ -352,8 +352,8 @@ kabupaten.id_provinsi = provinsi.id
 
 
 
-GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kabupaten_kabupaten TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kabupaten_kabupaten FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kabupaten TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kabupaten FROM lap_kabupaten;
 
 GRANT ALL PRIVILEGES ON skpd, sub_skpd, kode_barang_108 TO lap_kabupaten;
 REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd, kode_barang_108 FROM lap_kabupaten;

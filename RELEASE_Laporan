@@ -59,6 +59,13 @@ RELEASE rel-8-2:
 RELEASE rel-8-3:
 
 
+    - Laporan SK Penghapusan Extracomptable:
+	PM  < 1000000
+	GB  < 5000000
+	ATL < 500000
+    - Perbaikan laporan SK Penghapusan ATL:
+	ATL >= 500000
+
     - sql KIB -OK-
     - perbaikan judul tahun pada Penyusutan 2021 -OK-
     - KIB 108:

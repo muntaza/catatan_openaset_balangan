@@ -52,8 +52,18 @@ rel-1-2:
     - perbaikan query Buku Inventaris, asal-usul -OK-
 
     - alatangkutankabupaten.xml (khusus modul kabupaten)
-    - extra_comptable_2006_2014_skpd.xml
+	- view nya sudah -OK-
+	- tinggal copy file laporan nya
+
+
     - extra_comptable_skpd.xml
+	- copy file sql -OK-
+	- ubah nama view -OK-
+	- edit asal-usul -OK-
+	- edit file gabung.sh -OK-
+	- edit script -OK-
+	- test psql -OK-
+
     - extra_comptable_sub_skpd.xml
     - kartu_barang_skpd.xml
     - kir.xml
@@ -69,6 +79,8 @@ rel-1-2:
 
 
 rel-1-3:
+
+    - extra_comptable_2006_2014_skpd.xml
 
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan

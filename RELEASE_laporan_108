@@ -8,5 +8,14 @@ rel-1-0:
 
 rel-1-1:
 
-    - testing laporan di Android, kirim WA screenshoot
+    - testing laporan di Android, kirim WA screenshoot -OK-
+    - setwan laporan
+	KIB, Daftar Pengadaan, BI
+    - test setwan
+	KIB, Daftar Pengadaan, BI
+    - semua SKPD
+	KIB, Daftar Pengadaan, BI
+    - test salah satu SKPD
+	KIB, Daftar Pengadaan, BI
+
     - cvs tag rel-1-1

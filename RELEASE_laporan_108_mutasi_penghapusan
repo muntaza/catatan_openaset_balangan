@@ -1,0 +1,20 @@
+RELEASE_laporan_108_mutasi_penghapusan:
+
+
+    - usul_hapus_2014_skpd.xml
+    - usul_hapus_extra_comptable_skpd.xml
+    - usul_hapus_skpd.xml
+    - sk_penghapusan_atl_skpd.xml
+    - sk_penghapusan_extracomptable_atl_skpd.xml
+    - sk_penghapusan_extracomptable_gedung_bangunan_skpd.xml
+    - sk_penghapusan_extracomptable_peralatan_mesin_skpd.xml
+    - sk_penghapusan_gedung_bangunan_skpd.xml
+    - sk_penghapusan_jij_skpd.xml
+    - sk_penghapusan_peralatan_mesin_skpd.xml
+    - sk_penghapusan_tanah_skpd.xml
+    - mutasi_barang_dari_skpd_lain_extracomptable.xml
+    - mutasi_barang_dari_skpd_lain.xml
+    - mutasi_barang_ke_skpd_lain_aset.xml
+    - mutasi_barang_ke_skpd_lain_extracomptable.xml
+
+    - cvs tag rel-1-0

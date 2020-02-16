@@ -13,8 +13,8 @@ id_skpd = 34;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_awayan TO lap_awayan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_awayan FROM lap_awayan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_awayan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_awayan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_awayan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_awayan;
 
 
 
@@ -33,8 +33,8 @@ id_skpd = 21;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_bappeda TO lap_bappeda;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_bappeda FROM lap_bappeda;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_bappeda;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bappeda;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_bappeda;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_bappeda;
 
 
 
@@ -53,8 +53,8 @@ id_skpd = 32;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_batumandi TO lap_batumandi;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_batumandi FROM lap_batumandi;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_batumandi;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batumandi;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_batumandi;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_batumandi;
 
 
 
@@ -73,8 +73,8 @@ id_skpd = 37;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_batupiring TO lap_batupiring;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_batupiring FROM lap_batupiring;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_batupiring;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_batupiring;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_batupiring;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_batupiring;
 
 
 
@@ -93,8 +93,8 @@ id_skpd = 19;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_bkd TO lap_bkd;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_bkd FROM lap_bkd;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_bkd;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkd;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_bkd;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_bkd;
 
 
 
@@ -113,8 +113,8 @@ id_skpd = 26;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_bkppd TO lap_bkppd;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_bkppd FROM lap_bkppd;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_bkppd;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bkppd;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_bkppd;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_bkppd;
 
 
 
@@ -133,8 +133,8 @@ id_skpd = 39;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_bpbd TO lap_bpbd;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_bpbd FROM lap_bpbd;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_bpbd;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bpbd;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_bpbd;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_bpbd;
 
 
 
@@ -153,8 +153,8 @@ id_skpd = 48;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_bppd TO lap_bppd;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_bppd FROM lap_bppd;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_bppd;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_bppd;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_bppd;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_bppd;
 
 
 
@@ -173,8 +173,8 @@ id_skpd = 5;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dinkes TO lap_dinkes;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dinkes FROM lap_dinkes;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dinkes;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dinkes;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dinkes;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dinkes;
 
 
 
@@ -193,8 +193,8 @@ id_skpd = 7;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_disdik TO lap_disdik;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_disdik FROM lap_disdik;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_disdik;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disdik;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_disdik;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_disdik;
 
 
 
@@ -213,8 +213,8 @@ id_skpd = 4;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dishub TO lap_dishub;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dishub FROM lap_dishub;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dishub;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dishub;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dishub;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dishub;
 
 
 
@@ -233,8 +233,8 @@ id_skpd = 41;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_disnakertrans TO lap_disnakertrans;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_disnakertrans FROM lap_disnakertrans;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_disnakertrans;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_disnakertrans;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_disnakertrans;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_disnakertrans;
 
 
 
@@ -253,8 +253,8 @@ id_skpd = 17;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_distamben TO lap_distamben;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_distamben FROM lap_distamben;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_distamben;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_distamben;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_distamben;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_distamben;
 
 
 
@@ -273,8 +273,8 @@ id_skpd = 23;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dko TO lap_dko;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dko FROM lap_dko;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dko;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dko;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dko;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dko;
 
 
 
@@ -293,8 +293,8 @@ id_skpd = 15;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dkp TO lap_dkp;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dkp FROM lap_dkp;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dkp;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkp;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dkp;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dkp;
 
 
 
@@ -313,8 +313,8 @@ id_skpd = 16;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dkukmp TO lap_dkukmp;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dkukmp FROM lap_dkukmp;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dkukmp;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dkukmp;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dkukmp;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dkukmp;
 
 
 
@@ -333,8 +333,8 @@ id_skpd = 22;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dlh TO lap_dlh;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dlh FROM lap_dlh;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dlh;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dlh;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dlh;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dlh;
 
 
 
@@ -353,8 +353,8 @@ id_skpd = 40;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dpkp TO lap_dpkp;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dpkp FROM lap_dpkp;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dpkp;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpkp;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dpkp;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dpkp;
 
 
 
@@ -373,8 +373,8 @@ id_skpd = 10;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dpmd TO lap_dpmd;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dpmd FROM lap_dpmd;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dpmd;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmd;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dpmd;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dpmd;
 
 
 
@@ -393,8 +393,8 @@ id_skpd = 18;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dpmptsp TO lap_dpmptsp;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dpmptsp FROM lap_dpmptsp;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dpmptsp;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpmptsp;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dpmptsp;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dpmptsp;
 
 
 
@@ -413,8 +413,8 @@ id_skpd = 42;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dppkb TO lap_dppkb;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dppkb FROM lap_dppkb;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dppkb;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dppkb;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dppkb;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dppkb;
 
 
 
@@ -433,8 +433,8 @@ id_skpd = 11;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dpppa TO lap_dpppa;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dpppa FROM lap_dpppa;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dpppa;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpppa;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dpppa;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dpppa;
 
 
 
@@ -453,8 +453,8 @@ id_skpd = 3;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dpupr TO lap_dpupr;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dpupr FROM lap_dpupr;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dpupr;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dpupr;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dpupr;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dpupr;
 
 
 
@@ -473,8 +473,8 @@ id_skpd = 12;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_dukcatpil TO lap_dukcatpil;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_dukcatpil FROM lap_dukcatpil;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_dukcatpil;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_dukcatpil;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_dukcatpil;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_dukcatpil;
 
 
 
@@ -493,8 +493,8 @@ id_skpd = 35;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_halong TO lap_halong;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_halong FROM lap_halong;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_halong;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_halong;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_halong;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_halong;
 
 
 
@@ -513,8 +513,8 @@ id_skpd = 20;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_inspektorat TO lap_inspektorat;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_inspektorat FROM lap_inspektorat;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_inspektorat;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_inspektorat;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_inspektorat;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_inspektorat;
 
 
 
@@ -533,8 +533,8 @@ id_skpd = 33;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_juai TO lap_juai;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_juai FROM lap_juai;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_juai;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_juai;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_juai;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_juai;
 
 
 
@@ -553,8 +553,8 @@ id_skpd = 44;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kearsipan TO lap_kearsipan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kearsipan FROM lap_kearsipan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_kearsipan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kearsipan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_kearsipan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_kearsipan;
 
 
 
@@ -573,8 +573,8 @@ id_skpd = 14;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kehutanan TO lap_kehutanan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kehutanan FROM lap_kehutanan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_kehutanan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kehutanan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_kehutanan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_kehutanan;
 
 
 
@@ -593,8 +593,8 @@ id_skpd = 24;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kesbangpol TO lap_kesbangpol;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kesbangpol FROM lap_kesbangpol;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_kesbangpol;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kesbangpol;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_kesbangpol;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_kesbangpol;
 
 
 
@@ -613,8 +613,8 @@ id_skpd = 43;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_kominfo TO lap_kominfo;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_kominfo FROM lap_kominfo;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_kominfo;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_kominfo;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_kominfo;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_kominfo;
 
 
 
@@ -633,8 +633,8 @@ id_skpd = 27;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_korpri TO lap_korpri;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_korpri FROM lap_korpri;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_korpri;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_korpri;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_korpri;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_korpri;
 
 
 
@@ -653,8 +653,8 @@ id_skpd = 31;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_lampihong TO lap_lampihong;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_lampihong FROM lap_lampihong;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_lampihong;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_lampihong;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_lampihong;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_lampihong;
 
 
 
@@ -673,8 +673,8 @@ id_skpd = 28;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_paringin TO lap_paringin;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_paringin FROM lap_paringin;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_paringin;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringin;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_paringin;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_paringin;
 
 
 
@@ -693,8 +693,8 @@ id_skpd = 29;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_paringinkota TO lap_paringinkota;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_paringinkota FROM lap_paringinkota;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_paringinkota;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinkota;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_paringinkota;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_paringinkota;
 
 
 
@@ -713,8 +713,8 @@ id_skpd = 36;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_paringinselatan TO lap_paringinselatan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_paringinselatan FROM lap_paringinselatan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_paringinselatan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringinselatan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_paringinselatan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_paringinselatan;
 
 
 
@@ -733,8 +733,8 @@ id_skpd = 30;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_paringintimur TO lap_paringintimur;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_paringintimur FROM lap_paringintimur;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_paringintimur;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_paringintimur;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_paringintimur;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_paringintimur;
 
 
 
@@ -753,8 +753,8 @@ id_skpd = 46;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_pariwisata TO lap_pariwisata;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_pariwisata FROM lap_pariwisata;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_pariwisata;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pariwisata;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_pariwisata;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_pariwisata;
 
 
 
@@ -773,8 +773,8 @@ id_skpd = 47;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_perdagangan TO lap_perdagangan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_perdagangan FROM lap_perdagangan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_perdagangan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perdagangan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_perdagangan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_perdagangan;
 
 
 
@@ -793,8 +793,8 @@ id_skpd = 45;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_perikanan TO lap_perikanan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_perikanan FROM lap_perikanan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_perikanan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perikanan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_perikanan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_perikanan;
 
 
 
@@ -813,8 +813,8 @@ id_skpd = 8;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_perpustakaan TO lap_perpustakaan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_perpustakaan FROM lap_perpustakaan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_perpustakaan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_perpustakaan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_perpustakaan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_perpustakaan;
 
 
 
@@ -833,8 +833,8 @@ id_skpd = 13;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_pertanian TO lap_pertanian;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_pertanian FROM lap_pertanian;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_pertanian;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_pertanian;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_pertanian;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_pertanian;
 
 
 
@@ -853,8 +853,8 @@ id_skpd = 6;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_rsud TO lap_rsud;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_rsud FROM lap_rsud;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_rsud;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_rsud;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_rsud;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_rsud;
 
 
 
@@ -873,8 +873,8 @@ id_skpd = 25;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_satpolpp TO lap_satpolpp;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_satpolpp FROM lap_satpolpp;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_satpolpp;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_satpolpp;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_satpolpp;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_satpolpp;
 
 
 
@@ -893,8 +893,8 @@ id_skpd = 2;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_setda TO lap_setda;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_setda FROM lap_setda;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_setda;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setda;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_setda;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_setda;
 
 
 
@@ -913,8 +913,8 @@ id_skpd = 1;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_setwan TO lap_setwan;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_setwan FROM lap_setwan;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_setwan;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_setwan;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_setwan;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_setwan;
 
 
 
@@ -933,8 +933,8 @@ id_skpd = 9;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_sosial TO lap_sosial;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_sosial FROM lap_sosial;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_sosial;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_sosial;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_sosial;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_sosial;
 
 
 
@@ -953,8 +953,8 @@ id_skpd = 38;
 GRANT ALL PRIVILEGES ON view_daftar_pengadaan_108_tebingtinggi TO lap_tebingtinggi;
 REVOKE INSERT, UPDATE, DELETE ON view_daftar_pengadaan_108_tebingtinggi FROM lap_tebingtinggi;
 
-GRANT ALL PRIVILEGES ON skpd, sub_skpd TO lap_tebingtinggi;
-REVOKE INSERT, UPDATE, DELETE ON skpd, sub_skpd FROM lap_tebingtinggi;
+GRANT ALL PRIVILEGES ON skpd, view_kode_level_2_108, sub_skpd TO lap_tebingtinggi;
+REVOKE INSERT, UPDATE, DELETE ON skpd, view_kode_level_2_108, sub_skpd FROM lap_tebingtinggi;
 
 
 

@@ -8,6 +8,78 @@ rel-1-0:
 
 rel-1-1:
 
+    - testing laporan di Android, kirim WA screenshoot -OK-
+    - setwan laporan
+	KIB, Daftar Pengadaan, BI
+    - test setwan
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK-
+	KIB F -OK-
+	    Harus Beri izin akses ke view_kode_level_2_108
+	Daftar Pengadaan -OK-
+	Buku Inventaris -OK-
+
+    - copy laporan semua SKPD
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK-
+	KIB F -OK-
+	Daftar Pengadaan -OK-
+	Buku Inventaris -OK-
+
+    - test salah satu SKPD (dprkp)
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK- (19 BKD)
+	KIB F -OK-
+	    Harus Beri izin akses ke view_kode_level_2_108
+	Daftar Pengadaan -OK-
+	Buku Inventaris -OK-
 
 
     - cvs tag rel-1-1
+
+
+rel-1-2:
+
+    - perbaikan query Buku Inventaris, asal-usul -OK-
+
+    - alatangkutankabupaten.xml (khusus modul kabupaten)
+	- view nya sudah -OK-
+	- tinggal copy file laporan nya
+
+
+    - extra_comptable_skpd.xml
+	- copy file sql -OK-
+	- ubah nama view -OK-
+	- edit asal-usul -OK-
+	- edit file gabung.sh -OK-
+	- edit script -OK-
+	- test psql -OK-
+
+    - kartu_barang_skpd.xml
+    - kir.xml
+    - kode_lokasi.xml
+    - laporan_barang_pengguna_skpd.xml
+    - laporan_barang_rusak.xml
+    - mutasi_barang_berkurang_skpd.xml
+    - mutasi_barang_skpd_l2_per_register.xml
+    - mutasi_barang_skpd_l2.xml
+
+    - cvs tag rel-1-2
+
+
+
+rel-1-3:
+
+    - extra_comptable_2006_2014_skpd.xml
+
+    - update sql kartu barang, dan tampilan kartu barang
+	- review kebutuhan, contoh tanah dan gedung setwan

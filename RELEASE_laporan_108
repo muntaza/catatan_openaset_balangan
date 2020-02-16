@@ -30,7 +30,7 @@ rel-1-1:
 	KIB E -OK-
 	KIB F -OK-
 	Daftar Pengadaan -OK-
-	Buku Inventaris
+	Buku Inventaris -OK-
 
     - test salah satu SKPD (dprkp)
 	KIB A -OK-
@@ -41,10 +41,27 @@ rel-1-1:
 	KIB F -OK-
 	    Harus Beri izin akses ke view_kode_level_2_108
 	Daftar Pengadaan -OK-
-	Buku Inventaris
+	Buku Inventaris -OK-
 
 
     - cvs tag rel-1-1
 
 
+rel-1-2:
+
+
+    - alatangkutankabupaten.xml (khusus modul kabupaten)
+    - extra_comptable_2006_2014_skpd.xml
+    - extra_comptable_skpd.xml
+    - extra_comptable_sub_skpd.xml
+    - kartu_barang_skpd.xml
+    - kir.xml
+    - kode_lokasi.xml
+    - laporan_barang_pengguna_skpd.xml
+    - laporan_barang_rusak.xml
+    - mutasi_barang_berkurang_skpd.xml
+    - mutasi_barang_skpd_l2_per_register.xml
+    - mutasi_barang_skpd_l2.xml
+
+    - cvs tag rel-1-2
 

@@ -1,0 +1,17 @@
+RELEASE_laporan_mutasi_penghapusan_108 rel-1-0:
+
+
+
+    - atl_sub_skpd.xml
+    - extra_comptable_sub_skpd.xml
+    - gedungsubskpd.xml
+    - jij_sub_skpd.xml
+    - kdp_gedung_sub_skpd.xml
+    - kdp_jij_sub_skpd.xml
+    - kode_barang.xml
+    - kode_lokasi.xml
+    - peralatanmesinsubskpd.xml
+    - sub_skpd.xml
+    - tanahsubskpd.xml
+
+    - cvs tag rel-1-0

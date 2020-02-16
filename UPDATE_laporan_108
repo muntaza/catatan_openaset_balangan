@@ -2,3 +2,8 @@ rel-1-0:
 
     psql -U kabupaten -h localhost kabupaten < kode_barang_baru.sql
     cvs up pada php5_projects_108
+
+rel-1-1:
+    Bug Fix: Daftar Pengadaan
+	psql -h localhost -U kabupaten kabupaten < gabungan_daftar_pengadaan_108.sql
+

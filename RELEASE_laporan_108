@@ -12,10 +12,39 @@ rel-1-1:
     - setwan laporan
 	KIB, Daftar Pengadaan, BI
     - test setwan
-	KIB, Daftar Pengadaan, BI
-    - semua SKPD
-	KIB, Daftar Pengadaan, BI
-    - test salah satu SKPD
-	KIB, Daftar Pengadaan, BI
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK-
+	KIB F -OK-
+	    Harus Beri izin akses ke view_kode_level_2_108
+	Daftar Pengadaan -OK-
+	Buku Inventaris -OK-
+
+    - copy laporan semua SKPD
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK-
+	KIB F -OK-
+	Daftar Pengadaan -OK-
+	Buku Inventaris
+
+    - test salah satu SKPD (dprkp)
+	KIB A -OK-
+	KIB B -OK-
+	KIB C -OK-
+	KIB D -OK-
+	KIB E -OK- (19 BKD)
+	KIB F -OK-
+	    Harus Beri izin akses ke view_kode_level_2_108
+	Daftar Pengadaan -OK-
+	Buku Inventaris
+
 
     - cvs tag rel-1-1
+
+
+

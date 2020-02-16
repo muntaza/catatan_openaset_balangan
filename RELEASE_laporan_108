@@ -64,7 +64,6 @@ rel-1-2:
 	- edit script -OK-
 	- test psql -OK-
 
-    - extra_comptable_sub_skpd.xml
     - kartu_barang_skpd.xml
     - kir.xml
     - kode_lokasi.xml

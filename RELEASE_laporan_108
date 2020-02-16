@@ -49,6 +49,7 @@ rel-1-1:
 
 rel-1-2:
 
+    - perbaikan query Buku Inventaris, asal-usul -OK-
 
     - alatangkutankabupaten.xml (khusus modul kabupaten)
     - extra_comptable_2006_2014_skpd.xml
@@ -65,3 +66,9 @@ rel-1-2:
 
     - cvs tag rel-1-2
 
+
+
+rel-1-3:
+
+    - update sql kartu barang, dan tampilan kartu barang
+	- review kebutuhan, contoh tanah dan gedung setwan

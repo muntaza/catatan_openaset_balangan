@@ -7,3 +7,6 @@ rel-1-1:
     Bug Fix: Daftar Pengadaan
 	psql -h localhost -U kabupaten kabupaten < gabungan_daftar_pengadaan_108.sql
 
+rel-1-2:
+    Bug Fix: Buku Inventaris, asal usul melebar
+	psql -h localhost -U kabupaten kabupaten < buku_inventaris_108.sql

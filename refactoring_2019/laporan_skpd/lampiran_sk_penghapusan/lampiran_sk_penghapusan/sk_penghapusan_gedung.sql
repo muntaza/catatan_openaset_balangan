@@ -1,8 +1,7 @@
 DROP VIEW IF EXISTS view_sk_penghapusan_gedung_bangunan_kabupaten;
 
 
-
-CREATE VIEW view_sk_penghapusan_gedung_bangunan_kabupaten AS
+CREATE OR REPLACE VIEW view_sk_penghapusan_gedung_bangunan_kabupaten AS
 
 SELECT
 gedung_bangunan.id_sub_skpd,
@@ -49,13 +48,14 @@ view_tanah_tanpa_harga_kabupaten.luas as luas_tanah,
 
 view_tanah_tanpa_harga_kabupaten.id_tanah as nomor_kode_tanah,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_gedung_bangunan.harga_bertambah) - SUM(harga_gedung_bangunan.harga_berkurang) harga,
 
 penghapusan_gedung_bangunan.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
 tahun_berkurang_gedung_bangunan.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_usul_hapus_gedung.tahun_berkurang as tahun_usul_hapus,
 
 gedung_bangunan.keterangan
 
@@ -65,12 +65,14 @@ gedung_bangunan as gedung_bangunan, harga_gedung_bangunan as harga_gedung_bangun
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 status_tingkat, status_beton,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi, view_tanah_tanpa_harga_kabupaten,
+tahun_berkurang_usul_hapus_gedung,
 tahun_berkurang_gedung_bangunan, penghapusan_gedung_bangunan, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
 gedung_bangunan.id = tahun_berkurang_gedung_bangunan.id_gedung_bangunan AND
+gedung_bangunan.id = tahun_berkurang_usul_hapus_gedung.id_gedung_bangunan AND
 gedung_bangunan.id = penghapusan_gedung_bangunan.id_gedung_bangunan AND
 penghapusan_gedung_bangunan.id_sk_penghapusan = sk_penghapusan.id AND
 
@@ -132,6 +134,7 @@ id_sk_penghapusan,
 nomor_sk_penghapusan,
 tanggal_sk_penghapusan,
 tahun_penghapusan,
+tahun_usul_hapus,
 
 gedung_bangunan.keterangan
 

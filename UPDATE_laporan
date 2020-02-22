@@ -32,6 +32,14 @@ UPDATE rel-8-2:
     - sh ~/bin/chmod_plus.sh -OK-
     - cvs up php5_projects -OK-
 
+UPDATE rel-8-3:
+    - psql
+	psql -h localhost -U kabupaten kabupaten < sk_penghapusan_tanah.sql
+	psql -h localhost -U kabupaten kabupaten < sk_penghapusan_peralatan_mesin.sql
+	psql -h localhost -U kabupaten kabupaten < sk_penghapusan_gedung.sql
+	psql -h localhost -U kabupaten kabupaten < sk_penghapusan_jij.sql
+	psql -h localhost -U kabupaten kabupaten < sk_penghapusan_atl.sql
+    - cvs up pada php5_projects
 
 
 

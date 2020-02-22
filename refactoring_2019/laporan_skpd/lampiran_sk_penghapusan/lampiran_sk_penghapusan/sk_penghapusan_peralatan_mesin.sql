@@ -1,8 +1,7 @@
 DROP VIEW IF EXISTS view_sk_penghapusan_peralatan_mesin_kabupaten;
 
 
-
-CREATE VIEW view_sk_penghapusan_peralatan_mesin_kabupaten AS
+CREATE OR REPLACE VIEW view_sk_penghapusan_peralatan_mesin_kabupaten AS
 
 SELECT
 peralatan_mesin.id_sub_skpd,
@@ -43,13 +42,14 @@ peralatan_mesin.nomor_mesin,
 peralatan_mesin.nomor_polisi,
 peralatan_mesin.nomor_bpkb,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_peralatan_mesin.harga_bertambah) - SUM(harga_peralatan_mesin.harga_berkurang) harga,
 
 penghapusan_peralatan_mesin.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
 tahun_berkurang_peralatan_mesin.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_usul_hapus_pm.tahun_berkurang as tahun_usul_hapus,
 
 peralatan_mesin.keterangan
 
@@ -58,12 +58,14 @@ FROM
 peralatan_mesin as peralatan_mesin, harga_peralatan_mesin as harga_peralatan_mesin, kode_barang,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi,
+tahun_berkurang_usul_hapus_pm,
 tahun_berkurang_peralatan_mesin, penghapusan_peralatan_mesin, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
 peralatan_mesin.id = tahun_berkurang_peralatan_mesin.id_peralatan_mesin AND
+peralatan_mesin.id = tahun_berkurang_usul_hapus_pm.id_peralatan_mesin AND
 peralatan_mesin.id = penghapusan_peralatan_mesin.id_peralatan_mesin AND
 penghapusan_peralatan_mesin.id_sk_penghapusan = sk_penghapusan.id AND
 
@@ -118,9 +120,9 @@ id_sk_penghapusan,
 nomor_sk_penghapusan,
 tanggal_sk_penghapusan,
 tahun_penghapusan,
+tahun_usul_hapus,
 
 peralatan_mesin.keterangan
-
 
 
 ORDER BY id_skpd, kode_barang;

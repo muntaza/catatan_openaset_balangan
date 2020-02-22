@@ -1,3 +1,6 @@
+DROP VIEW IF EXISTS view_sk_penghapusan_tanah_kabupaten;
+
+
 CREATE OR REPLACE VIEW view_sk_penghapusan_tanah_kabupaten AS
 
 SELECT

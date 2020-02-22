@@ -43,13 +43,14 @@ atl.ukuran_hewan_tumbuhan,
 
 atl.tahun,
 
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_atl.harga_bertambah) - SUM(harga_atl.harga_berkurang) harga,
 
 penghapusan_atl.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
 tahun_berkurang_atl.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_usul_hapus_atl.tahun_berkurang as tahun_usul_hapus,
 
 atl.keterangan
 
@@ -58,12 +59,14 @@ FROM
 atl as atl, harga_atl as harga_atl, kode_barang,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi,
+tahun_berkurang_usul_hapus_atl,
 tahun_berkurang_atl, penghapusan_atl, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
 atl.id = tahun_berkurang_atl.id_atl AND
+atl.id = tahun_berkurang_usul_hapus_atl.id_atl AND
 atl.id = penghapusan_atl.id_atl AND
 penghapusan_atl.id_sk_penghapusan = sk_penghapusan.id AND
 
@@ -120,6 +123,7 @@ id_sk_penghapusan,
 nomor_sk_penghapusan,
 tanggal_sk_penghapusan,
 tahun_penghapusan,
+tahun_usul_hapus,
 
 atl.keterangan
 

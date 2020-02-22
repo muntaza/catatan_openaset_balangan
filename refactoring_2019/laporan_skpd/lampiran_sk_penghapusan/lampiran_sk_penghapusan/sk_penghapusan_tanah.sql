@@ -37,7 +37,7 @@ hak_tanah.hak_tanah,
 tanah.tanggal_sertifikat,
 tanah.nomor_sertifikat,
 tanah.penggunaan,
-string_agg(asal_usul.asal_usul, ' : ') asal_usul,
+array_to_string(array_unique(array_agg(asal_usul.asal_usul)), ', ') asal_usul,
 SUM(harga_tanah.harga_bertambah) - SUM(harga_tanah.harga_berkurang) harga,
 
 penghapusan_tanah.id_sk_penghapusan,

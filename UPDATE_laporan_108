@@ -4,9 +4,12 @@ rel-1-0:
     cvs up pada php5_projects_108
 
 rel-1-1:
-    Bug Fix: Daftar Pengadaan
+    sh chmod_plus.sh -OK-
+    cvs up php5_projects_108 -OK-
+    git pull catatan_openaset (master) -OK-
+    Bug Fix: Daftar Pengadaan -OK-
 	psql -h localhost -U kabupaten kabupaten < gabungan_daftar_pengadaan_108.sql
 
 rel-1-2:
-    Bug Fix: Buku Inventaris, asal usul melebar
+    Bug Fix: Buku Inventaris, asal usul melebar -OK-
 	psql -h localhost -U kabupaten kabupaten < buku_inventaris_108.sql

@@ -44,7 +44,7 @@ rel-1-1:
 	Buku Inventaris -OK-
 
 
-    - cvs tag rel-1-1
+    - cvs tag rel-1-1 -OK-
 
 
 rel-1-2:

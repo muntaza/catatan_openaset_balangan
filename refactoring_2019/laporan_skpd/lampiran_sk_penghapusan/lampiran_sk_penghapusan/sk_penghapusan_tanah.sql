@@ -45,6 +45,7 @@ penghapusan_tanah.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
 tahun_berkurang_tanah.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_usul_hapus_tanah.tahun_berkurang as tahun_usul_hapus,
 
 tanah.keterangan
 
@@ -53,12 +54,14 @@ FROM
 tanah as tanah, harga_tanah as harga_tanah, kode_barang,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 hak_tanah, sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi,
+tahun_berkurang_usul_hapus_tanah,
 tahun_berkurang_tanah, penghapusan_tanah, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
 tanah.id = tahun_berkurang_tanah.id_tanah AND
+tanah.id = tahun_berkurang_usul_hapus_tanah.id_tanah AND
 tanah.id = penghapusan_tanah.id_tanah AND
 penghapusan_tanah.id_sk_penghapusan = sk_penghapusan.id AND
 
@@ -111,6 +114,7 @@ id_sk_penghapusan,
 nomor_sk_penghapusan,
 tanggal_sk_penghapusan,
 tahun_penghapusan,
+tahun_usul_hapus,
 
 tanah.keterangan
 

@@ -1,8 +1,4 @@
-DROP VIEW IF EXISTS view_sk_penghapusan_tanah_kabupaten;
-
-
-
-CREATE VIEW view_sk_penghapusan_tanah_kabupaten AS
+CREATE OR REPLACE VIEW view_sk_penghapusan_tanah_kabupaten AS
 
 SELECT
 tanah.id_sub_skpd,

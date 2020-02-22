@@ -1,8 +1,4 @@
-DROP VIEW IF EXISTS view_sk_penghapusan_peralatan_mesin_kabupaten;
-
-
-
-CREATE VIEW view_sk_penghapusan_peralatan_mesin_kabupaten AS
+CREATE OR REPLACE VIEW view_sk_penghapusan_peralatan_mesin_kabupaten AS
 
 SELECT
 peralatan_mesin.id_sub_skpd,

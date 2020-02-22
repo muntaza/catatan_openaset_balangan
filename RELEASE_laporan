@@ -58,16 +58,33 @@ RELEASE rel-8-2:
 
 RELEASE rel-8-3:
 
-
-    - Laporan SK Penghapusan Extracomptable:
+    - Laporan SK Penghapusan Extracomptable: OK-
 	PM  < 1000000
 	GB  < 5000000
 	ATL < 500000
-    - Perbaikan laporan SK Penghapusan ATL:
+    - Perbaikan laporan SK Penghapusan ATL: -OK_
 	ATL >= 500000
 
     - sql KIB -OK-
     - perbaikan judul tahun pada Penyusutan 2021 -OK-
+
+    - perbaikan SQL SK Penghapusan:
+	asal-usul -OK-
+
+    - Perbaikan SK Penghapusan: Tambah field Tahun Usul Hapus
+	Lampiran SK Tanah -OK-
+	Lampiran SK Peralatan Mesin -OK-
+	Lampiran SK Gedung Bangunan -OK-
+	Lampiran SK Jalan, Irigasi dan Jaringan -OK-
+	Lampiran SK Aset Tetap Lainnya -OK-
+	Lampiran SK Extracomptable Peralatan Mesin -OK-
+	Lampiran SK Extracomptable Gedung Bangunan -OK-
+	Lampiran SK Extracomptable Aset Tetap Lainnya -OK-
+
+    - cvs tag rel-8-3
+
+RELEASE rel-8-4:
+
     - KIB 108:
 	Perbaiki UML dan ER
 	    Tanah
@@ -76,5 +93,4 @@ RELEASE rel-8-3:
 	    JIJ
 	    ATL
 
-    - cvs tag rel-8-3
-
+    - cvs tag rel-8-4

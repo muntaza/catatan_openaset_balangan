@@ -50,6 +50,7 @@ penghapusan_peralatan_mesin.id_sk_penghapusan,
 sk_penghapusan.nomor_sk_penghapusan,
 sk_penghapusan.tanggal_sk_penghapusan,
 tahun_berkurang_peralatan_mesin.tahun_berkurang as tahun_penghapusan,
+tahun_berkurang_usul_hapus_peralatan_mesin.tahun_berkurang as tahun_usul_hapus,
 
 peralatan_mesin.keterangan
 
@@ -58,12 +59,14 @@ FROM
 peralatan_mesin as peralatan_mesin, harga_peralatan_mesin as harga_peralatan_mesin, kode_barang,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi,
+tahun_berkurang_usul_hapus_peralatan_mesin,
 tahun_berkurang_peralatan_mesin, penghapusan_peralatan_mesin, sk_penghapusan
 
 
 WHERE
 1 = 1  AND
 peralatan_mesin.id = tahun_berkurang_peralatan_mesin.id_peralatan_mesin AND
+peralatan_mesin.id = tahun_berkurang_usul_hapus_peralatan_mesin.id_peralatan_mesin AND
 peralatan_mesin.id = penghapusan_peralatan_mesin.id_peralatan_mesin AND
 penghapusan_peralatan_mesin.id_sk_penghapusan = sk_penghapusan.id AND
 
@@ -118,6 +121,7 @@ id_sk_penghapusan,
 nomor_sk_penghapusan,
 tanggal_sk_penghapusan,
 tahun_penghapusan,
+tahun_usul_hapus,
 
 peralatan_mesin.keterangan
 

@@ -81,7 +81,7 @@ RELEASE rel-8-3:
 	Lampiran SK Extracomptable Gedung Bangunan -OK-
 	Lampiran SK Extracomptable Aset Tetap Lainnya -OK-
 
-    - cvs tag rel-8-3
+    - cvs tag rel-8-3 -OK-
 
 RELEASE rel-8-4:
 

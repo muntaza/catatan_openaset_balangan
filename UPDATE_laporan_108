@@ -18,3 +18,7 @@ rel-1-3:
     - Buat view extracomptable
 	psql -h localhost -U kabupaten kabupaten < extracomptable_108.sql
 	psql -h localhost -U kabupaten kabupaten < gabungan_extracomptable_108.sql
+
+    - buat view kir
+	psql -U kabupaten -h localhost kabupaten < kir_108.sql
+	psql -U kabupaten -h localhost kabupaten < gabungan_kir_108.sql

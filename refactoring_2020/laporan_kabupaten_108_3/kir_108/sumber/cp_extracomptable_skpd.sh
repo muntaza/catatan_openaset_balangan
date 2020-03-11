@@ -28,12 +28,12 @@ cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/paringin/g  | sed -e
 #cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/paringinkota/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>29/g >  29_paringinkota/extracomptable_skpd_108.xml
 #cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/paringintimur/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>30/g >  30_paringintimur/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/lampihong/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>31/g >  31_lampihong/extracomptable_skpd_108.xml
-#cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/batumandi/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>32/g >  32_batumandi/extracomptable_skpd_108.xml
+cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/batumandi/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>32/g >  32_batumandi/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/juai/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>33/g >  33_juai/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/awayan/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>34/g >  34_awayan/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/halong/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>35/g >  35_halong/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/paringinselatan/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>36/g >  36_paringinselatan/extracomptable_skpd_108.xml
-cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/batupiring/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>37/g >  37_batupiring/extracomptable_skpd_108.xml
+#cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/batupiring/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>37/g >  37_batupiring/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/tebingtinggi/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>38/g >  38_tebingtinggi/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/bpbd/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>39/g >  39_bpbd/extracomptable_skpd_108.xml
 cat 01_setwan/extracomptable_skpd_108.xml | sed -e s/setwan/dpkp/g  | sed -e s/\<CriteriaDefaults\>1/\<CriteriaDefaults\>40/g >  40_dpkp/extracomptable_skpd_108.xml

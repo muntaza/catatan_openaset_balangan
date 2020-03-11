@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# hapus file gabungan
+rm -f gabungan_extracomptable_108.sql
+
+
+# buat file masing-masing skpd
 cat extracomptable_108_setwan.sql | sed -e s/setwan/setda/g | sed -e s/"id_skpd = 1"/"id_skpd = 2"/g > extracomptable_108_setda.sql
 cat extracomptable_108_setwan.sql | sed -e s/setwan/dpupr/g | sed -e s/"id_skpd = 1"/"id_skpd = 3"/g > extracomptable_108_dpupr.sql
 cat extracomptable_108_setwan.sql | sed -e s/setwan/dishub/g | sed -e s/"id_skpd = 1"/"id_skpd = 4"/g > extracomptable_108_dishub.sql
@@ -47,4 +54,5 @@ cat extracomptable_108_setwan.sql | sed -e s/setwan/pariwisata/g | sed -e s/"id_
 cat extracomptable_108_setwan.sql | sed -e s/setwan/perdagangan/g | sed -e s/"id_skpd = 1"/"id_skpd = 47"/g > extracomptable_108_perdagangan.sql
 cat extracomptable_108_setwan.sql | sed -e s/setwan/bppd/g | sed -e s/"id_skpd = 1"/"id_skpd = 48"/g > extracomptable_108_bppd.sql
 
-cat extracomptable_108_*.sql > ../gabungan_extracomptable_108.sql
+# gabungkan seluruh file skpd
+cat extracomptable_108_*.sql > gabungan_extracomptable_108.sql

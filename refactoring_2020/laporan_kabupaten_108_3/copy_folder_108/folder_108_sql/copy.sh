@@ -5,5 +5,5 @@ cat ../sumber/extracomptable_108.sh | sed -e s/extracomptable/gedung/g > gedung_
 cat ../sumber/extracomptable_108_setwan.sql | sed -e s/extracomptable/gedung/g > gedung_108_setwan.sql
 
 
-cat ../sumber/cp_laporan_108.sh | sed -e s/extracomptable/gedung/g > cp_laporan_108.sh
-cat ../sumber/script.sh | sed -e s/extracomptable/gedung/g > script.sh
+cat ../sumber/cp_laporan_108.sh | sed -e s/extracomptable/gedung/g > ../cp_laporan_108.sh
+cat ../sumber/script.sh | sed -e s/extracomptable/gedung/g > ../script.sh

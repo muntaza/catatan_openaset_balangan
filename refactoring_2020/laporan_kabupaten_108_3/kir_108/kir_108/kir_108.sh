@@ -1,3 +1,10 @@
+#!/bin/bash
+
+# hapus file gabungan
+rm -f gabungan_kir_108.sql
+
+
+# buat file masing-masing skpd
 cat kir_108_setwan.sql | sed -e s/setwan/setda/g | sed -e s/"id_skpd = 1"/"id_skpd = 2"/g > kir_108_setda.sql
 cat kir_108_setwan.sql | sed -e s/setwan/dpupr/g | sed -e s/"id_skpd = 1"/"id_skpd = 3"/g > kir_108_dpupr.sql
 cat kir_108_setwan.sql | sed -e s/setwan/dishub/g | sed -e s/"id_skpd = 1"/"id_skpd = 4"/g > kir_108_dishub.sql
@@ -47,4 +54,5 @@ cat kir_108_setwan.sql | sed -e s/setwan/pariwisata/g | sed -e s/"id_skpd = 1"/"
 cat kir_108_setwan.sql | sed -e s/setwan/perdagangan/g | sed -e s/"id_skpd = 1"/"id_skpd = 47"/g > kir_108_perdagangan.sql
 cat kir_108_setwan.sql | sed -e s/setwan/bppd/g | sed -e s/"id_skpd = 1"/"id_skpd = 48"/g > kir_108_bppd.sql
 
-cat kir_108_*.sql > ../gabungan_kir_108.sql
+# gabungkan seluruh file skpd
+cat kir_108_*.sql > gabungan_kir_108.sql

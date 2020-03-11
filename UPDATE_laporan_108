@@ -13,3 +13,8 @@ rel-1-1:
 rel-1-2:
     Bug Fix: Buku Inventaris, asal usul melebar -OK-
 	psql -h localhost -U kabupaten kabupaten < buku_inventaris_108.sql
+
+rel-1-3:
+    - Buat view extracomptable
+	psql -h localhost -U kabupaten kabupaten < extracomptable_108.sql
+	psql -h localhost -U kabupaten kabupaten < gabungan_extracomptable_108.sql

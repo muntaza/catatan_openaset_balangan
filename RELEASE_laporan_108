@@ -79,6 +79,12 @@ rel-1-2:
 
 rel-1-3:
 
+    - laporan extracomptable
+	- psql extracomptable_108 dan gabungan extracomptable_108
+	- edit cp_laporan.sh
+	- cp_laporan.sh -OK-
+	- cek hasil setwan dan kabupaten -OK-
+	- copy ke skpd lain
     - extra_comptable_2006_2014_skpd.xml
 
     - update sql kartu barang, dan tampilan kartu barang

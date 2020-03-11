@@ -1,0 +1,62 @@
+    laporan_108
+tanahskpd.xml -OK-
+peralatanmesinskpd.xml -OK-
+gedungskpd.xml -OK-
+jij_skpd.xml -OK-
+atl_skpd.xml -OK-
+kdp_gedung_skpd.xml -OK-
+kdp_jij_skpd.xml -OK-
+extra_comptable_skpd.xml -OK-
+buku_inventaris_skpd.xml -OK-
+alatangkutankabupaten.xml (khusus kabupaten)
+daftar_pengadaan_skpd_l2.xml -OK-
+kode_barang.xml -OK-
+kartu_barang_skpd.xml (revisi)
+kir.xml
+mutasi_barang_berkurang_skpd.xml
+mutasi_barang_skpd_l2_per_register.xml
+mutasi_barang_skpd_l2.xml
+laporan_barang_pengguna_skpd.xml
+
+    laporan_108_kepala_skpd
+
+    laporan_108_mutasi_penghapusan
+usul_hapus_skpd.xml
+usul_hapus_extra_comptable_skpd.xml
+sk_penghapusan_tanah_skpd.xml
+sk_penghapusan_peralatan_mesin_skpd.xml
+sk_penghapusan_gedung_bangunan_skpd.xml
+sk_penghapusan_jij_skpd.xml
+sk_penghapusan_atl_skpd.xml
+sk_penghapusan_extracomptable_peralatan_mesin_skpd.xml
+sk_penghapusan_extracomptable_gedung_bangunan_skpd.xml
+sk_penghapusan_extracomptable_atl_skpd.xml
+mutasi_barang_dari_skpd_lain.xml
+mutasi_barang_ke_skpd_lain_aset.xml
+mutasi_barang_dari_skpd_lain_extracomptable.xml
+mutasi_barang_ke_skpd_lain_extracomptable.xml
+laporan_barang_rusak.xml
+
+    laporan_108_sub_skpd
+tanahsubskpd.xml
+peralatanmesinsubskpd.xml
+gedungsubskpd.xml
+jij_sub_skpd.xml
+atl_sub_skpd.xml
+kdp_gedung_sub_skpd.xml
+kdp_jij_sub_skpd.xml
+extra_comptable_sub_skpd.xml
+
+laporan_108_penetapan_status
+
+laporan_108_penyusutan_2019
+laporan_108_penyusutan_2020
+laporan_108_penyusutan_2021
+
+
+    tertinggal
+extra_comptable_2006_2014_skpd.xml
+hapus_skpd.xml
+kode_lokasi.xml
+sub_skpd.xml
+usul_hapus_2014_skpd.xml

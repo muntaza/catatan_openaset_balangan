@@ -94,8 +94,14 @@ rel-1-3:
 	- psql -U kabupaten -h localhost kabupaten < gabungan_kir_108.sql
 	- cp_laporan.sh -OK-
 	- cp_kir_skpd.sh -OK-
-	- test kabupaten
-	- test setwan
+	- test kabupaten, cek skpd lain: Pertanian -OK-
+	- test setwan -OK-
+	- test dinas perumahan rakyat -OK-
+
+    - mutasi_barang_berkurang:
+	- test -OK-
+
+rel-1-4
 
     - extra_comptable_2006_2014_skpd.xml
 

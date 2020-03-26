@@ -12,8 +12,8 @@ alatangkutankabupaten.xml (khusus kabupaten)
 daftar_pengadaan_skpd_l2.xml -OK-
 kode_barang.xml -OK-
 kartu_barang_skpd.xml (revisi)
-kir.xml
-mutasi_barang_berkurang_skpd.xml
+kir.xml -OK-
+mutasi_barang_berkurang_skpd.xml -OK-
 mutasi_barang_skpd_l2_per_register.xml
 mutasi_barang_skpd_l2.xml
 laporan_barang_pengguna_skpd.xml

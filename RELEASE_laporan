@@ -85,12 +85,22 @@ RELEASE rel-8-3:
 
 RELEASE rel-8-4:
 
-    - KIB 108:
-	Perbaiki UML dan ER
-	    Tanah
-	    PM
-	    Gedung Bangunan
-	    JIJ
-	    ATL
 
-    - cvs tag rel-8-4
+    - test laporan pada production -OK-
+    - test laporan pada development -OK-
+    - Penambahan modul:
+	penyusutan aset lainnya -OK-
+	penyusutan aset lainnya 2020 -OK-
+	penyusutan aset lainnya 2021 -OK-
+    - perbaikan laporan alat angkutan kabupaten -OK-
+    - cvs tag rel-8-4 -OK-
+
+RELEASE rel-8-5:
+
+    - pembuatan database kabupaten_c -OK-
+    - pembuatan modul back_up_2019 -OK-
+	- link ke database kabupaten_c
+    - perubahan modul penyusutan_2019 -OK-
+	- link ke database kabupaten_c -OK-
+    - cvs tag rel-8-5 -OK-
+

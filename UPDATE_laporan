@@ -42,5 +42,16 @@ UPDATE rel-8-3:
     - sh /home/muntaza/bin/chmod_balangan_plus.sh
     - cvs up pada php5_projects
 
+UPDATE rel-8-4:
+    - cvs ci pada production untuk mencek perubahan di prod -OK-
+    - cvs up pada development -OK-
+    - test -OK-
+    - createuser -U postgres kabupaten_c -P
+    - createdb -U postgres kabupaten_c -O kabupaten_c
+    - psql -U postgres kabupaten_c < kabupaten_2020-06-15_00_10.sql
+
+
+
+
 
 

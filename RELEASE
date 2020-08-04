@@ -1410,3 +1410,18 @@ RELEASE 8.3:
 
 
 RELEASE 8.4
+
+    - KIB 108:
+	Perbaiki UML dan ER
+	    UML Tanah -OK-
+	    ER Tanah -OK-
+	    UML PM -OK-
+	    ER PM -OK-
+	    UML Gedung Bangunan -OK-
+	    ER Gedung Bangunan -OK-
+	    ER JIJ -OK-
+	    UML JIJ -OK-
+	    ER ATL -OK-
+	    UML ATL -OK-
+
+    - cvs tag rel-8-4 pada menu_entry

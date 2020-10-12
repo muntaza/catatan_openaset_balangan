@@ -1424,4 +1424,12 @@ RELEASE 8.4
 	    ER ATL -OK-
 	    UML ATL -OK-
 
+    - Bugfix tanda micro pada Dinkes:
+	- Matikan server
+	- Backup database kabupaten
+	- Git pull script update
+	- Backup database kabupaten
+	- Cek diff database kabupaten
+	- Aktifkan server
+
     - cvs tag rel-8-4 pada menu_entry

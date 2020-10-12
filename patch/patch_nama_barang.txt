@@ -1,0 +1,7 @@
+1 jam
+
+update peralatan_mesin set nama_barang = 'Klinipet multi 10-100 micro liter'
+where id=24483
+
+update peralatan_mesin set nama_barang = 'Klinipet multi 10-100 micro liter'
+where id=24493

@@ -1425,9 +1425,17 @@ RELEASE 8.4
 	    UML ATL -OK-
 
     - Bugfix tanda micro pada Dinkes:
-	- Matikan server
-	- Backup database kabupaten
+	- Matikan server -OK-
+	- Backup database kabupaten -OK-
 	- Git pull script update
+	    thinkpad$ psql -U kabupaten kabupaten -h localhost
+	    kabupaten=> update peralatan_mesin set nama_barang = 'Klinipet multi 10-100 micro liter'
+	    kabupaten-> where id=24483;
+	    UPDATE 1
+	    kabupaten=> update peralatan_mesin set nama_barang = 'Klinipet multi 10-100 micro liter'
+	    kabupaten-> where id=24493;
+	    UPDATE 1
+	    kabupaten=> \q
 	- Backup database kabupaten
 	- Cek diff database kabupaten
 	- Aktifkan server

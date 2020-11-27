@@ -1436,8 +1436,16 @@ RELEASE 8.4
 	    kabupaten-> where id=24493;
 	    UPDATE 1
 	    kabupaten=> \q
-	- Backup database kabupaten
-	- Cek diff database kabupaten
-	- Aktifkan server
+	- Backup database kabupaten -OK-
+	- Cek diff database kabupaten -OK-
+	- Aktifkan server -OK-
 
-    - cvs tag rel-8-4 pada menu_entry
+    - aktivasi kunci ssh cvs-server pada server development plus password -OK-
+    - test md5 kabupaten prod -OK-
+    - test md5 kabupaten devel -OK-
+    - cvs tag rel-8-4 pada menu_entry -OK-
+
+RELEASE 8.5:
+
+    - Entry Berita Acara Serah Terima Barang:
+    - Diagram ER dan UML 2 jam

@@ -1440,7 +1440,7 @@ RELEASE 8.4
 	- Cek diff database kabupaten -OK-
 	- Aktifkan server -OK-
 
-    - aktivasi kunci ssh cvs-server pada server development plus password -OK-
+    - aktivasi kunci ssh cvs-server pada server development plus password -OK- 1jam
     - test md5 kabupaten prod -OK-
     - test md5 kabupaten devel -OK-
     - cvs tag rel-8-4 pada menu_entry -OK-
@@ -1449,3 +1449,12 @@ RELEASE 8.5:
 
     - Entry Berita Acara Serah Terima Barang:
     - Diagram ER dan UML 2 jam
+	ER Tanah
+    - Daftar Pengadaan L2:
+	semua tahun
+    - Daftar Pengadaan
+	hanya dari 2020 keatas
+    - Solusi lain, insert tanggal default dari 2006, lalu gunakan insert untuk
+      memasukkan semua pengadaan berdasarkan tahun nya, menyesuaikan BA nya.
+
+

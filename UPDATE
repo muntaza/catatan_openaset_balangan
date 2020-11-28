@@ -9,3 +9,8 @@ RELEASE 8.4:
           sudo chmod -R u+w openaset
 
     - cek upload foto -OK-
+
+RELEASE 8.5:
+    - cvs up pada kabupaten
+    - python manage.py migrate
+    - rcctl restart apache2

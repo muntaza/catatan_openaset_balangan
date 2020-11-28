@@ -1457,6 +1457,9 @@ RELEASE 8.5:
     - Solusi lain, insert tanggal default dari 2006, lalu gunakan insert untuk
       memasukkan semua pengadaan berdasarkan tahun nya, menyesuaikan BA nya.
     - Pembuatan table BASerahTerima -OK-
-    - Pembuatan admin BASerahTerima
+    - Pembuatan admin BASerahTerima -OK-
+    - Pembuatan menu per SKPD BASerahTerima -OK-
+    - test md5 -OK-
+    - cvs tag rel-8-5 pada menu_entry -OK-
 
 

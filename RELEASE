@@ -1456,5 +1456,7 @@ RELEASE 8.5:
 	hanya dari 2020 keatas
     - Solusi lain, insert tanggal default dari 2006, lalu gunakan insert untuk
       memasukkan semua pengadaan berdasarkan tahun nya, menyesuaikan BA nya.
+    - Pembuatan table BASerahTerima -OK-
+    - Pembuatan admin BASerahTerima
 
 

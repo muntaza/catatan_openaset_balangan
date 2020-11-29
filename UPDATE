@@ -11,6 +11,14 @@ RELEASE 8.4:
     - cek upload foto -OK-
 
 RELEASE 8.5:
-    - cvs up pada kabupaten
-    - python manage.py migrate
-    - rcctl restart apache2
+    - cvs up pada kabupaten -OK-
+    - python manage.py migrate -OK-
+    - rcctl restart apache2 -OK-
+    - testing production
+
+RELEASE 8.6:
+    - cvs up pada kabupaten -OK-
+    - python manage.py migrate -OK-
+    - rcctl restart apache2 -OK-
+    - logout -OK-
+    - testing production -OK-

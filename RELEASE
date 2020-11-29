@@ -1456,10 +1456,32 @@ RELEASE 8.5:
 	hanya dari 2020 keatas
     - Solusi lain, insert tanggal default dari 2006, lalu gunakan insert untuk
       memasukkan semua pengadaan berdasarkan tahun nya, menyesuaikan BA nya.
-    - Pembuatan table BASerahTerima -OK-
+
+    - Pembuatan table BASerahTerima -OK- (3 jam + deploy)
     - Pembuatan admin BASerahTerima -OK-
     - Pembuatan menu per SKPD BASerahTerima -OK-
     - test md5 -OK-
     - cvs tag rel-8-5 pada menu_entry -OK-
 
 
+RELEASE 8.6:
+
+    - entry data pada setda, BA default dari tahun 2001-2020 -OK- 30 menit
+    - tambah field id_ba_serah_terima:
+	- harga_tanah -OK-
+	- harga_peralatan_mesin -OK-
+	- harga_gedungbangunan -OK-
+	- harga_jalanirigasijaringan -OK-
+	- harga_atl -OK-
+    - edit admin:
+	- harga tanah inline -OK-
+	- harga pm inline -OK-
+	- harga gb inline -OK-
+	- harga jij inline -OK-
+	- harga atl inline -OK-
+    - edit admin tebing tinggi -OK-
+	- tidak ada yang di edit, karena BA tidak difilter, BA bisa pilih punya SKPD lain,
+	  karena saat mutasi ke SKPD lain, field BA Serah Terima ikut di bawa.
+	- tiap tahun akan di rubah default BA nya ke field tahun berkenaan---
+    - test md5 -OK-
+    - cvs tag rel-8-6 pada menu_entry -OK-

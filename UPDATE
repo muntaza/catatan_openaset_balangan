@@ -22,3 +22,5 @@ RELEASE 8.6:
     - rcctl restart apache2 -OK-
     - logout -OK-
     - testing production -OK-
+
+RELEASE 8.7

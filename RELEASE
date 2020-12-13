@@ -1485,3 +1485,7 @@ RELEASE 8.6:
 	- tiap tahun akan di rubah default BA nya ke field tahun berkenaan---
     - test md5 -OK-
     - cvs tag rel-8-6 pada menu_entry -OK-
+
+RELEASE 8.7:
+    -
+    - cvs tag rel-8-6 pada menu_entry

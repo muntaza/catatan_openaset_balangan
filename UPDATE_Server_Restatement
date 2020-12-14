@@ -1,0 +1,17 @@
+RELEASE 1:
+
+    - Copy file backup sql dari firewall -OK-
+    - Bunzip file sql -OK-
+    - Pindah ke user postgres -OK-
+    - copy file sql ke home postgres -OK-
+    - restore file sql di Devel -OK-
+	- hapus database kabupaten -OK-
+	- buat database kabupaten -OK-
+	- restore dengan psql -OK-
+    - testing di phpPGAdmin:
+	- restore database kabupaten di Local Asus -OK-
+	- hapus pengadaan 2020 asal-usul belanja modal dan hibah -OK-
+	     psql kabupaten < /tmp/hapus_pengadaan_2020.sql -OK-
+    - aplikasikan di Devel
+	- hapus pengadaan 2020 asal-usul belanja modal dan hibah -OK-
+	     psql kabupaten < /tmp/hapus_pengadaan_2020.sql -OK-

@@ -3,3 +3,9 @@ Diagram Penambahan Umur:
 
 Koding Penambahan Umur:
     - Gedung Bangunan
+
+Diagram BA_Serah_Terima
+    - Tanah, Peralatan Mesin, Gedung Bangunan, Jalan Irigasi dan Jaringan, ATL
+
+Koding modul BA_Serah_Terima
+    - Tanah

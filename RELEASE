@@ -1448,8 +1448,13 @@ RELEASE 8.4
 RELEASE 8.5:
 
     - Entry Berita Acara Serah Terima Barang:
-    - Diagram ER dan UML 2 jam
-	ER Tanah
+    - Diagram ER dan UML Serah terima barang : 2 jam
+	ER Tanah dan UML Tanah -OK-
+	ER Peralatan Mesin dan UML Peralatan Mesin -OK-
+	ER Gedung Bangunan dan UML Gedung Bangunan -OK-
+	ER Jalan Irigasi dan Jaringan dan UML Jalan Irigasi dan Jaringan -OK-
+	ER ATL dan UML ATL -OK-
+	
     - Daftar Pengadaan L2:
 	semua tahun
     - Daftar Pengadaan
@@ -1487,5 +1492,28 @@ RELEASE 8.6:
     - cvs tag rel-8-6 pada menu_entry -OK-
 
 RELEASE 8.7:
-    -
+    - entry tahun sampai 2030
+    - entry data pada setda, BA default dari tahun 2021-2030 -15 menit
+    - Perubahan ER untuk penambahan table penyusutan_108: 1 jam
+	HANYA KODING di GEDUNG BANGUNAN, gambar di PM, GB, JIJ
+	- Peralatan Mesin
+	- Gedung Bangunan -OK-
+	- Jalan Irigasi dan Jaringan
+    - Perubahan UML untuk penambahan table penyusutan_108: 1 jam
+	HANYA KODING di GEDUNG BANGUNAN, gambar di PM, GB, JIJ
+	- Peralatan Mesin
+	- Gedung Bangunan -OK-
+	- Jalan Irigasi dan Jaringan
+    - Revisi ER dan UML untuk Nomor BKU dan Tanggal BKU: 1 jam
+	- Tanah -OK-
+	- Peralatan Mesin -OK-
+	- Gedung Bangunan -OK-
+	- Jalan Irigasi dan Jaringan -OK-
+	- Aset Tetap Lainnya -OK-
     - cvs tag rel-8-6 pada menu_entry
+
+
+
+
+
+    - Laporan Realisasi Belanja Modal

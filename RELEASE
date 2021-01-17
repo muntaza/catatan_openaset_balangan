@@ -1510,6 +1510,9 @@ RELEASE 8.7:
 	- Gedung Bangunan -OK-
 	- Jalan Irigasi dan Jaringan -OK-
 	- Aset Tetap Lainnya -OK-
+    - Pembuatan models KelompokBarang108 dan PenambahanUmur108 -OK-
+    - Pembuatan admin KelompokBarang108 dan PenambahanUmur108 -OK-
+    - deploy development Laptop Asus
     - cvs tag rel-8-6 pada menu_entry
 
 

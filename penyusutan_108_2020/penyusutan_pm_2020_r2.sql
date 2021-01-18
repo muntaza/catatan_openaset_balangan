@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS view_penyusutan_pm_2020_r2_a1 CASCADE;
+DROP VIEW IF EXISTS view_penyusutan_108_pm_2020_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_pm_2020_r2_a1 AS
+CREATE VIEW view_penyusutan_108_pm_2020_r2_a1 AS
 
 
 
@@ -33,8 +33,8 @@ golongan_barang.golongan_barang,
 peralatan_mesin.id_golongan_barang,
 
 peralatan_mesin.nama_barang,
-LEFT(kode_barang.kode_barang, 14) kode_barang,
-LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 peralatan_mesin.id register,
 
 peralatan_mesin.merk_type,
@@ -48,7 +48,7 @@ peralatan_mesin.keterangan
 
 
 FROM
-peralatan_mesin as peralatan_mesin, harga_peralatan_mesin as harga_peralatan_mesin, kode_barang,
+peralatan_mesin as peralatan_mesin, harga_peralatan_mesin as harga_peralatan_mesin, kode_barang_108,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi
 
@@ -59,7 +59,7 @@ harga_peralatan_mesin.id_peralatan_mesin = peralatan_mesin.id AND
 harga_peralatan_mesin.id_asal_usul = asal_usul.id AND
 harga_peralatan_mesin.tahun <= 2020 AND
 
-peralatan_mesin.id_kode_barang = kode_barang.id AND
+peralatan_mesin.id_kode_barang_108 = kode_barang_108.id AND
 peralatan_mesin.id_mutasi_berkurang = mutasi_berkurang.id AND
 
 peralatan_mesin.id_keadaan_barang = keadaan_barang.id AND
@@ -95,7 +95,7 @@ golongan_barang.golongan_barang,
 peralatan_mesin.id_golongan_barang,
 peralatan_mesin.nama_barang,
 
-kode_barang,
+kode_barang_108,
 kode_l2,
 register,
 
@@ -111,5 +111,5 @@ peralatan_mesin.keterangan) AS QUERY_PERALATAN_MESIN
 ;
 
 
-GRANT ALL PRIVILEGES ON view_penyusutan_pm_2020_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_pm_2020_r2_a1 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_108_pm_2020_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_108_pm_2020_r2_a1 FROM lap_kabupaten;

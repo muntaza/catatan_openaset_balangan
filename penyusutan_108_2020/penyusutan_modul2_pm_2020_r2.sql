@@ -19,7 +19,7 @@ harga,
 sum (harga) over (partition by register order by tahun asc) as nilai_perolehan,
 tahun,
 view_penyusutan_108_pm_2020_r2_a1.kode_barang_108,
-left(view_penyusutan_108_pm_2020_r2_a1.kode_barang_108, 8) as kode_umur,
+left(view_penyusutan_108_pm_2020_r2_a1.kode_barang_108, 11) as kode_umur,
 rank() over (partition by register order by tahun asc) as rank,
 lead(tahun, 1, 2021) over (partition by register order by tahun asc) as tahun_akhir,
 umur as masa_manfaat,
@@ -48,7 +48,7 @@ END as nilai_buku_akhir
 
 from view_penyusutan_108_pm_2020_r2_a1, kode_barang_108
 
-where view_penyusutan_108_pm_2020_r2_a1.kode_barang_108 = left(kode_barang_108.kode_barang_108,14)
+where view_penyusutan_108_pm_2020_r2_a1.kode_barang_108 = left(kode_barang_108.kode_barang_108, 18)
 
 order by register, rank;
 
@@ -193,8 +193,8 @@ order by register, rank;
 -- terdapat bug pada query sql, yaitu ketika
 -- link ke table penambahan_umur, maka tidak dilakukan
 -- link seperti biasa, yaitu
--- persentasi = penambahan_umur.persen, tetapi
--- penambahan_umur.persen > 75 (tidak tahu kenapa)
+-- persentasi =  view_penambahan_umur_108.persen, tetapi
+--  view_penambahan_umur_108.persen > 75 (tidak tahu kenapa)
 
 
 
@@ -229,7 +229,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -245,11 +245,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e3, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e3, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e3.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e3.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e3.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e3.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -539,7 +539,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -555,11 +555,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e6, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e6, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e6.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e6.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e6.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e6.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -851,7 +851,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -867,11 +867,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e9, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e9, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e9.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e9.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e9.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e9.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -1162,7 +1162,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1178,11 +1178,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e12, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e12, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e12.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e12.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e12.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e12.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -1474,7 +1474,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1490,11 +1490,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e15, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e15, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e15.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e15.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e15.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e15.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -1787,7 +1787,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1803,11 +1803,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e18, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e18, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e18.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e18.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e18.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e18.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -2102,7 +2102,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2118,11 +2118,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e21, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e21, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e21.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e21.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e21.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e21.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -2416,7 +2416,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2432,11 +2432,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e24, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e24, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e24.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e24.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e24.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e24.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 
@@ -2728,7 +2728,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2744,11 +2744,11 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_108_pm_2020_r2_e27, penambahan_umur
+view_penyusutan_108_pm_2020_r2_e27, view_penambahan_umur_108
 
 where
-view_penyusutan_108_pm_2020_r2_e27.kode_umur = penambahan_umur.kode_barang_108 AND
-view_penyusutan_108_pm_2020_r2_e27.persentasi = penambahan_umur.persen
+view_penyusutan_108_pm_2020_r2_e27.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_pm_2020_r2_e27.persentasi =  view_penambahan_umur_108.persen
 
 order by register, rank;
 

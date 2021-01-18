@@ -1492,8 +1492,6 @@ RELEASE 8.6:
     - cvs tag rel-8-6 pada menu_entry -OK-
 
 RELEASE 8.7:
-    - entry tahun sampai 2030
-    - entry data pada setda, BA default dari tahun 2021-2030 -15 menit
     - Perubahan ER untuk penambahan table penyusutan_108: 1 jam
 	HANYA KODING di GEDUNG BANGUNAN, gambar di PM, GB, JIJ
 	- Peralatan Mesin
@@ -1510,13 +1508,20 @@ RELEASE 8.7:
 	- Gedung Bangunan -OK-
 	- Jalan Irigasi dan Jaringan -OK-
 	- Aset Tetap Lainnya -OK-
-    - Pembuatan models KelompokBarang108 dan PenambahanUmur108 -OK-
+    - Pembuatan models KelompokBarang108 dan PenambahanUmur108 -OK- 2 jam
     - Pembuatan admin KelompokBarang108 dan PenambahanUmur108 -OK-
-    - deploy development Laptop Asus
-    - cvs tag rel-8-6 pada menu_entry
+    - deploy development Laptop Asus -OK-
+    - insert data kelompok_barang_108 dan penambahan_umur_108 2 jam -OK-
+    - fitur search pada penambahan_umur_108 1 jam -OK-
+    - md5 test -OK-
+    - review diff -OK-
+    - cvs tag rel-8-7 pada menu_entry -OK-
 
 
 
-
-
+RELEASE 8.7:
+    - entry tahun sampai 2030
+    - entry data pada setda, BA default dari tahun 2021-2030 -15 menit
     - Laporan Realisasi Belanja Modal
+    - cvs tag rel-8-8 pada menu_entry 
+

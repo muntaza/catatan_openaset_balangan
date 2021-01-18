@@ -23,4 +23,26 @@ RELEASE 8.6:
     - logout -OK-
     - testing production -OK-
 
-RELEASE 8.7
+RELEASE 8.7:
+    - ssh-add user cvs -OK-
+    - rcctl stop apache2 -OK-
+    - cvs up pada kabupaten -OK-
+    - python manage.py migrate -OK-
+    - psql -h localhost -U kabupaten kabupaten < kelompok_barang_108_insert.sql -OK-
+    - psql -h localhost -U kabupaten kabupaten < penambahan_umur_108_insert.sql -OK-
+    - rcctl restart apache2 -OK-
+    - testing -OK-
+    - sh clean.sh -OK-
+    - testing -OK-
+    - pkill ssh-agent database -OK-
+    - logout database -OK-
+    - pkill ssh-agent gateway -OK-
+    - logout gateway -OK-
+    - testing -OK-
+
+RELEASE 8.8:
+
+
+
+
+

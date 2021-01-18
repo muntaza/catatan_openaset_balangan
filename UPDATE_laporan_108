@@ -26,3 +26,19 @@ rel-1-3:
     - mutasi barang berkurang:
 	psql -U kabupaten -h localhost kabupaten < mutasi_barang_berkurang_108.sql
 	psql -U kabupaten -h localhost kabupaten < gabungan_mutasi_barang_berkurang_108.sql
+
+rel-1-4:
+    - ssh-add cvs user
+    - cvs up pada php5_projects_108
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2019_r2_OK.sql
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2020_r2_OK.sql
+    - testing jij 2019, jij 2020, beban jij
+    - pkill ssh-agent
+    - exit database
+    - pkil ssh-agent
+    - exit gateway
+    
+
+
+
+

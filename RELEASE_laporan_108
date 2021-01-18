@@ -102,16 +102,65 @@ rel-1-3:
 	- test -OK-
 
 rel-1-4:
-    - Penyusutan_108_2020
-	- buat 
+    - test md5 production -OK-
+    - test md5 development -OK-
+    - copy file dari penyusutan_2020_r2   
+    - algoritma perubahan penyusutan 108
+	- penyusutan_gb_2020_r2
+	    - rename view_penyusutan -> view_penyusutan_108 -OK-
+	    - rename kode_barang -> kode_barang_108 -OK-
+		LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108, -OK-
+		LEFT(kode_barang_108.kode_barang_108, 8) kode_l2, -OK-
+	- penyusutan_modul2_gb_2020_r2
+	    - rename view_penyusutan -> view_penyusutan_108 -OK-
+	    - rename kode_barang -> kode_barang_108 -OK-
+	    - left(view_penyusutan_108_gb_2020_r2_a1.kode_barang_108, 11) as kode_umur, -OK-
+	    - where view_penyusutan_108_gb_2020_r2_a1.kode_barang_108 = left(kode_barang_108.kode_barang_108, 18) -OK-
+	    - rename:
+		penambahan_umur.umur -> view_penambahan_umur_108.umur -OK-
+		, penambahan_umur -> , view_penambahan_umur_108 -OK-
+		penambahan_umur.kode_barang_108 -> view_penambahan_umur_108.kode_kelompok_barang -OK-
+		penambahan_umur.persen -> view_penambahan_umur_108.persen -OK-
+	- penyusutan_modul3_gb_2020_r2, penyusutan_modul4_gb_2020_r2 
+	    - rename view_penyusutan -> view_penyusutan_108 -OK-
+	    - rename kode_barang -> kode_barang_108 -OK- 
+	- beban_gb_2020_r2
+	    - rename view_penyusutan -> view_penyusutan_108 -OK-
+	    - rename kode_barang -> kode_barang_108 -OK-
+	    - rename view_beban_penyusutan -> view_beban_penyusutan_108 -OK-
+
+    - reporting
+	    - rename view_penyusutan -> view_penyusutan_108 -OK-
+	    - rename kode_barang -> kode_barang_108 -OK-
+	    - rename view_beban_penyusutan -> view_beban_penyusutan_108 -OK-
+    
+    - persiapan penyusutan 2020:
+	- pm 2020 -OK-
+	- gb 2020 -OK-
+	- jij 2020 -OK-
+	- pm 2019 -OK-
+	- gb 2019 -OK-
+	- jij 2019 -OK-
+    - reporting 2020:
+	- penyusutan lk 2020 pengadaan 2019
+	    pm, pm rinci -OK-
+	    gb, gb rinci -OK-
+	    jij, jij rinci -OK-
+	- penyusutan lk 2020 pengadaan 2020
+	    pm, pm rinci -OK-
+	    gb, gb rinci -OK-
+	    jij, jij rinci -OK-
+	- beban 2020
+	    pm -OK-
+	    gb -OK-
+	    jij -OK-
+    
+    - md5 test development -OK-
+    - cvs tag rel-1-4 -OK-
+    
 
 
 rel-1-5
-
-
     - extra_comptable_2006_2014_skpd.xml
-
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
-
-    

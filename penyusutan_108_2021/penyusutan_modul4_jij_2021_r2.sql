@@ -1,6 +1,6 @@
-DROP view if exists view_penyusutan_jij_2021_r2_a4 CASCADE;
+DROP view if exists view_penyusutan_108_jij_2021_r2_a4 CASCADE;
 
-create view view_penyusutan_jij_2021_r2_a4 as
+create view view_penyusutan_108_jij_2021_r2_a4 as
 
 select register,
 nama_skpd,
@@ -16,7 +16,7 @@ mutasi_berkurang,
 keadaan_barang,
 nama_barang,
 
-kode_barang,
+kode_barang_108,
 min(tahun) as tahun_awal,
 
 sum(harga) as nilai_perolehan,
@@ -25,7 +25,7 @@ sum(harga) - sum(penyusutan) as nilai_buku
 
 
  from
-view_penyusutan_jij_2021_r2_a3
+view_penyusutan_108_jij_2021_r2_a3
 
 GROUP BY
 register,
@@ -42,9 +42,9 @@ mutasi_berkurang,
 keadaan_barang,
 nama_barang,
 
-kode_barang
+kode_barang_108
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2021_r2_a4 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2021_r2_a4 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_108_jij_2021_r2_a4 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_108_jij_2021_r2_a4 FROM lap_kabupaten;

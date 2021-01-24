@@ -1,6 +1,6 @@
-DROP view if exists view_penyusutan_gb_2021_r2_e2 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e2 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e2 as select
+create view view_penyusutan_108_gb_2021_r2_e2 as select
 nama_skpd,
 id_skpd,
 nama_lokasi_bidang,
@@ -18,8 +18,8 @@ register,
 harga,
 sum (harga) over (partition by register order by tahun asc) as nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_a1.kode_barang,
-left(view_penyusutan_gb_2021_r2_a1.kode_barang, 8) as kode_umur,
+view_penyusutan_108_gb_2021_r2_a1.kode_barang_108,
+left(view_penyusutan_108_gb_2021_r2_a1.kode_barang_108, 11) as kode_umur,
 rank() over (partition by register order by tahun asc) as rank,
 lead(tahun, 1, 2022) over (partition by register order by tahun asc) as tahun_akhir,
 umur as masa_manfaat,
@@ -46,9 +46,9 @@ ELSE
      0
 END as nilai_buku_akhir
 
-from view_penyusutan_gb_2021_r2_a1, kode_barang
+from view_penyusutan_108_gb_2021_r2_a1, kode_barang_108
 
-where view_penyusutan_gb_2021_r2_a1.kode_barang = left(kode_barang.kode_barang,14)
+where view_penyusutan_108_gb_2021_r2_a1.kode_barang_108 = left(kode_barang_108.kode_barang_108, 18)
 
 order by register, rank;
 
@@ -59,9 +59,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e3 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e3 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e3 as
+create view view_penyusutan_108_gb_2021_r2_e3 as
 
 select register,
 nama_skpd,
@@ -80,7 +80,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e2.kode_barang,
+view_penyusutan_108_gb_2021_r2_e2.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -173,7 +173,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e2
+view_penyusutan_108_gb_2021_r2_e2
  Window
 urutan as (partition by register order by rank)
 
@@ -193,14 +193,14 @@ order by register, rank;
 -- terdapat bug pada query sql, yaitu ketika
 -- link ke table penambahan_umur, maka tidak dilakukan
 -- link seperti biasa, yaitu
--- persentasi = penambahan_umur.persen, tetapi
--- penambahan_umur.persen > 75 (tidak tahu kenapa)
+-- persentasi = view_penambahan_umur_108.persen, tetapi
+-- view_penambahan_umur_108.persen > 75 (tidak tahu kenapa)
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e4 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e4 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e4 as
+create view view_penyusutan_108_gb_2021_r2_e4 as
 
 select register,
 nama_skpd,
@@ -219,7 +219,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e3.kode_barang,
+view_penyusutan_108_gb_2021_r2_e3.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -229,7 +229,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -245,20 +245,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e3, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e3, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e3.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e3.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e3.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e3.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e5 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e5 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e5 as
+create view view_penyusutan_108_gb_2021_r2_e5 as
 
 select register,
 nama_skpd,
@@ -277,7 +277,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -372,7 +372,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e4
+view_penyusutan_108_gb_2021_r2_e4
  Window
 urutan as (partition by register order by rank)
 
@@ -383,9 +383,9 @@ order by register, rank;
 
 -------kunci angka baris ke 2
 
-DROP view if exists view_penyusutan_gb_2021_r2_e6 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e6 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e6 as
+create view view_penyusutan_108_gb_2021_r2_e6 as
 
 select register,
 nama_skpd,
@@ -404,7 +404,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e5.kode_barang,
+view_penyusutan_108_gb_2021_r2_e5.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -497,7 +497,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e5
+view_penyusutan_108_gb_2021_r2_e5
  Window
 urutan as (partition by register order by rank)
 
@@ -508,9 +508,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e7 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e7 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e7 as
+create view view_penyusutan_108_gb_2021_r2_e7 as
 
 select register,
 nama_skpd,
@@ -529,7 +529,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e6.kode_barang,
+view_penyusutan_108_gb_2021_r2_e6.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -539,7 +539,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -555,20 +555,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e6, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e6, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e6.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e6.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e6.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e6.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e8 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e8 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e8 as
+create view view_penyusutan_108_gb_2021_r2_e8 as
 
 select register,
 nama_skpd,
@@ -587,7 +587,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -682,7 +682,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e7
+view_penyusutan_108_gb_2021_r2_e7
  Window
 urutan as (partition by register order by rank)
 
@@ -695,9 +695,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e9 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e9 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e9 as
+create view view_penyusutan_108_gb_2021_r2_e9 as
 
 select register,
 nama_skpd,
@@ -716,7 +716,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e8.kode_barang,
+view_penyusutan_108_gb_2021_r2_e8.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -809,7 +809,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e8
+view_penyusutan_108_gb_2021_r2_e8
  Window
 urutan as (partition by register order by rank)
 
@@ -820,9 +820,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e10 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e10 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e10 as
+create view view_penyusutan_108_gb_2021_r2_e10 as
 
 select register,
 nama_skpd,
@@ -841,7 +841,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e9.kode_barang,
+view_penyusutan_108_gb_2021_r2_e9.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -851,7 +851,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -867,20 +867,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e9, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e9, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e9.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e9.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e9.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e9.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e11 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e11 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e11 as
+create view view_penyusutan_108_gb_2021_r2_e11 as
 
 select register,
 nama_skpd,
@@ -899,7 +899,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -994,7 +994,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e10
+view_penyusutan_108_gb_2021_r2_e10
  Window
 urutan as (partition by register order by rank)
 
@@ -1006,9 +1006,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e12 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e12 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e12 as
+create view view_penyusutan_108_gb_2021_r2_e12 as
 
 select register,
 nama_skpd,
@@ -1027,7 +1027,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e11.kode_barang,
+view_penyusutan_108_gb_2021_r2_e11.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1120,7 +1120,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e11
+view_penyusutan_108_gb_2021_r2_e11
  Window
 urutan as (partition by register order by rank)
 
@@ -1131,9 +1131,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e13 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e13 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e13 as
+create view view_penyusutan_108_gb_2021_r2_e13 as
 
 select register,
 nama_skpd,
@@ -1152,7 +1152,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e12.kode_barang,
+view_penyusutan_108_gb_2021_r2_e12.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1162,7 +1162,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1178,20 +1178,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e12, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e12, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e12.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e12.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e12.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e12.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e14 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e14 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e14 as
+create view view_penyusutan_108_gb_2021_r2_e14 as
 
 select register,
 nama_skpd,
@@ -1210,7 +1210,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1305,7 +1305,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e13
+view_penyusutan_108_gb_2021_r2_e13
  Window
 urutan as (partition by register order by rank)
 
@@ -1318,9 +1318,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e15 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e15 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e15 as
+create view view_penyusutan_108_gb_2021_r2_e15 as
 
 select register,
 nama_skpd,
@@ -1339,7 +1339,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e14.kode_barang,
+view_penyusutan_108_gb_2021_r2_e14.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1432,7 +1432,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e14
+view_penyusutan_108_gb_2021_r2_e14
  Window
 urutan as (partition by register order by rank)
 
@@ -1443,9 +1443,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e16 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e16 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e16 as
+create view view_penyusutan_108_gb_2021_r2_e16 as
 
 select register,
 nama_skpd,
@@ -1464,7 +1464,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e15.kode_barang,
+view_penyusutan_108_gb_2021_r2_e15.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1474,7 +1474,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1490,20 +1490,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e15, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e15, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e15.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e15.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e15.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e15.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e17 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e17 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e17 as
+create view view_penyusutan_108_gb_2021_r2_e17 as
 
 select register,
 nama_skpd,
@@ -1522,7 +1522,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1617,7 +1617,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e16
+view_penyusutan_108_gb_2021_r2_e16
  Window
 urutan as (partition by register order by rank)
 
@@ -1631,9 +1631,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e18 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e18 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e18 as
+create view view_penyusutan_108_gb_2021_r2_e18 as
 
 select register,
 nama_skpd,
@@ -1652,7 +1652,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e17.kode_barang,
+view_penyusutan_108_gb_2021_r2_e17.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1745,7 +1745,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e17
+view_penyusutan_108_gb_2021_r2_e17
  Window
 urutan as (partition by register order by rank)
 
@@ -1756,9 +1756,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e19 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e19 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e19 as
+create view view_penyusutan_108_gb_2021_r2_e19 as
 
 select register,
 nama_skpd,
@@ -1777,7 +1777,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e18.kode_barang,
+view_penyusutan_108_gb_2021_r2_e18.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1787,7 +1787,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -1803,20 +1803,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e18, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e18, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e18.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e18.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e18.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e18.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e20 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e20 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e20 as
+create view view_penyusutan_108_gb_2021_r2_e20 as
 
 select register,
 nama_skpd,
@@ -1835,7 +1835,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -1930,7 +1930,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e19
+view_penyusutan_108_gb_2021_r2_e19
  Window
 urutan as (partition by register order by rank)
 
@@ -1946,9 +1946,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e21 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e21 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e21 as
+create view view_penyusutan_108_gb_2021_r2_e21 as
 
 select register,
 nama_skpd,
@@ -1967,7 +1967,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e20.kode_barang,
+view_penyusutan_108_gb_2021_r2_e20.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2060,7 +2060,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e20
+view_penyusutan_108_gb_2021_r2_e20
  Window
 urutan as (partition by register order by rank)
 
@@ -2071,9 +2071,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e22 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e22 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e22 as
+create view view_penyusutan_108_gb_2021_r2_e22 as
 
 select register,
 nama_skpd,
@@ -2092,7 +2092,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e21.kode_barang,
+view_penyusutan_108_gb_2021_r2_e21.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2102,7 +2102,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2118,20 +2118,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e21, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e21, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e21.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e21.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e21.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e21.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e23 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e23 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e23 as
+create view view_penyusutan_108_gb_2021_r2_e23 as
 
 select register,
 nama_skpd,
@@ -2150,7 +2150,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2245,7 +2245,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e22
+view_penyusutan_108_gb_2021_r2_e22
  Window
 urutan as (partition by register order by rank)
 
@@ -2260,9 +2260,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e24 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e24 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e24 as
+create view view_penyusutan_108_gb_2021_r2_e24 as
 
 select register,
 nama_skpd,
@@ -2281,7 +2281,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e23.kode_barang,
+view_penyusutan_108_gb_2021_r2_e23.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2374,7 +2374,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e23
+view_penyusutan_108_gb_2021_r2_e23
  Window
 urutan as (partition by register order by rank)
 
@@ -2385,9 +2385,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e25 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e25 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e25 as
+create view view_penyusutan_108_gb_2021_r2_e25 as
 
 select register,
 nama_skpd,
@@ -2406,7 +2406,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e24.kode_barang,
+view_penyusutan_108_gb_2021_r2_e24.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2416,7 +2416,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2432,20 +2432,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e24, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e24, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e24.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e24.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e24.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e24.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e26 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e26 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e26 as
+create view view_penyusutan_108_gb_2021_r2_e26 as
 
 select register,
 nama_skpd,
@@ -2464,7 +2464,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2559,7 +2559,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e25
+view_penyusutan_108_gb_2021_r2_e25
  Window
 urutan as (partition by register order by rank)
 
@@ -2572,9 +2572,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e27 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e27 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e27 as
+create view view_penyusutan_108_gb_2021_r2_e27 as
 
 select register,
 nama_skpd,
@@ -2593,7 +2593,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e26.kode_barang,
+view_penyusutan_108_gb_2021_r2_e26.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2686,7 +2686,7 @@ nilai_buku_awal,
 penyusutan,
 nilai_buku_akhir
  from
-view_penyusutan_gb_2021_r2_e26
+view_penyusutan_108_gb_2021_r2_e26
  Window
 urutan as (partition by register order by rank)
 
@@ -2697,9 +2697,9 @@ order by register, rank;
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e28 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e28 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e28 as
+create view view_penyusutan_108_gb_2021_r2_e28 as
 
 select register,
 nama_skpd,
@@ -2718,7 +2718,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-view_penyusutan_gb_2021_r2_e27.kode_barang,
+view_penyusutan_108_gb_2021_r2_e27.kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2728,7 +2728,7 @@ persentasi,
 
 masa_manfaat,
 CASE WHEN rank > 1
-          THEN penambahan_umur.umur
+          THEN view_penambahan_umur_108.umur
      WHEN rank = 1
 	  THEN 0
 ELSE
@@ -2744,20 +2744,20 @@ nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e27, penambahan_umur
+view_penyusutan_108_gb_2021_r2_e27, view_penambahan_umur_108
 
 where
-view_penyusutan_gb_2021_r2_e27.kode_umur = penambahan_umur.kode_barang AND
-view_penyusutan_gb_2021_r2_e27.persentasi = penambahan_umur.persen
+view_penyusutan_108_gb_2021_r2_e27.kode_umur = view_penambahan_umur_108.kode_kelompok_barang AND
+view_penyusutan_108_gb_2021_r2_e27.persentasi = view_penambahan_umur_108.persen
 
 order by register, rank;
 
 
 
 
-DROP view if exists view_penyusutan_gb_2021_r2_e29 CASCADE;
+DROP view if exists view_penyusutan_108_gb_2021_r2_e29 CASCADE;
 
-create view view_penyusutan_gb_2021_r2_e29 as
+create view view_penyusutan_108_gb_2021_r2_e29 as
 
 select register,
 nama_skpd,
@@ -2776,7 +2776,7 @@ nama_barang,
 harga,
 nilai_perolehan,
 tahun,
-kode_barang,
+kode_barang_108,
 kode_umur,
 rank,
 tahun_akhir,
@@ -2871,7 +2871,7 @@ END as nilai_buku_akhir
 
 
  from
-view_penyusutan_gb_2021_r2_e28
+view_penyusutan_108_gb_2021_r2_e28
  Window
 urutan as (partition by register order by rank)
 

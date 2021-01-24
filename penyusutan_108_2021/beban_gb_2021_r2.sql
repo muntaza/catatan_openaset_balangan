@@ -1,6 +1,6 @@
-DROP view if exists view_beban_penyusutan_gb_2021_r2_a1 CASCADE;
+DROP view if exists view_beban_penyusutan_108_gb_2021_r2_a1 CASCADE;
 
-create view view_beban_penyusutan_gb_2021_r2_a1 as
+create view view_beban_penyusutan_108_gb_2021_r2_a1 as
 
 
 select register,
@@ -17,7 +17,7 @@ mutasi_berkurang,
 keadaan_barang,
 nama_barang,
 
-kode_barang,
+kode_barang_108,
 tahun_awal,
 
 nilai_perolehan as nilai_perolehan_sd_2020,
@@ -28,7 +28,7 @@ nilai_buku as nilai_buku_sd_2020,
 
 
  from
-view_penyusutan_gb_2020_r2_a4
+view_penyusutan_108_gb_2020_r2_a4
 
 
 UNION ALL
@@ -47,7 +47,7 @@ mutasi_berkurang,
 keadaan_barang,
 nama_barang,
 
-kode_barang,
+kode_barang_108,
 tahun_awal,
 
 0 as nilai_perolehan_sd_2020,
@@ -58,16 +58,16 @@ nilai_buku as nilai_buku_sd_2021
 
 
  from
-view_penyusutan_gb_2021_r2_a4
+view_penyusutan_108_gb_2021_r2_a4
 
 
 order by register;
 
 
 
-DROP view if exists view_beban_penyusutan_gb_2021_r2_a2 CASCADE;
+DROP view if exists view_beban_penyusutan_108_gb_2021_r2_a2 CASCADE;
 
-create view view_beban_penyusutan_gb_2021_r2_a2 as
+create view view_beban_penyusutan_108_gb_2021_r2_a2 as
 
 
 select register,
@@ -84,7 +84,7 @@ mutasi_berkurang,
 keadaan_barang,
 nama_barang,
 
-kode_barang,
+kode_barang_108,
 min(tahun_awal) as tahun_awal,
 
 sum(nilai_perolehan_sd_2020) as nilai_perolehan_sd_2020,
@@ -104,7 +104,7 @@ sum(nilai_buku_sd_2021) as nilai_buku_sd_2021
 
 
  from
-view_beban_penyusutan_gb_2021_r2_a1
+view_beban_penyusutan_108_gb_2021_r2_a1
 
 GROUP BY
 register,
@@ -120,10 +120,10 @@ id_mutasi_berkurang,
 mutasi_berkurang,
 keadaan_barang,
 nama_barang,
-kode_barang
+kode_barang_108
 
 
 order by register;
 
-GRANT ALL PRIVILEGES ON view_beban_penyusutan_gb_2021_r2_a2 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_gb_2021_r2_a2 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_beban_penyusutan_108_gb_2021_r2_a2 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_beban_penyusutan_108_gb_2021_r2_a2 FROM lap_kabupaten;

@@ -1,7 +1,7 @@
-DROP VIEW IF EXISTS view_penyusutan_jij_2021_r2_a1 CASCADE;
+DROP VIEW IF EXISTS view_penyusutan_108_jij_2021_r2_a1 CASCADE;
 
 
-CREATE VIEW view_penyusutan_jij_2021_r2_a1 AS
+CREATE VIEW view_penyusutan_108_jij_2021_r2_a1 AS
 
 
 SELECT * FROM
@@ -32,8 +32,8 @@ golongan_barang.golongan_barang,
 jalan_irigasi_jaringan.id_golongan_barang,
 
 jalan_irigasi_jaringan.nama_barang,
-LEFT(kode_barang.kode_barang, 14) kode_barang,
-LEFT(kode_barang.kode_barang, 5) kode_l2,
+LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
+LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
 jalan_irigasi_jaringan.id register,
 
 '' as merk_type,
@@ -47,7 +47,7 @@ jalan_irigasi_jaringan.keterangan
 
 
 FROM
-jalan_irigasi_jaringan as jalan_irigasi_jaringan, harga_jalan_irigasi_jaringan as harga_jalan_irigasi_jaringan, kode_barang,
+jalan_irigasi_jaringan as jalan_irigasi_jaringan, harga_jalan_irigasi_jaringan as harga_jalan_irigasi_jaringan, kode_barang_108,
 mutasi_berkurang, asal_usul, keadaan_barang, satuan_barang, golongan_barang,
 sub_skpd, skpd, lokasi_bidang, kabupaten, provinsi, view_tanah_tanpa_harga_kabupaten
 
@@ -58,7 +58,7 @@ harga_jalan_irigasi_jaringan.id_jalan_irigasi_jaringan = jalan_irigasi_jaringan.
 harga_jalan_irigasi_jaringan.id_asal_usul = asal_usul.id AND
 harga_jalan_irigasi_jaringan.tahun <= 2021 AND
 
-jalan_irigasi_jaringan.id_kode_barang = kode_barang.id AND
+jalan_irigasi_jaringan.id_kode_barang_108 = kode_barang_108.id AND
 jalan_irigasi_jaringan.id_mutasi_berkurang = mutasi_berkurang.id AND
 
 jalan_irigasi_jaringan.id_keadaan_barang = keadaan_barang.id AND
@@ -96,7 +96,7 @@ golongan_barang.golongan_barang,
 jalan_irigasi_jaringan.id_golongan_barang,
 jalan_irigasi_jaringan.nama_barang,
 
-kode_barang,
+kode_barang_108,
 kode_l2,
 register,
 
@@ -109,5 +109,5 @@ jalan_irigasi_jaringan.keterangan) AS QUERY_JALAN_IRIGASI_JARINGAN
 
 ;
 
-GRANT ALL PRIVILEGES ON view_penyusutan_jij_2021_r2_a1 TO lap_kabupaten;
-REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_jij_2021_r2_a1 FROM lap_kabupaten;
+GRANT ALL PRIVILEGES ON view_penyusutan_108_jij_2021_r2_a1 TO lap_kabupaten;
+REVOKE INSERT, UPDATE, DELETE ON view_penyusutan_108_jij_2021_r2_a1 FROM lap_kabupaten;

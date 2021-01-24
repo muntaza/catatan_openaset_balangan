@@ -161,6 +161,45 @@ rel-1-4:
 
 
 rel-1-5
+    - penyusutan_2021 108 -OK-
+	- penyusutan_gb_2021_r2
+	    - rename view_penyusutan -> view_penyusutan_108
+	    - rename kode_barang -> kode_barang_108
+		LEFT(kode_barang_108.kode_barang_108, 18) kode_barang_108,
+		LEFT(kode_barang_108.kode_barang_108, 8) kode_l2,
+	- penyusutan_modul2_gb_2021_r2
+	    - rename view_penyusutan -> view_penyusutan_108
+	    - rename kode_barang -> kode_barang_108
+	    - left(view_penyusutan_108_gb_2021_r2_a1.kode_barang_108, 11) as kode_umur,
+	    - where view_penyusutan_108_gb_2021_r2_a1.kode_barang_108 = left(kode_barang_108.kode_barang_108, 18)
+	    - rename:
+		penambahan_umur.umur -> view_penambahan_umur_108.umur
+		, penambahan_umur -> , view_penambahan_umur_108
+		penambahan_umur.kode_barang_108 -> view_penambahan_umur_108.kode_kelompok_barang
+		penambahan_umur.persen -> view_penambahan_umur_108.persen
+	- penyusutan_modul3_gb_2021_r2, penyusutan_modul4_gb_2021_r2 
+	    - rename view_penyusutan -> view_penyusutan_108
+	    - rename kode_barang -> kode_barang_108 
+	- beban_gb_2021_r2
+	    - rename view_penyusutan -> view_penyusutan_108
+	    - rename kode_barang -> kode_barang_108
+	    - rename view_beban_penyusutan -> view_beban_penyusutan_108
+
+    - reporting
+	    - rename view_penyusutan -> view_penyusutan_108
+	    - rename kode_barang -> kode_barang_108
+	    - rename view_beban_penyusutan -> view_beban_penyusutan_108
+
+    - reporting dengan script laporan_penyusutan_2021 -OK-
+	- pastikan bahwa script hanya di jalankan 1 kali -OK-
+
+    - md5 test development
+    - cvs tag rel-1-5
+
     - extra_comptable_2006_2014_skpd.xml
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
+
+
+
+

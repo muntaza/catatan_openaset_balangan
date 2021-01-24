@@ -23,3 +23,5 @@ cat penyusutan_pm_2019.xml | sed -e s/2021/2022/g  | sed -e s/2020/2021/g  | sed
 
 cat penyusutan_pm_rinci_2020.xml | sed -e s/2021/2022/g  | sed -e s/2020/2021/g  | sed -e s/2019/2020/g  > penyusutan_pm_rinci_2021.xml
 cat penyusutan_pm_rinci_2019.xml | sed -e s/2021/2022/g  | sed -e s/2020/2021/g  | sed -e s/2019/2020/g  > penyusutan_pm_rinci_2020.xml
+
+rm *2019.xml beban*2020.xml

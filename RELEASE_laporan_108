@@ -198,11 +198,14 @@ rel-1-5:
     - cvs tag rel-1-5 -OK-
 
 rel-1-6:
+    
+    ----45 minute
     - Laporan Barang Dihapus 2020 PMDN 108 -OK-
 	- id_status_mutasi != 5
+    ----
 
 
-
+    ----45 minute
     - Laporan Penyusutan KIB E
 	- entry penambahan umur 108 di development -OK-
 	    - 0, 25, 50, 75, 100
@@ -213,14 +216,52 @@ rel-1-6:
 	- Edit 108_atl_2019_r2_a1: -OK-
 	    hapus:
 		- no_no
+		- bahan
 		- ukuran
 		- merk_type
 	    - rubah nama dari 108_pm_2019_r2 menjadi 108_atl_2019_r2_a1
 	    - ganti peralatan_mesin menjadi atl
+	    - id_golongan_barang = 5
 	- psql 108_atl_2019_r2_a1 -OK-
 	- test phpMyAdmin 108_atl_2019_r2_a1 -OK-
 	- edit modul2, modul3, modul4: -OK-
 	    - rubah nama dari 108_pm_2019_r2 menjadi 108_atl_2019_r2_a1
+    ----
+
+    ----45 minute
+    - Buat Laporan 2020 KIB E:
+	- Copy dari pm semua script -OK-
+	- Edit 108_atl_2020_r2_a1: -OK-
+	    hapus:
+		- no_no
+		- bahan
+		- ukuran
+		- merk_type
+	    - rubah nama dari 108_pm_2020_r2 menjadi 108_atl_2020_r2_a1 -OK-
+	    - ganti peralatan_mesin menjadi atl -OK-
+	    - id_golongan_barang = 5 -OK-
+	- psql 108_atl_2020_r2_a1 -OK-
+	- test phpMyAdmin 108_atl_2020_r2_a1 -OK-
+	- edit modul2, modul3, modul4: -OK-
+	    - rubah nama dari 108_pm_2020_r2 menjadi 108_atl_2020_r2_a1
+
+
+    - Buat Laporan 2021 KIB E:
+	- Copy dari pm semua script -OK-
+	- Edit 108_atl_2021_r2_a1: -OK-
+	    hapus:
+		- no_no
+		- bahan
+		- ukuran
+		- merk_type
+	    - rubah nama dari 108_pm_2021_r2 menjadi 108_atl_2021_r2_a1
+	    - ganti peralatan_mesin menjadi atl
+	    - id_golongan_barang = 5
+	- psql 108_atl_2021_r2_a1 -OK-
+	- test phpMyAdmin 108_atl_2021_r2_a1 -OK-
+	- edit modul2, modul3, modul4: -OK-
+	    - rubah nama dari 108_pm_2021_r2 menjadi 108_atl_2021_r2_a1
+
 
 
 

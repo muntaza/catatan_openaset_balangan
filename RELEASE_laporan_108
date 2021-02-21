@@ -251,14 +251,35 @@ rel-1-6:
 	- copy laporan dari pm ke atl
 	- rename nama view ke 108_pm_2020_r2
 	- testing beban atl, penyusutan atl, penyusutan rinci atl 
-	    - tidak valid
     ----
     
 
-    ----45 minute
-    - validasi dari PM, GB, JIJ, ATL
+    ----15 minute
+    - cvs add *.xml pada penyusutan_2020 -OK-
+    - test md5
+    - validasi dari penyusutan ATL 2020 
+	- Beban -OK-
+	- penyusutan_2019 -OK-
+	- penyusutan_2020 -OK-
+	- penyusutan_rinci_2019 -OK-
+	- penyusutan_rinci_2020 -OK-
+	    - perbaikan kode_barang_108 -OK-
+    
+    - validasi dari penyusutan ATL 2020 
+	- Beban -OK-
+	- penyusutan_2019 -OK-
+	- penyusutan_2020 -OK-
+	    - perbaikan kode_barang_108 -OK-
+	- penyusutan_rinci_2019 -OK-
+	- penyusutan_rinci_2020 -OK-
+	    - perbaikan kode_barang_108 -OK-
+	- test md5
+    ----
+    
+    - cvs tag rel-1-6 -OK-
 
 
+rel-1-7:
     - Buat Laporan 2021 KIB E:
 	- Copy dari pm semua script -OK-
 	- Edit 108_atl_2021_r2_a1: -OK-
@@ -284,8 +305,7 @@ rel-1-6:
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
 
-    - md5 test development
-    - cvs tag rel-1-6
 
-rel-1-7:
     
+    - md5 test development
+    - cvs tag rel-1-7

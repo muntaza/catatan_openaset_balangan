@@ -55,4 +55,18 @@ rel-1-5:
     - pkil ssh-agent -OK-
     - exit gateway -OK-
     
-
+rel-1-6:
+    - backup_database
+    - ssh-add cvs user
+    - chmod_plus
+    - delete penyusutan_2020 dan penyusutan_2021
+    - cvs pada php5_projects_108
+    - git pull catatan_openaset_balangan
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_atl_2019_r2_OK.sql -OK-
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_atl_2020_r2_OK.sql -OK-
+    - testing laporan pm dan atl 2020
+    - pkill ssh-agent
+    - exit database
+    - pkil ssh-agent 
+    - exit gateway 
+    

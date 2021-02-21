@@ -41,4 +41,18 @@ rel-1-4:
     - exit gateway
     
 
+rel-1-5:
+    - ssh-add cvs user -OK-
+    - chmod plus; ls -l -OK-
+    - cvs up pada php5_projects_108 -OK-
+    - test production -OK-
+    - git pull catatan_openaset_balangan  -OK-
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2021_r2_OK.sql -OK-
+    - testing jij 2020, jij 2021, beban jij -OK-
+    - chmod min; ls -l -OK-
+    - pkill ssh-agent -OK-
+    - exit database -OK-
+    - pkil ssh-agent -OK-
+    - exit gateway -OK-
+    
 

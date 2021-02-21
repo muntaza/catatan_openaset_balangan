@@ -160,7 +160,7 @@ rel-1-4:
     
 
 
-rel-1-5
+rel-1-5:
     - penyusutan_2021 108 -OK-
 	- penyusutan_gb_2021_r2
 	    - rename view_penyusutan -> view_penyusutan_108
@@ -193,13 +193,23 @@ rel-1-5
     - reporting dengan script laporan_penyusutan_2021 -OK-
 	- pastikan bahwa script hanya di jalankan 1 kali -OK-
 
-    - md5 test development
-    - cvs tag rel-1-5
+    - md5 test development -OK-
 
+    - cvs tag rel-1-5 -OK-
+
+rel-1-6:
+    - Laporan Barang Dihapus 2020 PMDN 108 -OK-
+	- id_status_mutasi != 5
+
+    - Laporan Penyusutan KIB E
+	- entry penambahan umur di development
+    
     - extra_comptable_2006_2014_skpd.xml
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
 
+    - md5 test development
+    - cvs tag rel-1-6
 
-
-
+rel-1-7:
+    

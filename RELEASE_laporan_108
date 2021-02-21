@@ -245,6 +245,19 @@ rel-1-6:
 	- edit modul2, modul3, modul4: -OK-
 	    - rubah nama dari 108_pm_2020_r2 menjadi 108_atl_2020_r2_a1
 
+    - edit Laporan KIB E Reportico 2020 PMDN 108: -OK-
+	- Bug fix pm 2020 dan pm rinci 2020 ke kode 108
+	- Bug fix pm 2021 dan pm rinci 2021 ke kode 108
+	- copy laporan dari pm ke atl
+	- rename nama view ke 108_pm_2020_r2
+	- testing beban atl, penyusutan atl, penyusutan rinci atl 
+	    - tidak valid
+    ----
+    
+
+    ----45 minute
+    - validasi dari PM, GB, JIJ, ATL
+
 
     - Buat Laporan 2021 KIB E:
 	- Copy dari pm semua script -OK-

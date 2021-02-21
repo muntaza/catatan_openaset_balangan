@@ -3116,7 +3116,7 @@ nilai_buku as nilai_buku_sd_2019,
 
 
  from
-view_penyusutan_108_pm_2019_r2_a4
+view_penyusutan_108_atl_2019_r2_a4
 
 
 UNION ALL

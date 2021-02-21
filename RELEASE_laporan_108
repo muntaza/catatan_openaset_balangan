@@ -201,8 +201,30 @@ rel-1-6:
     - Laporan Barang Dihapus 2020 PMDN 108 -OK-
 	- id_status_mutasi != 5
 
+
+
     - Laporan Penyusutan KIB E
-	- entry penambahan umur di development
+	- entry penambahan umur 108 di development -OK-
+	    - 0, 25, 50, 75, 100
+	- entry penambahan umur 108 di production 
+	    - 0, 25, 50, 75, 100
+    - Buat Laporan 2019 KIB E:
+	- Copy dari pm semua script -OK-
+	- Edit 108_atl_2019_r2_a1: -OK-
+	    hapus:
+		- no_no
+		- ukuran
+		- merk_type
+	    - rubah nama dari 108_pm_2019_r2 menjadi 108_atl_2019_r2_a1
+	    - ganti peralatan_mesin menjadi atl
+	- psql 108_atl_2019_r2_a1 -OK-
+	- test phpMyAdmin 108_atl_2019_r2_a1 -OK-
+	- edit modul2, modul3, modul4: -OK-
+	    - rubah nama dari 108_pm_2019_r2 menjadi 108_atl_2019_r2_a1
+
+
+
+
     
     - extra_comptable_2006_2014_skpd.xml
     - update sql kartu barang, dan tampilan kartu barang

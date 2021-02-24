@@ -55,18 +55,19 @@ rel-1-5:
     - pkil ssh-agent -OK-
     - exit gateway -OK-
     
+---30 menit
 rel-1-6:
-    - backup_database
-    - ssh-add cvs user
-    - chmod_plus
-    - delete penyusutan_2020 dan penyusutan_2021
-    - cvs pada php5_projects_108
+    - backup_database -OK-
+    - ssh-add cvs user -OK-
+    - chmod_plus -OK-
+    - delete penyusutan_2020 dan penyusutan_2021 -OK-
+    - cvs up pada php5_projects_108 -OK-
     - git pull catatan_openaset_balangan
-    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_atl_2019_r2_OK.sql -OK-
-    - psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_atl_2020_r2_OK.sql -OK-
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_atl_gabungan_2019_r2_OK.sql -OK-
+    - psql -h localhost -U kabupaten kabupaten < penyusutan_atl_gabungan_2020_r2_OK.sql -OK-
+    - pkill ssh-agent -OK-
+    - exit database -OK-
+    - pkil ssh-agent  -OK-
+    - exit gateway  -OK-
     - testing laporan pm dan atl 2020
-    - pkill ssh-agent
-    - exit database
-    - pkil ssh-agent 
-    - exit gateway 
-    
+---

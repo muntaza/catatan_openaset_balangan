@@ -280,6 +280,51 @@ rel-1-6:
 
 
 rel-1-7:
+
+    ----45 menit
+    - Buat Laporan Penyusutan Aset Lain-lain 2020 PMDN 108:
+	- Review Aset Lain-lain PMDN 17
+	    - id_mutasi_berkurang = 3
+	    - hapus filter keadaan_barang pada PMDN 17
+	    - harusnya khusus untuk barang reklas pada 2020
+	- Copy php5_laporan_108 php5_laporan pada Development -OK-
+	    - mkdir php5_laporan
+	    - chmod_local_plus
+	- copy penyusutan_2020 penyusutan_aset_lain_lain_2020 
+	- Rubah Aset Tetap lainnya
+	    - id_mutasi_berkurang = 3, hapus filter keadaan_barang
+	      dan rubah batas kapitalisasi dari 1000000 menjadi 500000 -OK-	
+		- Beban
+		- Penyusutan 2019
+		- Penyusutan 2020
+		- Penyusutan Rinci 2019
+		- Penyusutan Rinci 2020
+	- Rubah Gedung Bangunan:
+	    - id_mutasi_berkurang = 3, hapus filter keadaan_barang -OK-
+		- Beban
+		- Penyusutan 2019
+		- Penyusutan 2020
+		- Penyusutan Rinci 2019
+		- Penyusutan Rinci 2020
+	- Rubah Jalan Irigasi Jaringan:
+	    - id_mutasi_berkurang = 3, hapus filter keadaan_barang -OK-
+		- Beban
+		- Penyusutan 2019
+		- Penyusutan 2020
+		- Penyusutan Rinci 2019
+		- Penyusutan Rinci 2020
+	- Rubah Peralatan Mesin:
+	    - id_mutasi_berkurang = 3, hapus filter keadaan_barang -OK-
+		- Beban
+		- Penyusutan 2019
+		- Penyusutan 2020
+		- Penyusutan Rinci 2019
+		- Penyusutan Rinci 2020
+    ---
+
+    - ketemu bug salah filter batas kapitalisasi pada KIB E:
+	- tertulis 1000000 seharusnya 500000
+
     - Buat Laporan 2021 KIB E:
 	- Copy dari pm semua script -OK-
 	- Edit 108_atl_2021_r2_a1: -OK-
@@ -296,16 +341,9 @@ rel-1-7:
 	- edit modul2, modul3, modul4: -OK-
 	    - rubah nama dari 108_pm_2021_r2 menjadi 108_atl_2021_r2_a1
 
-
-
-
-
-    
     - extra_comptable_2006_2014_skpd.xml
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
 
-
-    
     - md5 test development
     - cvs tag rel-1-7

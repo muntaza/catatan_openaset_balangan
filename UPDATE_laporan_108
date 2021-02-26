@@ -71,3 +71,9 @@ rel-1-6:
     - exit gateway  -OK-
     - testing laporan pm dan atl 2020
 ---
+
+rel-1-7:
+    - ssh-add cvs user -OK-
+    - chmod_plus -OK-
+    - cvs up pada php5_projects_108 -OK-
+

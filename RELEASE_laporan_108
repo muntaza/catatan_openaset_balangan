@@ -320,10 +320,18 @@ rel-1-7:
 		- Penyusutan 2020
 		- Penyusutan Rinci 2019
 		- Penyusutan Rinci 2020
+
+    - md5 test development -OK-
+    - cvs tag rel-1-7
     ---
 
-    - ketemu bug salah filter batas kapitalisasi pada KIB E:
+rel-1-8:
+
+    ----15 menit
+    - Bug fix filter batas kapitalisasi pada KIB E:  -OK-
 	- tertulis 1000000 seharusnya 500000
+	- 5 laporan cvs ci -OK-
+    ----
 
     - Buat Laporan 2021 KIB E:
 	- Copy dari pm semua script -OK-
@@ -346,4 +354,4 @@ rel-1-7:
 	- review kebutuhan, contoh tanah dan gedung setwan
 
     - md5 test development
-    - cvs tag rel-1-7
+    - cvs tag rel-1-8

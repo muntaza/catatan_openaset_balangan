@@ -199,14 +199,14 @@ rel-1-5:
 
 rel-1-6:
     
-    ----45 minute
+    ----45 minute -OK-
     - Laporan Barang Dihapus 2020 PMDN 108 -OK-
 	- id_status_mutasi != 5
     ----
 
 
-    ----45 minute
-    - Laporan Penyusutan KIB E
+    ----45 minute -OK-
+    - Laporan Penyusutan KIB E 2020 PMDN 108
 	- entry penambahan umur 108 di development -OK-
 	    - 0, 25, 50, 75, 100
 	- entry penambahan umur 108 di production 
@@ -228,7 +228,7 @@ rel-1-6:
 	    - rubah nama dari 108_pm_2019_r2 menjadi 108_atl_2019_r2_a1
     ----
 
-    ----45 minute
+    ----45 minute -OK-
     - Buat Laporan 2020 KIB E:
 	- Copy dari pm semua script -OK-
 	- Edit 108_atl_2020_r2_a1: -OK-
@@ -281,7 +281,7 @@ rel-1-6:
 
 rel-1-7:
 
-    ----45 menit
+    ----45 menit -OK-
     - Buat Laporan Penyusutan Aset Lain-lain 2020 PMDN 108:
 	- Review Aset Lain-lain PMDN 17
 	    - id_mutasi_berkurang = 3
@@ -327,7 +327,7 @@ rel-1-7:
 
 rel-1-8:
 
-    ----15 menit
+    ----15 menit -OK-
     - Bug fix filter batas kapitalisasi pada KIB E:  -OK-
 	- tertulis 1000000 seharusnya 500000
 	- 5 laporan cvs ci -OK-

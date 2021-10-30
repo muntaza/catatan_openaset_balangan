@@ -333,6 +333,55 @@ rel-1-8:
 	- 5 laporan cvs ci -OK-
     ----
 
+
+    - Test Timeout 1800 pada server development
+	- pada virtualhost ssl
+	- Restart server development
+    - Test naik kan limit pada php.ini:
+	- dari 128M menjadi 512M
+    - Test LimitRequestBody 5120000 pada virtualhost ssl
+
+    prod
+    - test Edit file index.php
+	ini_set('memory_limit', '-1');
+    - Test LimitRequestBody 5120000 pada virtualhost ssl
+    - Test Timeout 1800 pada virtualhost ssl
+
+    hapus prod:
+    - test Edit file index.php
+	ini_set('memory_limit', '-1');
+    - .htaccess
+
+    prod:
+    thinkpad$ cat .htaccess -gagal
+	php_value upload_max_filesize 1000M
+	php_value post_max_size 99500M
+	php_value memory_limit 500M
+	php_value max_execution_time 300
+    edit php.ini
+
+    hapus prod:
+    - test Edit file run.php
+	ini_set('memory_limit', '-1');
+    
+
+rel-1-9:
+    - chmod plus -OK-
+    - cvs ci pergantian password di prod
+	- simpan data perubahan password ke repo laporan_108 -OK-
+	- simpan data perubahan password ke repo laporan -OK-
+    - cvs tag rel-1-9 -OK-
+
+rel-1-10:
+    - buat folder backup_2020
+    - createdb -O kabupaten kabupaten_2020
+    - bunzip2 kabupaten_2021-05-24_00_10.sql.bz2
+    - psql kabupaten_2020 < kabupaten_2021-05-24_00_10.sql
+
+    - cvs tag rel-1-10
+
+rel-1-11:
+
     - Buat Laporan 2021 KIB E:
 	- Copy dari pm semua script -OK-
 	- Edit 108_atl_2021_r2_a1: -OK-
@@ -353,5 +402,18 @@ rel-1-8:
     - update sql kartu barang, dan tampilan kartu barang
 	- review kebutuhan, contoh tanah dan gedung setwan
 
-    - md5 test development
-    - cvs tag rel-1-8
+    - persiapan development
+    - md5 test production -OK-
+    - md5 test development -OK-
+    - cvs tag rel-1-11 (30 Oktober 2021) -OK-
+
+
+
+rel-1-12:
+
+
+    - md5 test production 
+    - md5 test development 
+    - cvs tag rel-1-12
+
+

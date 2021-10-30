@@ -77,3 +77,16 @@ rel-1-7:
     - chmod_plus -OK-
     - cvs up pada php5_projects_108 -OK-
 
+
+rel-1-11:
+    - ssh-add cvs user 
+    - chmod_plus
+    - cvs up pada php5_projects_108 
+    - buat database kabupaten_2021_08_26
+    - restore backup tanggal ...
+    - cek laporan
+    - test md5 production
+    - buat backup bulanan kabupaten_2021_08_26
+    - edit rsync backup gateway
+    - edit rsync backup laptop banjarbaru
+    

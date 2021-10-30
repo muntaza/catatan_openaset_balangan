@@ -410,10 +410,14 @@ rel-1-11:
 
 
 rel-1-12:
+    
+    - buat database kabupaten_2021_08_06 owner kabupaten
+    - restore backup tanggal .... ke kabupaten_2021_08_06
+    - rubah database pada kabupaten_26_Agustus_2021 ke database kabupaten_2021_08_06
+    - cek laporan
 
-
-    - md5 test production 
     - md5 test development 
+    - md5 test production 
     - cvs tag rel-1-12
 
 

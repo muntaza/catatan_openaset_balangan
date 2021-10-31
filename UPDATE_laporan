@@ -50,6 +50,12 @@ UPDATE rel-8-4:
     - createdb -U postgres kabupaten_c -O kabupaten_c
     - psql -U postgres kabupaten_c < kabupaten_2020-06-15_00_10.sql
 
+UPDATE rel-8-6:
+    - refresh susunan laporan: -OK-
+	doas rm -rf php5_projects
+	doas mkdir php5_projects
+	doas chown muntaza php5_projects
+	cvs co php5_projects
 
 
 

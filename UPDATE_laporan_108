@@ -78,15 +78,26 @@ rel-1-7:
     - cvs up pada php5_projects_108 -OK-
 
 
-rel-1-11:
-    - ssh-add cvs user 
-    - chmod_plus
-    - cvs up pada php5_projects_108 
+rel-1-12:
+    -----30 menit--
+    - ssh-add cvs user -OK-
+    - chmod_plus -OK-
+    - cvs up pada php5_projects_108 -OK-
     - buat database kabupaten_2021_08_26
-    - restore backup tanggal ...
-    - cek laporan
-    - test md5 production
-    - buat backup bulanan kabupaten_2021_08_26
-    - edit rsync backup gateway
-    - edit rsync backup laptop banjarbaru
-    
+	doas su - _postgresql -OK-
+	createdb -O kabupaten kabupaten_2021_08_26 -OK-
+    - restore backup tanggal 6 Oktober 2021
+	psql kabupaten_2021_08_26 < kabupaten_2021-10-06_00_10.sql -OK-
+    - cek laporan -OK-
+    -------
+
+    - test md5 production -OK-
+
+rel-1-13:
+    - refresh laporan_108:
+	doas rm -rf php5_projects_108
+	doas mkdir php5_projects_108
+	doas chown muntaza php5_projects_108
+	cvs co php5_projects_108
+
+

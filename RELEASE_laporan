@@ -104,3 +104,19 @@ RELEASE rel-8-5:
 	- link ke database kabupaten_c -OK-
     - cvs tag rel-8-5 -OK-
 
+
+RELEASE rel-8-6:
+
+    - md5 test production -OK-
+    - md5 test development -OK-
+    - refresh folder pada production -OK-
+
+    - copy modul kabupaten ke kabupaten_26_Agustus_2021 -OK-
+    - cvs add -OK-
+    - cvs ci -OK-
+
+    - md5 test development -OK-
+    - cvs tag rel-8-6
+
+
+

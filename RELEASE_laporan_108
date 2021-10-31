@@ -410,14 +410,36 @@ rel-1-11:
 
 
 rel-1-12:
+
+    - reset database kabupaten:
+	dropdb kabupaten
+	createdb -O kabupaten kabupaten
+	psql kabupaten < kabupaten_2021-10-30_00_10.sql
+	
     
     - buat database kabupaten_2021_08_06 owner kabupaten
-    - restore backup tanggal .... ke kabupaten_2021_08_06
+	createdb -O kabupaten kabupaten_2021_08_26 -OK-
+    - restore backup tanggal 6 Oktober 2021 ke kabupaten_2021_08_06
+	 psql kabupaten_2021_08_26 < kabupaten_2021-10-06_00_10.sql -OK-
     - rubah database pada kabupaten_26_Agustus_2021 ke database kabupaten_2021_08_06
-    - cek laporan
+	 edit file config.php -OK-
+	 cvs ci -OK-
+
+    - cek laporan -OK-
+    - Perbaikan tahun default dari 2019 menjadi 2021 -OK-
+
+    - md5 test development -OK-
+    - md5 test production -OK-
+    - cvs tag rel-1-12 (30 Oktober 2021) -OK-
+
+
+rel-1-13:
+
+    - refresh folder di production -OK- 
+    - copy manual database tanggal 6 Oktober 2021 ke folder khusus -OK-
 
     - md5 test development 
     - md5 test production 
-    - cvs tag rel-1-12
+    - cvs tag rel-1-13
 
 

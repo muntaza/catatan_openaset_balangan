@@ -41,6 +41,10 @@ RELEASE 8.7:
     - testing -OK-
 
 RELEASE 8.8:
+    - cvsup kabupaten
+    - python manage.py shell
+	from gedungbangunan.pm_pariwisata_ke_dinas_pemuda_insert import pm_pariwisata_ke_pemuda
+	pm_pariwisata_ke_pemuda()
 
 
 

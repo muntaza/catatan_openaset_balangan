@@ -42,9 +42,13 @@ RELEASE 8.7:
 
 RELEASE 8.8:
     - cvsup kabupaten
-    - python manage.py shell
+    - python manage.py shell -OK-
 	from gedungbangunan.pm_pariwisata_ke_dinas_pemuda_insert import pm_pariwisata_ke_pemuda
 	pm_pariwisata_ke_pemuda()
+    - git pull
+    - psql -U kabupaten -h localhost kabupaten < pm_pariwisata_ke_dinas_pemuda_insert.sql 
+    - git pull
+    - psql -U kabupaten -h localhost kabupaten < pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql
 
 
 

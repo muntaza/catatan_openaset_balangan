@@ -1546,7 +1546,7 @@ RELEASE 8.8:
 	- python manage.py shell
 	    from gedungbangunan.pm_pariwisata_ke_dinas_pemuda_insert import pm_pariwisata_ke_pemuda
 	    pm_pariwisata_ke_pemuda()
-	-
+	
 
     - laporan mutasi harus ada field "status_mutasi" -OK-
     - buat laporan mutasi aset lain-lain dengan link ke tahun usul hapus

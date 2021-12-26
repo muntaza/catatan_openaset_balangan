@@ -1522,6 +1522,19 @@ RELEASE 8.7:
 RELEASE 8.8:
     - entry tahun sampai 2030
     - entry data pada setda, BA default dari tahun 2021-2030 -15 menit
+
+    - mutasi aset:
+	- dapatkan register yang akan di mutasi
+	- gandakan dengan script
+	register lama:
+	- ganti sub skpd pada reg lama ke sub skpd tujuan
+	- ganti asal usul di table harga menjadi mutasi dari skpd lain
+	- ganti tahun mutasi menjadi 2021
+	- isi table skpd asal 
+	register baru:
+	- ganti mutasi berkurang menjadi "mutasi ke skpd lain"
+	- isi table skpd tujuan
+	- isi tahun berkurang di table tahun berkurang menjadi 2021
     - Laporan Realisasi Belanja Modal
     - cvs tag rel-8-8 pada menu_entry 
 

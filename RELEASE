@@ -1536,12 +1536,20 @@ RELEASE 8.8:
 	- isi table skpd tujuan
 	- isi tahun berkurang di table tahun berkurang menjadi 2021
 
+
     - Mutasi Dinas Pariwisata ke Dinas Pemuda Olahraga dan Pariwisata
 	- Hapus database kabupaten
 	- buat database kabupaten 
 	- restore kabupaten
 	- cvs add kabupaten
 	- md5 test -OK-
+	- python manage.py shell
+	    from gedungbangunan.pm_pariwisata_ke_dinas_pemuda_insert import pm_pariwisata_ke_pemuda
+	    pm_pariwisata_ke_pemuda()
+	-
+
+    - laporan mutasi harus ada field "status_mutasi" -OK-
+    - buat laporan mutasi aset lain-lain dengan link ke tahun usul hapus
 
     - Laporan Realisasi Belanja Modal
     - cvs tag rel-8-8 pada menu_entry 

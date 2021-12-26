@@ -1,13 +1,13 @@
 #!/bin/sh
 
 #beri awalan dan akhiran
-cat pm_pariwisata_ke_dinas_pemuda.sql | sed -e s/^/UPDATE\ peralatan_mesin\ SET\ id_sub_skpd\ \=\ 438\ WHERE\ id\ \=\ /g -e s/$/\;/g > pm_pariwisata_ke_dinas_pemuda_sub_skpd.sql
-cat pm_pariwisata_ke_dinas_pemuda.sql | sed -e s/^/UPDATE\ harga_peralatan_mesin\ SET\ id_asal_usul\ =\ 7\,\ tahun_mutasi\ =\ 2021\ WHERE\ id_peralatan_mesin\ \=\ /g -e s/$/\;/g > pm_pariwisata_ke_dinas_pemuda_harga.sql
-cat pm_pariwisata_ke_dinas_pemuda.sql | sed -e s/^/INSERT\ INTO\ skpd_asal_peralatan_mesin\ \(id_peralatan_mesin\,\ id_skpd\)\ VALUES\ \(/g -e s/$/\,\ 46\)\ ON\ CONFLICT\ \(id_peralatan_mesin\)\ DO\ UPDATE\ SET\ id_skpd\ \=\ 46\;/g > pm_pariwisata_ke_dinas_pemuda_skpd_asal.sql
+cat pm_pariwisata_ke_dinas_pemuda_reg_baru.sql | sed -e s/^/UPDATE\ peralatan_mesin\ SET\ id_mutasi_berkurang\ \=\ 2\ WHERE\ id\ \=\ /g -e s/$/\;/g > pm_pariwisata_ke_dinas_pemuda_reg_baru_mutasi_berkurang.sql
+cat pm_pariwisata_ke_dinas_pemuda_reg_baru.sql | sed -e s/^/INSERT\ INTO\ skpd_tujuan_peralatan_mesin\ \(id_peralatan_mesin\,\ id_skpd\)\ VALUES\ \(/g -e s/$/\,\ 23\)\ ON\ CONFLICT\ \(id_peralatan_mesin\)\ DO\ UPDATE\ SET\ id_skpd\ \=\ 23\;/g > pm_pariwisata_ke_dinas_pemuda_reg_baru_skpd_tujuan.sql
+cat pm_pariwisata_ke_dinas_pemuda_reg_baru.sql | sed -e s/^/INSERT\ INTO\ tahun_berkurang_peralatan_mesin\ \(id_peralatan_mesin\,\ tahun_berkurang\)\ VALUES\ \(/g -e s/$/\,\ 2021\)\ ON\ CONFLICT\ \(id_peralatan_mesin\)\ DO\ UPDATE\ SET\ tahun_berkurang\ \=\ 2021\;/g > pm_pariwisata_ke_dinas_pemuda_reg_baru_tahun_berkurang.sql
 
 
 #gabungkan
-echo "-- Pariwisata ke Dinas Pemuda" > pm_pariwisata_ke_dinas_pemuda_insert.sql
-cat  pm_pariwisata_ke_dinas_pemuda_sub_skpd.sql >> pm_pariwisata_ke_dinas_pemuda_insert.sql
-cat  pm_pariwisata_ke_dinas_pemuda_harga.sql >> pm_pariwisata_ke_dinas_pemuda_insert.sql
-cat  pm_pariwisata_ke_dinas_pemuda_skpd_asal.sql >> pm_pariwisata_ke_dinas_pemuda_insert.sql
+echo "-- Pariwisata ke Dinas Pemuda" > pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql
+cat  pm_pariwisata_ke_dinas_pemuda_reg_baru_mutasi_berkurang.sql >> pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql
+cat  pm_pariwisata_ke_dinas_pemuda_reg_baru_skpd_tujuan.sql >> pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql
+cat  pm_pariwisata_ke_dinas_pemuda_reg_baru_tahun_berkurang.sql >> pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql

@@ -49,6 +49,12 @@ RELEASE 8.8:
     - psql -U kabupaten -h localhost kabupaten < pm_pariwisata_ke_dinas_pemuda_insert.sql 
     - git pull
     - psql -U kabupaten -h localhost kabupaten < pm_pariwisata_ke_dinas_pemuda_reg_baru_insert.sql
+    - python manage.py shell -OK-
+	from gedungbangunan.pm_kearsipan_ke_dinas_perpustakaan_insert import pm_kearsipan_ke_dinas_perpustakaa     n
+	pm_kearsipan_ke_dinas_perpustakaan() 
+    - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_insert.sql
+    - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_reg_baru_insert.sql
+    
 
 
 

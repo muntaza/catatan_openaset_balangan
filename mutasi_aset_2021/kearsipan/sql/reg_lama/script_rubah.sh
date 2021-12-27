@@ -7,7 +7,6 @@ cat pm_kearsipan_ke_dinas_perpustakaan.sql | sed -e s/^/INSERT\ INTO\ skpd_asal_
 
 
 #gabungkan
-echo "-- Pariwisata ke Dinas Pemuda" > pm_kearsipan_ke_dinas_perpustakaan_insert.sql
-cat  pm_kearsipan_ke_dinas_perpustakaan_sub_skpd.sql >> pm_kearsipan_ke_dinas_perpustakaan_insert.sql
+cat  pm_kearsipan_ke_dinas_perpustakaan_sub_skpd.sql > pm_kearsipan_ke_dinas_perpustakaan_insert.sql
 cat  pm_kearsipan_ke_dinas_perpustakaan_harga.sql >> pm_kearsipan_ke_dinas_perpustakaan_insert.sql
 cat  pm_kearsipan_ke_dinas_perpustakaan_skpd_asal.sql >> pm_kearsipan_ke_dinas_perpustakaan_insert.sql

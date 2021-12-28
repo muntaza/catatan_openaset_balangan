@@ -52,8 +52,12 @@ RELEASE 8.8:
     - python manage.py shell -OK-
 	from gedungbangunan.pm_kearsipan_ke_dinas_perpustakaan_insert import pm_kearsipan_ke_dinas_perpustakaa     n
 	pm_kearsipan_ke_dinas_perpustakaan() 
+    - git pull -OK-
+    - verifikasi jumlah 253 * 3 = 759
     - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_insert.sql
+    - verifikasi jumlah 253 * 3 = 759
     - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_reg_baru_insert.sql
+    - python manage.py shell 
     
 
 

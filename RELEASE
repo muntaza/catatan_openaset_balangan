@@ -1546,7 +1546,20 @@ RELEASE 8.8:
 	- python manage.py shell
 	    from gedungbangunan.pm_pariwisata_ke_dinas_pemuda_insert import pm_pariwisata_ke_pemuda
 	    pm_pariwisata_ke_pemuda()
+	- python manage.py shell
+	    from gedungbangunan.pm_kearsipan_ke_dinas_perpustakaan_insert import pm_kearsipan_ke_dinas_perpustakaan
+	    pm_kearsipan_ke_dinas_perpustakaan()
 	
+	- cvs add
+	- md5 test
+	- python manage.py shell
+	    from gedungbangunan.pm_perikanan_ke_dinas_ketahanan_pangan_insert import pm_perikanan_ke_dinas_ketahanan_pangan
+	    pm_perikanan_ke_dinas_ketahanan_pangan()
+		498 register
+	    psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_insert.sql
+	    psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql
+	- cvs add kabupaten dan md5 test kabupaten
+	- cek laporan mutasi atl perikanan development -OK-
 
     - laporan mutasi harus ada field "status_mutasi" -OK-
     - buat laporan mutasi aset lain-lain dengan link ke tahun usul hapus

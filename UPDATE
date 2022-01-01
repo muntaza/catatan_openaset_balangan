@@ -57,7 +57,13 @@ RELEASE 8.8:
     - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_insert.sql
     - verifikasi jumlah 253 * 3 = 759
     - psql -U kabupaten -h localhost kabupaten < pm_kearsipan_ke_dinas_perpustakaan_reg_baru_insert.sql
+    - cvs up kabupaten
     - python manage.py shell 
+	from gedungbangunan.pm_perikanan_ke_dinas_ketahanan_pangan_insert import pm_perikanan_ke_dinas_ketahanan_pangan
+	pm_perikanan_ke_dinas_ketahanan_pangan()
+
+	psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql
     
 
 

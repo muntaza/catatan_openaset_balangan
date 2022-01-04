@@ -1,0 +1,12 @@
+UPDATE peralatan_mesin SET id_sub_skpd = 584 WHERE id = 71059;
+UPDATE peralatan_mesin SET id_sub_skpd = 584 WHERE id = 71064;
+UPDATE peralatan_mesin SET id_sub_skpd = 584 WHERE id = 89022;
+UPDATE peralatan_mesin SET id_sub_skpd = 584 WHERE id = 89023;
+UPDATE harga_peralatan_mesin SET id_asal_usul = 7, tahun_mutasi = 2021 WHERE id_peralatan_mesin = 71059;
+UPDATE harga_peralatan_mesin SET id_asal_usul = 7, tahun_mutasi = 2021 WHERE id_peralatan_mesin = 71064;
+UPDATE harga_peralatan_mesin SET id_asal_usul = 7, tahun_mutasi = 2021 WHERE id_peralatan_mesin = 89022;
+UPDATE harga_peralatan_mesin SET id_asal_usul = 7, tahun_mutasi = 2021 WHERE id_peralatan_mesin = 89023;
+INSERT INTO skpd_asal_peralatan_mesin (id_peralatan_mesin, id_skpd) VALUES (71059, 40) ON CONFLICT (id_peralatan_mesin) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_peralatan_mesin (id_peralatan_mesin, id_skpd) VALUES (71064, 40) ON CONFLICT (id_peralatan_mesin) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_peralatan_mesin (id_peralatan_mesin, id_skpd) VALUES (89022, 40) ON CONFLICT (id_peralatan_mesin) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_peralatan_mesin (id_peralatan_mesin, id_skpd) VALUES (89023, 40) ON CONFLICT (id_peralatan_mesin) DO UPDATE SET id_skpd = 40;

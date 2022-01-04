@@ -1572,6 +1572,11 @@ RELEASE 8.8:
 	    pm_litbang_ke_badan_perencanaan
 	    pm_litbang_ke_dinas_perhubungan
 	    pm_litbang_ke_dinas_pertanahan
+	    pm_perdagangan_ke_dinas_penanaman_modal
+	    pm_pembermas_ke_dinas_sosial
+	    pm_kb_ke_dinas_kesehatan
+	    pm_pemberpuan_ke_dinas_sosial
+	    pm_pemberpuan_ke_setda
 	
 
     - laporan mutasi harus ada field "status_mutasi" -OK-

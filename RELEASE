@@ -1562,13 +1562,14 @@ RELEASE 8.8:
 	- cek laporan mutasi atl perikanan development -OK-
 
 	- rencana deploy:
-	    pm_ketahanan_pangan_ke_dinas_pertanian
-	    pm_perdagangan_ke_dinas_koperasi
+	    pm_ketahanan_pangan_ke_dinas_pertanian -OK-
+	    pm_perdagangan_ke_dinas_koperasi -OK-
+	    pm_tenaga_kerja_ke_dinas_penanaman_modal
 	    pm_perkim_ke_dinas_koperasi
 	    pm_perkim_ke_dinas_pu
 	    pm_perkim_ke_dinas_pertanahan
 	    pm_perkim_ke_badan_keuangan
-	    pm_pariwisat_ke_setda
+	    pm_pariwisata_ke_setda
 	    pm_litbang_ke_badan_perencanaan
 	    pm_litbang_ke_dinas_perhubungan
 	    pm_litbang_ke_dinas_pertanahan

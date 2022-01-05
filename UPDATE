@@ -64,6 +64,30 @@ RELEASE 8.8:
 
 	psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_insert.sql
 	psql -h localhost -U kabupaten kabupaten < pm_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql
+
+    - cvs up kabupaten
+    - python manage.py shell
+	from gedungbangunan.atl_perikanan_ke_dinas_ketahanan_pangan_insert import atl_perikanan_ke_dinas_ketahanan_pangan
+	atl_perikanan_ke_dinas_ketahanan_pangan()
+
+	psql -h localhost -U kabupaten kabupaten < atl_perikanan_ke_dinas_ketahanan_pangan_insert.sql 
+	psql -h localhost -U kabupaten kabupaten < atl_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql
+
+    - cvs up kabupaten
+	from gedungbangunan.pm_ketahanan_pangan_ke_dinas_pertanian_insert import pm_ketahanan_pangan_ke_dinas_pertanian
+	pm_ketahanan_pangan_ke_dinas_pertanian()
+	psql -h localhost -U kabupaten kabupaten < pm_ketahanan_pangan_ke_dinas_pertanian_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_ketahanan_pangan_ke_dinas_pertanian_reg_baru_insert.sql
+
+	from gedungbangunan.pm_perdagangan_ke_dinas_koperasi_insert import pm_perdagangan_ke_dinas_koperasi
+	pm_perdagangan_ke_dinas_koperasi()
+	psql -h localhost -U kabupaten kabupaten < pm_perdagangan_ke_dinas_koperasi_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_perdagangan_ke_dinas_koperasi_reg_baru_insert.sql
+
+	
+
+    
+    
     
 
 

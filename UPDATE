@@ -84,8 +84,27 @@ RELEASE 8.8:
 	psql -h localhost -U kabupaten kabupaten < pm_perdagangan_ke_dinas_koperasi_insert.sql
 	psql -h localhost -U kabupaten kabupaten < pm_perdagangan_ke_dinas_koperasi_reg_baru_insert.sql
 
-	
+	from gedungbangunan.pm_tenaga_kerja_ke_dinas_penanaman_modal_insert import pm_tenaga_kerja_ke_dinas_penanaman_modal
+	pm_tenaga_kerja_ke_dinas_penanaman_modal()
+	psql -h localhost -U kabupaten kabupaten < pm_tenaga_kerja_ke_dinas_penanaman_modal_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_tenaga_kerja_ke_dinas_penanaman_modal_reg_baru_insert.sql
 
+	from gedungbangunan.pm_pembermas_ke_dinas_sosial_insert import pm_pembermas_ke_dinas_sosial
+	pm_pembermas_ke_dinas_sosial()
+	psql -h localhost -U kabupaten kabupaten < pm_pembermas_ke_dinas_sosial_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_pembermas_ke_dinas_sosial_reg_baru_insert.sql
+	
+	from gedungbangunan.pm_kb_ke_dinas_kesehatan_insert import pm_kb_ke_dinas_kesehatan -OK-
+	pm_kb_ke_dinas_kesehatan() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_kb_ke_dinas_kesehatan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_kb_ke_dinas_kesehatan_reg_baru_insert.sql -OK-
+
+	from gedungbangunan.pm_perkim_ke_dinas_koperasi_insert import pm_perkim_ke_dinas_koperasi
+	pm_perkim_ke_dinas_koperasi()
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_reg_baru_insert.sql
+
+	
     
     
     

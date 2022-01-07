@@ -99,15 +99,27 @@ RELEASE 8.8:
 	psql -h localhost -U kabupaten kabupaten < pm_kb_ke_dinas_kesehatan_insert.sql -OK-
 	psql -h localhost -U kabupaten kabupaten < pm_kb_ke_dinas_kesehatan_reg_baru_insert.sql -OK-
 
-	from gedungbangunan.pm_perkim_ke_dinas_koperasi_insert import pm_perkim_ke_dinas_koperasi
-	pm_perkim_ke_dinas_koperasi()
-	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_insert.sql
-	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_reg_baru_insert.sql
+	from gedungbangunan.pm_perkim_ke_dinas_koperasi_insert import pm_perkim_ke_dinas_koperasi -OK-
+	pm_perkim_ke_dinas_koperasi() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_koperasi_reg_baru_insert.sql -OK-
 
+	from gedungbangunan.pm_perkim_ke_dinas_pu_insert import pm_perkim_ke_dinas_pu -OK-
+	pm_perkim_ke_dinas_pu() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pu_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pu_reg_baru_insert.sql -OK-
 	
+	from gedungbangunan.pm_perkim_ke_dinas_pertanahan_insert import pm_perkim_ke_dinas_pertanahan -OK-
+	pm_perkim_ke_dinas_pertanahan() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pertanahan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pertanahan_reg_baru_insert.sql -OK-
     
-    
-    
+	from gedungbangunan.pm_perkim_ke_badan_keuangan_insert import pm_perkim_ke_badan_keuangan
+	pm_perkim_ke_badan_keuangan()
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_reg_baru_insert.sql
+
+
 
 
 

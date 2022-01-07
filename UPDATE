@@ -114,11 +114,15 @@ RELEASE 8.8:
 	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pertanahan_insert.sql -OK-
 	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_dinas_pertanahan_reg_baru_insert.sql -OK-
     
-	from gedungbangunan.pm_perkim_ke_badan_keuangan_insert import pm_perkim_ke_badan_keuangan
-	pm_perkim_ke_badan_keuangan()
-	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_insert.sql
-	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_reg_baru_insert.sql
+	from gedungbangunan.pm_perkim_ke_badan_keuangan_insert import pm_perkim_ke_badan_keuangan -OK-
+	pm_perkim_ke_badan_keuangan() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_perkim_ke_badan_keuangan_reg_baru_insert.sql -OK-
 
+	from gedungbangunan.pm_pariwisata_ke_setda_insert import pm_pariwisata_ke_setda
+	pm_pariwisata_ke_setda()
+	psql -h localhost -U kabupaten kabupaten < pm_pariwisata_ke_setda_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_pariwisata_ke_setda_reg_baru_insert.sql
 
 
 

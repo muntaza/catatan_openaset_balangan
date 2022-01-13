@@ -1564,6 +1564,7 @@ RELEASE 8.8:
 	- rencana deploy:
 	    pm_ketahanan_pangan_ke_dinas_pertanian -OK-
 	    pm_perdagangan_ke_dinas_koperasi -OK-
+		di blg
 	    pm_tenaga_kerja_ke_dinas_penanaman_modal -OK-
 	    pm_pembermas_ke_dinas_sosial -OK-
 	    pm_kb_ke_dinas_kesehatan -OK-
@@ -1572,6 +1573,7 @@ RELEASE 8.8:
 	    pm_perkim_ke_dinas_pertanahan -OK-
 	    pm_perkim_ke_badan_keuangan -OK-
 	    pm_pariwisata_ke_setda -OK-
+	    
 	    pm_litbang_ke_badan_perencanaan
 	    pm_litbang_ke_dinas_perhubungan
 	    pm_litbang_ke_dinas_pertanahan

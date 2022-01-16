@@ -1,0 +1,4 @@
+from jalanirigasijaringan.models import JalanIrigasiJaringan
+from gedungbangunan.clone_object import clone_object
+
+def jij_perikanan_ke_dinas_ketahanan_pangan():

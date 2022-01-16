@@ -124,9 +124,10 @@ RELEASE 8.8:
 	psql -h localhost -U kabupaten kabupaten < pm_pariwisata_ke_setda_insert.sql -OK-
 	psql -h localhost -U kabupaten kabupaten < pm_pariwisata_ke_setda_reg_baru_insert.sql -OK-
 
-	from gedungbangunan.pm_litbang_ke_badan_perencanaan_insert import pm_litbang_ke_badan_perencanaan
-	pm_litbang_ke_badan_perencanaan()
-	
+	from gedungbangunan.pm_litbang_ke_badan_perencanaan_insert import pm_litbang_ke_badan_perencanaan -OK-
+	pm_litbang_ke_badan_perencanaan() -OK-
+	psql -hlocalhost -U kabupaten kabupaten < pm_litbang_ke_badan_perencanaan_insert.sql -OK-
+	psql -hlocalhost -U kabupaten kabupaten < pm_litbang_ke_badan_perencanaan_reg_baru_insert.sql -OK-
 
 
 

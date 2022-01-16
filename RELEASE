@@ -1574,12 +1574,21 @@ RELEASE 8.8:
 	    pm_perkim_ke_badan_keuangan -OK-
 	    pm_pariwisata_ke_setda -OK-
 	    
-	    pm_litbang_ke_badan_perencanaan
+	    pm_litbang_ke_badan_perencanaan -OK-
 	    pm_litbang_ke_dinas_perhubungan
 	    pm_litbang_ke_dinas_pertanahan
 	    pm_pemberpuan_ke_dinas_sosial
 	    pm_pemberpuan_ke_setda
 	
+
+	- copy ke kabupaten gb dan jij script -OK-
+	- cvs ci -OK-
+	- md5 test -OK-
+	- deploy:
+	    
+	    gb_perikanan_ke_dinas_ketahanan_pangan
+	    jij_perikanan_ke_dinas_ketahanan_pangan
+
 
     - laporan mutasi harus ada field "status_mutasi" -OK-
     - buat laporan mutasi aset lain-lain dengan link ke tahun usul hapus

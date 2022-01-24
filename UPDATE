@@ -129,6 +129,14 @@ RELEASE 8.8:
 	psql -hlocalhost -U kabupaten kabupaten < pm_litbang_ke_badan_perencanaan_insert.sql -OK-
 	psql -hlocalhost -U kabupaten kabupaten < pm_litbang_ke_badan_perencanaan_reg_baru_insert.sql -OK-
 
+    - ssh-add repo -OK-
+    - cvs up kabupaten -OK-
+    - python manage.py shell -OK-
+	from gedungbangunan.gb_perikanan_ke_dinas_ketahanan_pangan_insert import gb_perikanan_ke_dinas_ketahanan_pangan
+	gb_perikanan_ke_dinas_ketahanan_pangan()
+
+	from gedungbangunan.jij_perikanan_ke_dinas_ketahanan_pangan_insert import jij_perikanan_ke_dinas_ketahanan_pangan
+	jij_perikanan_ke_dinas_ketahanan_pangan()
 
 
 

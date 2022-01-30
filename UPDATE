@@ -132,11 +132,33 @@ RELEASE 8.8:
     - ssh-add repo -OK-
     - cvs up kabupaten -OK-
     - python manage.py shell -OK-
-	from gedungbangunan.gb_perikanan_ke_dinas_ketahanan_pangan_insert import gb_perikanan_ke_dinas_ketahanan_pangan
-	gb_perikanan_ke_dinas_ketahanan_pangan()
+	from gedungbangunan.gb_perikanan_ke_dinas_ketahanan_pangan_insert import gb_perikanan_ke_dinas_ketahanan_pangan -OK-
+	gb_perikanan_ke_dinas_ketahanan_pangan() -OK-
+	gandakan register 533 (proses reklasifikasi KDP) -OK-
+	psql -h localhost -U kabupaten kabupaten < gb_perikanan_ke_dinas_ketahanan_pangan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < gb_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql -OK-
 
-	from gedungbangunan.jij_perikanan_ke_dinas_ketahanan_pangan_insert import jij_perikanan_ke_dinas_ketahanan_pangan
-	jij_perikanan_ke_dinas_ketahanan_pangan()
+	from gedungbangunan.jij_perikanan_ke_dinas_ketahanan_pangan_insert import jij_perikanan_ke_dinas_ketahanan_pangan -OK-
+	jij_perikanan_ke_dinas_ketahanan_pangan() -OK-
+	psql -h localhost -U kabupaten kabupaten < jij_perikanan_ke_dinas_ketahanan_pangan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < jij_perikanan_ke_dinas_ketahanan_pangan_reg_baru_insert.sql -OK-
+
+    - python manage.py shell
+	from gedungbangunan.pm_litbang_ke_dinas_perhubungan_insert import pm_litbang_ke_dinas_perhubungan -OK-
+	pm_litbang_ke_dinas_perhubungan() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_litbang_ke_dinas_perhubungan_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_litbang_ke_dinas_perhubungan_reg_baru_insert.sql -OK-
+
+	from gedungbangunan.pm_litbang_ke_dinas_pertanahan_insert import pm_litbang_ke_dinas_pertanahan -OK-
+	pm_litbang_ke_dinas_pertanahan() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_litbang_ke_dinas_pertanahan_insert.sql  -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_litbang_ke_dinas_pertanahan_reg_baru_insert.sql -OK-
+
+	from gedungbangunan.pm_pemberpuan_ke_dinas_sosial_insert import pm_pemberpuan_ke_dinas_sosial
+	pm_pemberpuan_ke_dinas_sosial()
+	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_dinas_sosial_insert.sql
+	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_dinas_sosial_reg_baru_insert.sql
+
 
 
 

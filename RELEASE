@@ -1575,8 +1575,8 @@ RELEASE 8.8:
 	    pm_pariwisata_ke_setda -OK-
 	    
 	    pm_litbang_ke_badan_perencanaan -OK-
-	    pm_litbang_ke_dinas_perhubungan
-	    pm_litbang_ke_dinas_pertanahan
+	    pm_litbang_ke_dinas_perhubungan -OK-
+	    pm_litbang_ke_dinas_pertanahan -OK-
 	    pm_pemberpuan_ke_dinas_sosial
 	    pm_pemberpuan_ke_setda
 	
@@ -1586,8 +1586,8 @@ RELEASE 8.8:
 	- md5 test -OK-
 	- deploy:
 	    
-	    gb_perikanan_ke_dinas_ketahanan_pangan
-	    jij_perikanan_ke_dinas_ketahanan_pangan
+	    gb_perikanan_ke_dinas_ketahanan_pangan -OK-
+	    jij_perikanan_ke_dinas_ketahanan_pangan -OK-
 
 
     - laporan mutasi harus ada field "status_mutasi" -OK-

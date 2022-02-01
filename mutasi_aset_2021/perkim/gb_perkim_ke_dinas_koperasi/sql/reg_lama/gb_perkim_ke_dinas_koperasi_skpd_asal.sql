@@ -1,0 +1,16 @@
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (4208, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (5770, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (5771, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (5895, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6089, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6090, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6091, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6121, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6122, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6123, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6252, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6295, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6340, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6341, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6563, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;
+INSERT INTO skpd_asal_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (4383, 40) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 40;

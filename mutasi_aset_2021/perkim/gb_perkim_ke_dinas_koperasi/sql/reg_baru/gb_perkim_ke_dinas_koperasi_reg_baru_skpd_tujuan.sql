@@ -1,0 +1,16 @@
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6716, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6717, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6718, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6719, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6720, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6721, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6722, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6723, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6724, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6725, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6726, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6727, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6728, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6729, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6730, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;
+INSERT INTO skpd_tujuan_gedung_bangunan (id_gedung_bangunan, id_skpd) VALUES (6731, 16) ON CONFLICT (id_gedung_bangunan) DO UPDATE SET id_skpd = 16;

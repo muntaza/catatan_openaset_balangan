@@ -1,0 +1,16 @@
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 4208;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 5770;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 5771;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 5895;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6089;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6090;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6091;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6121;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6122;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6123;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6252;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6295;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6340;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6341;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 6563;
+UPDATE gedung_bangunan SET id_sub_skpd = 403 WHERE id = 4383;

@@ -159,10 +159,15 @@ RELEASE 8.8:
 	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_dinas_sosial_insert.sql -OK-
 	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_dinas_sosial_reg_baru_insert.sql -OK-
 
-	from gedungbangunan.pm_pemberpuan_ke_setda_insert import pm_pemberpuan_ke_setda
-	pm_pemberpuan_ke_setda()
-	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_setda_insert.sql
-	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_setda_reg_baru_insert.sql
+	from gedungbangunan.pm_pemberpuan_ke_setda_insert import pm_pemberpuan_ke_setda -OK-
+	pm_pemberpuan_ke_setda() -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_setda_insert.sql -OK-
+	psql -h localhost -U kabupaten kabupaten < pm_pemberpuan_ke_setda_reg_baru_insert.sql -OK-
+
+	from gedungbangunan.jij_perkim_ke_dinas_pu_insert import jij_perkim_ke_dinas_pu
+	jij_perkim_ke_dinas_pu()
+	psql -h localhost -U kabupaten kabupaten < jij_perkim_ke_dinas_pu_insert.sql
+	psql -h localhost -U kabupaten kabupaten < jij_perkim_ke_dinas_pu_reg_baru_insert.sql
 
 
 

@@ -101,3 +101,9 @@ rel-1-13:
 	cvs co php5_projects_108
 
 
+rel-1-14:
+    - laporan penyusutan KIB E 2021:
+    - git pull 
+	psql -h localhost -U kabupaten kabupaten < penyusutan_gabungan_2021_r2_atl_OK.sql
+    - ssh-add -OK-
+    - cvs up pada php5_projects_108 -
